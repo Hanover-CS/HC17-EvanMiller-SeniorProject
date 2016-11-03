@@ -3,19 +3,13 @@ package com.enm.hch;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class BrowseListActivity extends AppCompatActivity {
+public class RoamCampusActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse_list);
+        setContentView(R.layout.activity_roam_campus);
     }
 
-    public void alphabeticalListClicked() {
 
-    }
-
-    public void categoriesClicked() {
-
-    }
 }

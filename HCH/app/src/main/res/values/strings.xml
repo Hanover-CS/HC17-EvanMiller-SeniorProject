@@ -4,5 +4,8 @@
         the history of Hanover College</string>
     <string name="roam_campus">Roam Campus</string>
     <string name="browse_list">Browse List</string>
-    <string name="about">About</string>
+    <string name="about_name">About</string>
+    <string name="alphabetical_list">Alphabetical List</string>
+    <string name="categories">Categories</string>
+    <string name="about">About description</string>
 </resources>

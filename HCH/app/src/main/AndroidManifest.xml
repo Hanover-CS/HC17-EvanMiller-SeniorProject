@@ -11,11 +11,21 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BrowseListActivity"></activity>
+        <activity
+            android:name=".BrowseListActivity">
+            android:label="@string/browse_list"
+        </activity>
+        <activity
+            android:name=".AboutActivity">
+            android:label="@string/about_name"
+        </activity>
+        <activity
+            android:name=".RoamCampusActivity">
+            android:label="@string/roam_campus"
+        </activity>
     </application>
 
 </manifest>
