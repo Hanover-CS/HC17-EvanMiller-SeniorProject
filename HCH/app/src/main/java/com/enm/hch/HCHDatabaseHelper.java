@@ -25,10 +25,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion == 1) {
             //CREATE DATABASE STRUCTURE
 
+            //
             //CREATE TABLE SITES
+            //
             db.execSQL("CREATE TABLE SITES ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "SITE_NAME TEXT,"
@@ -39,7 +40,40 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     + "NAMESAKE TEXT"
                     + "IMAGE_ID INTEGER);");
 
+            //INSERT SITES
+            insertSites(db, "Classic Hall", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "None",
+                    01234);
+            insertSites(db, "Hendricks Hall", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "VP Hendricks",
+                    01234);
+            insertSites(db, "Parker Auditorium", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "President Parker",
+                    01234);
+            insertSites(db, "Science Center", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "Goodrich",
+                    01234);
+            insertSites(db, "Science Hall", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "None",
+                    01234);
+            insertSites(db, "Newby", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "Newby",
+                    01234);
+            insertSites(db, "Faculty Office Building", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "None",
+                    01234);
+            insertSites(db, "Lynn Hall", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "Lynn",
+                    01234);
+            insertSites(db, "Duggan Library", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "Duggan",
+                    01234);
+            insertSites(db, "Lynn Center for the Fine Arts (CFA)", 1900, 0000,
+                    "Fa La La La La", "Academic Building", "Lynn",
+                    01234);
+            //
             //CREATE TABLE PEOPLE
+            //
             db.execSQL("CREATE TABLE PEOPLE ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "NAMESAKE TEXT,"
@@ -51,18 +85,33 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     + "DESCRIPTION TEXT,"
                     + "IMAGE_ID INTEGER);");
 
+            //INSERT PEOPLE
+            insertPeople(db, "Vice President Thomas A. Hendricks",
+                    "Hendricks", "Thomas", "A.", 1900, 2000,
+                    "Description", 1234);
+
+            //
             //CREATE TABLE SITES_TO_PEOPLE
+            //
             db.execSQL("CREATE TABLE SITES_TO_PEOPLE ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "SITE TEXT,"
                     + "NAME_PERSON TEXT);");
 
+            //INSERT SITES_TO_PEOPLE
+
+
+            //
             //CREATE TABLE IMAGES_SITES
+            //
             db.execSQL("CREATE TABLE IMAGES_SITES ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "SITE_NAME TEXT,"
                     + "IMAGE_ID TEXT,"
                     + "FILE TEXT);");
+
+            //INSERT IMAGES_SITES
+
 
             //CREATE TABLE IMAGES_PEOPLE
             db.execSQL("CREATE TABLE IMAGES_PEOPLE ("
@@ -71,23 +120,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     + "IMAGE_ID TEXT,"
                     + "FILE TEXT);");
 
-            //
-            //INPUTS
-            //
+            //INSERT IMAGES_PEOPLE
 
-            //INSERT SITES
-            insertSites(db, "Classic Hall", 1900, 0000,
-                    "Fa La La La La", "Academic Building", "None",
-                    01234);
-            insertSites(db, "Hendricks Hall", 1900, 0000,
-                    "Fa La La La La", "Academic Building", "None",
-                    01234);
-
-        }
-
-        else {
-
-        }
     }
 
     /**
@@ -105,15 +139,15 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                                     int date_built, int date_destroyed,
                                     String description, String site_type,
                                     String namesake, int image_id) {
-        ContentValues values = new ContentValues();
-        values.put("SITE_NAME", site_name);
-        values.put("DATE_BUILT", date_built);
-        values.put("DATE_DESTROYED", date_destroyed);
-        values.put("DESCRIPTION", description);
-        values.put("SITE_TYPE", site_type);
-        values.put("NAMESAKE", namesake);
-        values.put("IMAGE_ID", image_id);
-        db.insert("SITES", null, values);
+        ContentValues siteValues = new ContentValues();
+        siteValues.put("SITE_NAME", site_name);
+        siteValues.put("DATE_BUILT", date_built);
+        siteValues.put("DATE_DESTROYED", date_destroyed);
+        siteValues.put("DESCRIPTION", description);
+        siteValues.put("SITE_TYPE", site_type);
+        siteValues.put("NAMESAKE", namesake);
+        siteValues.put("IMAGE_ID", image_id);
+        db.insert("SITES", null, siteValues);
     }
 
     /**
@@ -132,16 +166,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                                     String name_last, String name_first, String name_middle,
                                     int date_born, int date_death,
                                     String description, int image_id) {
-        ContentValues values = new ContentValues();
-        values.put("NAMESAKE", namesake);
-        values.put("NAME_LAST", name_last);
-        values.put("NAME_FIRST", name_first);
-        values.put("NAME_MIDDLE", name_middle);
-        values.put("DATE_BORN", date_born);
-        values.put("DATE_DEATH", date_death);
-        values.put("DESCRIPTION", description);
-        values.put("IMAGE_ID", image_id);
-        db.insert("PEOPLE", null, values);
+        ContentValues peopleValues = new ContentValues();
+        peopleValues.put("NAMESAKE", namesake);
+        peopleValues.put("NAME_LAST", name_last);
+        peopleValues.put("NAME_FIRST", name_first);
+        peopleValues.put("NAME_MIDDLE", name_middle);
+        peopleValues.put("DATE_BORN", date_born);
+        peopleValues.put("DATE_DEATH", date_death);
+        peopleValues.put("DESCRIPTION", description);
+        peopleValues.put("IMAGE_ID", image_id);
+        db.insert("PEOPLE", null, peopleValues);
     }
 
     /**
@@ -152,10 +186,10 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
      */
     private static void insertSitesToPeople (SQLiteDatabase db, String site_name,
                                              String name_person) {
-        ContentValues values = new ContentValues();
-        values.put("SITE_NAME", site_name);
-        values.put("NAME_PERSON", name_person);
-        db.insert("SITE_TO_PEOPLE", null, values);
+        ContentValues sitesPeopleValues = new ContentValues();
+        sitesPeopleValues.put("SITE_NAME", site_name);
+        sitesPeopleValues.put("NAME_PERSON", name_person);
+        db.insert("SITE_TO_PEOPLE", null, sitesPeopleValues);
     }
 
     /**
@@ -167,11 +201,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
      */
     private static void insertImageSites (SQLiteDatabase db, String site_name,
                                           String image_id, String file) {
-        ContentValues values = new ContentValues();
-        values.put("SITE_NAME", site_name);
-        values.put("IMAGE_ID", image_id);
-        values.put("FILE", file);
-        db.insert("IMAGES_SITES", null, values);
+        ContentValues imageSitesValues = new ContentValues();
+        imageSitesValues.put("SITE_NAME", site_name);
+        imageSitesValues.put("IMAGE_ID", image_id);
+        imageSitesValues.put("FILE", file);
+        db.insert("IMAGES_SITES", null, imageSitesValues);
     }
 
     /**
@@ -183,11 +217,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
      */
     private static void insertImagesPeople (SQLiteDatabase db, String person_name,
                                             String image_id, String file) {
-        ContentValues values = new ContentValues();
-        values.put("SITE_NAME", person_name);
-        values.put("IMAGE_ID", image_id);
-        values.put("FILE", file);
-        db.insert("IMAGES_PEOPLE", null, values);
+        ContentValues imagePeopleValues = new ContentValues();
+        imagePeopleValues.put("SITE_NAME", person_name);
+        imagePeopleValues.put("IMAGE_ID", image_id);
+        imagePeopleValues.put("FILE", file);
+        db.insert("IMAGES_PEOPLE", null, imagePeopleValues);
     }
 }
 
