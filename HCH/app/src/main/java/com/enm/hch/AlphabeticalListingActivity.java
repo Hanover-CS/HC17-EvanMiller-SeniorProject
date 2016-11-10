@@ -58,6 +58,7 @@ public class AlphabeticalListingActivity extends ListActivity {
                                 int position,
                                 long id) {
         Intent intent = new Intent(AlphabeticalListingActivity.this, AlphabeticalItemActivity.class);
+        intent.putExtra(AlphabeticalItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }

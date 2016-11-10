@@ -2,17 +2,12 @@ package com.enm.hch;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
-import android.widget.CheckBox;
-import android.content.ContentValues;
-import android.os.AsyncTask;
 import android.util.Log;
 
 public class AlphabeticalItemActivity extends Activity {
@@ -37,14 +32,14 @@ public class AlphabeticalItemActivity extends Activity {
                     new String[] {Integer.toString(item)},
                     null, null, null);
 
-            //Move to the first recrod in the Cursor
+            //Move to the first record in the Cursor
             if (cursor.moveToFirst()) {
                 //Get details
                 String siteNameText = cursor.getString(0);
-                Integer dateBuiltText = cursor.getInt(1);
-                Integer dateDestroyedText = cursor.getInt(2);
+                String dateBuiltText = Integer.toString(cursor.getInt(1));
+                String dateDestroyedText = Integer.toString(cursor.getInt(2));
                 String descriptionText = cursor.getString(3);
-                String namesakeText = cursor.getString(5);
+                String namesakeText = cursor.getString(4);
 
                 //Populate Site_Name
                 TextView siteName = (TextView) findViewById(R.id.site_name);
@@ -69,7 +64,7 @@ public class AlphabeticalItemActivity extends Activity {
             cursor.close();
             db.close();
         } catch(SQLiteException e) {
-            Log.v("SQLiteException", "..........SQLITEEXCEPTION..........");
+            Log.v("SQLiteException", "..........SQLITE_EXCEPTION..........");
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
