@@ -19,15 +19,14 @@ public class AlphabeticalItemActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alphabetical_item);
 
-        //Get item from the intent
         int item = (Integer)getIntent().getExtras().get(ITEM);
 
-        //Create cursor
         try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             SQLiteDatabase db = HCHDatabaseHelper.getReadableDatabase();
+
             Cursor cursor = db.query ("SITES",
-                    new String[] {"SITE_NAME", "DATE_BUILT", "DATE_DESTROYED", "DESCRIPTION", "NAMESAKE"},
+                    new String[] {"_id", "SITE_NAME", "DATE_BUILT", "DATE_DESTROYED", "DESCRIPTION", "NAMESAKE"},
                     "_id = ?",
                     new String[] {Integer.toString(item)},
                     null, null, null);
@@ -35,11 +34,11 @@ public class AlphabeticalItemActivity extends Activity {
             //Move to the first record in the Cursor
             if (cursor.moveToFirst()) {
                 //Get details
-                String siteNameText = cursor.getString(0);
-                String dateBuiltText = Integer.toString(cursor.getInt(1));
-                String dateDestroyedText = Integer.toString(cursor.getInt(2));
-                String descriptionText = cursor.getString(3);
-                String namesakeText = cursor.getString(4);
+                String siteNameText = cursor.getString(1);
+                String dateBuiltText = Integer.toString(cursor.getInt(2));
+                String dateDestroyedText = Integer.toString(cursor.getInt(3));
+                String descriptionText = cursor.getString(4);
+                String namesakeText = cursor.getString(5);
 
                 //Populate Site_Name
                 TextView siteName = (TextView) findViewById(R.id.site_name);
@@ -61,8 +60,10 @@ public class AlphabeticalItemActivity extends Activity {
                 TextView namesake = (TextView) findViewById(R.id.namesake);
                 namesake.setText(namesakeText);
             }
+
             cursor.close();
             db.close();
+
         } catch(SQLiteException e) {
             Log.v("SQLiteException", "..........SQLITE_EXCEPTION..........");
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);

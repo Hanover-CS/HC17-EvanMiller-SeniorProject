@@ -39,6 +39,7 @@ public class AlphabeticalListingActivity extends ListActivity {
                     0);
 
             listSites.setAdapter(listAdapter);
+
         } catch(SQLiteException error) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();

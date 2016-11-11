@@ -19,7 +19,7 @@ public class BrowseListActivity extends AppCompatActivity {
     }
 
     public void categoriesClicked(View view) {
-        Intent intent = new Intent (this, AlphabeticalListingActivity.class);
+        Intent intent = new Intent (this, CategoryListingActivity.class);
         startActivity(intent);
     }
 }

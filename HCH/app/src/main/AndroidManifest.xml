@@ -24,10 +24,18 @@
         <activity android:name=".RoamCampusActivity">
             android:label="@string/roam_campus"
         </activity>
-        <activity android:name=".AlphabeticalListingActivity" />
-        <activity android:name=".AlphabeticalItemActivity" />
-        <activity android:name=".CategoryListingActivity" />
-        <activity android:name=".CategoryItemActivity"></activity>
+        <activity android:name=".AlphabeticalItemActivity">
+            android:label="@string/alphabetical_item_activity"
+        </activity>
+        <activity android:name=".AlphabeticalListingActivity">
+            android:label="@string/alphabetical_listing_activity"
+        </activity>
+        <activity android:name=".CategoryItemActivity">
+            android:label="@string/alphabetical_item_activity"
+        </activity>
+        <activity android:name=".CategoryListingActivity">
+            android:label="@string/category_listing_activity"
+        </activity>
     </application>
 
 </manifest>
