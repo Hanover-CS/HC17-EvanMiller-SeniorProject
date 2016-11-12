@@ -36,6 +36,10 @@
         <activity android:name=".CategoryListingActivity">
             android:label="@string/category_listing_activity"
         </activity>
+        <activity android:name=".PeopleActivity" />
+        <activity android:name=".AlphabeticalPeopleActivity" />
+        <activity android:name=".CategoryPeopleActivity" />
+        <activity android:name=".PeopleItemActivity"></activity>
     </application>
 
 </manifest>

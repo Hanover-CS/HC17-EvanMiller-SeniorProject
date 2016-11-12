@@ -22,4 +22,9 @@ public class BrowseListActivity extends AppCompatActivity {
         Intent intent = new Intent (this, CategoryListingActivity.class);
         startActivity(intent);
     }
+
+    public void peopleClicked(View view) {
+        Intent intent = new Intent (this, PeopleActivity.class);
+        startActivity(intent);
+    }
 }
