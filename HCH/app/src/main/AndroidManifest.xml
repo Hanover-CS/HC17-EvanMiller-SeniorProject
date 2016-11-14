@@ -15,7 +15,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BrowseListActivity"></activity>
+        <activity android:name=".BrowseListActivity">
+            android:label="@string/browse_list"
+        </activity>
+        <activity android:name=".AboutActivity">
+            android:label="@string/about_name"
+        </activity>
+        <activity android:name=".RoamCampusActivity">
+            android:label="@string/roam_campus"
+        </activity>
+        <activity android:name=".AlphabeticalItemActivity">
+            android:label="@string/alphabetical_item_activity"
+        </activity>
+        <activity android:name=".AlphabeticalListingActivity">
+            android:label="@string/alphabetical_listing_activity"
+        </activity>
+        <activity android:name=".CategoryItemActivity">
+            android:label="@string/alphabetical_item_activity"
+        </activity>
+        <activity android:name=".CategoryListingActivity">
+            android:label="@string/category_listing_activity"
+        </activity>
+        <activity android:name=".PeopleActivity" />
+        <activity android:name=".AlphabeticalPeopleActivity" />
+        <activity android:name=".CategoryPeopleActivity" />
+        <activity android:name=".PeopleItemActivity"></activity>
     </application>
 
 </manifest>
