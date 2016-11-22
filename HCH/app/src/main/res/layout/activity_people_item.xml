@@ -17,12 +17,12 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/date_born"
+        android:id="@+id/date_born_people"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/date_died"
+        android:id="@+id/date_died_people"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

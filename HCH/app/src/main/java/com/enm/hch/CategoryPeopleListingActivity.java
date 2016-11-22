@@ -13,7 +13,8 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class AlphabeticalPeopleActivity extends ListActivity {
+public class CategoryPeopleListingActivity extends ListActivity {
+
     private SQLiteDatabase db;
     private Cursor cursor;
 
@@ -26,15 +27,15 @@ public class AlphabeticalPeopleActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("PEOPLE",
-                    new String[]{"_id", "NAMESAKE"},
+            cursor = db.query("CONNECTION_PEOPLE",
+                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     null, null, null, null,
-                    "NAMESAKE ASC");
+                    "CATEGORY ASC");
 
             CursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[]{"NAMESAKE"},
+                    new String[]{"CATEGORY_PROPER"},
                     new int[]{android.R.id.text1},
                     0);
 
@@ -58,8 +59,9 @@ public class AlphabeticalPeopleActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(AlphabeticalPeopleActivity.this, PeopleItemActivity.class);
-        intent.putExtra(PeopleItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(CategoryPeopleListingActivity.this, CategoryPeopleItemActivity.class);
+        intent.putExtra(CategoryPeopleItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }
+

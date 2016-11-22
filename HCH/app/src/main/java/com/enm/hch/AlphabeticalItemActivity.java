@@ -46,19 +46,22 @@ public class AlphabeticalItemActivity extends Activity {
 
                 //Populate Date_Built
                 TextView dateBuilt = (TextView) findViewById(R.id.date_built);
-                dateBuilt.setText(dateBuiltText);
+                dateBuilt.setText("Built: " + dateBuiltText);
 
                 //Populate Date_Destroyed
                 TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                dateDestroyed.setText(dateDestroyedText);
+                dateDestroyed.setText("Status: " + dateDestroyedText);
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description);
-                description.setText(descriptionText);
+                description.setText("\n" + descriptionText);
 
                 //Populate Namesake
-                TextView namesake = (TextView) findViewById(R.id.namesake);
-                namesake.setText(namesakeText);
+                if (namesakeText != "None") {
+                    TextView namesake = (TextView) findViewById(R.id.namesake);
+                    namesake.setText("Namesake: " + namesakeText);
+                }
+
             }
 
             cursor.close();

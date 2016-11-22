@@ -36,10 +36,21 @@
         <activity android:name=".CategoryListingActivity">
             android:label="@string/category_listing_activity"
         </activity>
-        <activity android:name=".PeopleActivity" />
-        <activity android:name=".AlphabeticalPeopleActivity" />
-        <activity android:name=".CategoryPeopleActivity" />
-        <activity android:name=".PeopleItemActivity"></activity>
+        <activity android:name=".PeopleActivity">
+            android:label="@string/people_activity"
+        </activity>
+        <activity android:name=".AlphabeticalPeopleActivity">
+            android:label="@string/alphabetical_people_activity"
+        </activity>
+        <activity android:name=".CategoryPeopleListingActivity">
+            android:label="@string/category_people_listing_activity"
+        </activity>
+        <activity android:name=".PeopleItemActivity">
+            android:label="@string/people_item_activity"
+        </activity>
+        <activity android:name=".CategoryPeopleItemActivity">
+            android:label="@string/category_people_item_activity"
+        </activity>
     </application>
 
 </manifest>
