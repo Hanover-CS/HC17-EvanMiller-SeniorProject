@@ -13,50 +13,34 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class CategoryPeopleItemActivity extends ListActivity {
+public class SitesAlphabeticalListingActivity extends ListActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
-
-    public static final String ITEM = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listSites = getListView();
 
-        int item = (Integer) getIntent().getExtras().get(ITEM);
-
-        try {
+        try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("CONNECTION_PEOPLE",
-                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
-                    "_id = ?",
-                    new String[]{Integer.toString(item)},
-                    null, null, null);
-
-            cursor.moveToFirst();
-            String category_input = cursor.getString(1) + " = ?";
-
-            cursor = db.query("PEOPLE_TO_CONNECTION",
-                    null,
-                    category_input,
-                    new String[]{"Y"},
-                    null,
-                    null,
-                    "NAMESAKE ASC");
+            cursor = db.query("SITES",
+                    new String[]{"_id", "SITE_NAME"},
+                    null, null, null, null,
+                    "SITE_NAME ASC");
 
             CursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[]{"NAMESAKE"},
+                    new String[]{"SITE_NAME"},
                     new int[]{android.R.id.text1},
                     0);
 
             listSites.setAdapter(listAdapter);
 
-        } catch (SQLiteException error) {
+        } catch(SQLiteException error) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -74,8 +58,8 @@ public class CategoryPeopleItemActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(CategoryPeopleItemActivity.this, PeopleItemActivity.class);
-        intent.putExtra(PeopleItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(SitesAlphabeticalListingActivity.this, SitesItemActivity.class);
+        intent.putExtra(SitesItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }

@@ -13,7 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class CategoryListingActivity extends ListActivity {
+public class PeopleCategoryListingActivity extends ListActivity {
 
     private SQLiteDatabase db;
     private Cursor cursor;
@@ -27,7 +27,7 @@ public class CategoryListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("SITE_TYPE",
+            cursor = db.query("CONNECTION_PEOPLE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     null, null, null, null,
                     "CATEGORY ASC");
@@ -59,8 +59,9 @@ public class CategoryListingActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(CategoryListingActivity.this, CategoryItemActivity.class);
-        intent.putExtra(CategoryItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(PeopleCategoryListingActivity.this, PeopleCategoryItemListingActivity.class);
+        intent.putExtra(PeopleCategoryItemListingActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }
+
