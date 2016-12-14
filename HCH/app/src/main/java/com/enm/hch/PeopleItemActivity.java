@@ -26,7 +26,7 @@ public class PeopleItemActivity extends Activity {
             SQLiteDatabase db = HCHDatabaseHelper.getReadableDatabase();
 
             Cursor cursor = db.query ("PEOPLE",
-                    new String[] {"_id", "NAMESAKE", "DATE_BIRTH", "DATE_DEATH", "DESCRIPTION"},
+                    new String[] {"_id", "NAMESAKE", "DATE_BIRTH", "DATE_DIED", "DESCRIPTION"},
                     "_id = ?",
                     new String[] {Integer.toString(item)},
                     null, null, null);
@@ -48,8 +48,8 @@ public class PeopleItemActivity extends Activity {
                 dateBorn.setText(dateBornText);
 
                 //Populate Date_Destroyed
-                TextView dateDeath = (TextView) findViewById(R.id.date_death_people);
-                dateDeath.setText(dateDiedText);
+                TextView dateDied = (TextView) findViewById(R.id.date_died_people);
+                dateDied.setText(dateDiedText);
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description_people);

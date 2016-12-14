@@ -13,32 +13,33 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class PeopleAlphabeticalListingActivity extends ListActivity {
+public class CategoryPeopleListingActivity extends ListActivity {
+
     private SQLiteDatabase db;
     private Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ListView listPeople = getListView();
+        ListView listSites = getListView();
 
         try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("PEOPLE",
-                    new String[]{"_id", "NAMESAKE", "NAME_LAST"},
+            cursor = db.query("CONNECTION_PEOPLE",
+                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     null, null, null, null,
-                    "NAME_LAST ASC");
+                    "CATEGORY ASC");
 
             CursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[]{"NAMESAKE"},
+                    new String[]{"CATEGORY_PROPER"},
                     new int[]{android.R.id.text1},
                     0);
 
-            listPeople.setAdapter(listAdapter);
+            listSites.setAdapter(listAdapter);
 
         } catch(SQLiteException error) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
@@ -58,8 +59,9 @@ public class PeopleAlphabeticalListingActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(PeopleAlphabeticalListingActivity.this, PeopleItemActivity.class);
-        intent.putExtra(PeopleItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(CategoryPeopleListingActivity.this, CategoryPeopleItemActivity.class);
+        intent.putExtra(CategoryPeopleItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }
+

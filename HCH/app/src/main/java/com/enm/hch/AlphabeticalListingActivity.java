@@ -13,8 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class SitesCategoryListingActivity extends ListActivity {
-
+public class AlphabeticalListingActivity extends ListActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
 
@@ -27,15 +26,15 @@ public class SitesCategoryListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("SITE_TYPE",
-                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
+            cursor = db.query("SITES",
+                    new String[]{"_id", "SITE_NAME"},
                     null, null, null, null,
-                    "CATEGORY ASC");
+                    "SITE_NAME ASC");
 
             CursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[]{"CATEGORY_PROPER"},
+                    new String[]{"SITE_NAME"},
                     new int[]{android.R.id.text1},
                     0);
 
@@ -59,8 +58,8 @@ public class SitesCategoryListingActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(SitesCategoryListingActivity.this, SitesCategoryItemListingActivity.class);
-        intent.putExtra(SitesCategoryItemListingActivity.ITEM, (int) id);
+        Intent intent = new Intent(AlphabeticalListingActivity.this, AlphabeticalItemActivity.class);
+        intent.putExtra(AlphabeticalItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }

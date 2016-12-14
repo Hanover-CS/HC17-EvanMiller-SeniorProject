@@ -14,12 +14,12 @@ public class BrowseListActivity extends AppCompatActivity {
     }
 
     public void alphabeticalListClicked(View view) {
-        Intent intent = new Intent (this, SitesAlphabeticalListingActivity.class);
+        Intent intent = new Intent (this, AlphabeticalListingActivity.class);
         startActivity(intent);
     }
 
     public void categoriesClicked(View view) {
-        Intent intent = new Intent (this, SitesCategoryListingActivity.class);
+        Intent intent = new Intent (this, CategoryListingActivity.class);
         startActivity(intent);
     }
 
