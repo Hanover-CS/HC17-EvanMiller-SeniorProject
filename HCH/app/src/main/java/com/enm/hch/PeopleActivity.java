@@ -14,12 +14,12 @@ public class PeopleActivity extends AppCompatActivity {
     }
 
     public void alphabeticalPeopleClicked(View view) {
-        Intent intent = new Intent (this, PeopleAlphabeticalListingActivity.class);
+        Intent intent = new Intent (this, AlphabeticalPeopleActivity.class);
         startActivity(intent);
     }
 
     public void categoriesPeopleClicked(View view) {
-        Intent intent = new Intent (this, PeopleCategoryListingActivity.class);
+        Intent intent = new Intent (this, CategoryPeopleListingActivity.class);
         startActivity(intent);
     }
 
