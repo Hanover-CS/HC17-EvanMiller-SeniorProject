@@ -12,16 +12,12 @@ import android.util.Log;
 
 public class PeopleItemActivity extends Activity {
 
-    //
-    //NEED TO FIX THIS FOR PEOPLE -> INTERFACE
-    //NOT TESTED -> MIGHT NOT HAVE A GOOD LAYOUT
-    //
     public static final String ITEM = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabetical_item);
+        setContentView(R.layout.activity_people_item);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 
@@ -30,7 +26,7 @@ public class PeopleItemActivity extends Activity {
             SQLiteDatabase db = HCHDatabaseHelper.getReadableDatabase();
 
             Cursor cursor = db.query ("PEOPLE",
-                    new String[] {"_id", "NAMESAKE", "DATE_BIRTH", "DATE_DIED", "DESCRIPTION"},
+                    new String[] {"_id", "NAMESAKE", "DATE_BIRTH", "DATE_DEATH", "DESCRIPTION"},
                     "_id = ?",
                     new String[] {Integer.toString(item)},
                     null, null, null);
@@ -48,12 +44,12 @@ public class PeopleItemActivity extends Activity {
                 namesakePeople.setText(namesakeText);
 
                 //Populate Date_Built
-                TextView dateBorn = (TextView) findViewById(R.id.date_born);
+                TextView dateBorn = (TextView) findViewById(R.id.date_born_people);
                 dateBorn.setText(dateBornText);
 
                 //Populate Date_Destroyed
-                TextView dateDied = (TextView) findViewById(R.id.date_died);
-                dateDied.setText(dateDiedText);
+                TextView dateDeath = (TextView) findViewById(R.id.date_death_people);
+                dateDeath.setText(dateDiedText);
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description_people);

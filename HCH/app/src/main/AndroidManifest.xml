@@ -24,22 +24,33 @@
         <activity android:name=".RoamCampusActivity">
             android:label="@string/roam_campus"
         </activity>
-        <activity android:name=".AlphabeticalItemActivity">
+        <activity android:name=".SitesItemActivity">
             android:label="@string/alphabetical_item_activity"
         </activity>
-        <activity android:name=".AlphabeticalListingActivity">
+        <activity android:name=".SitesAlphabeticalListingActivity">
             android:label="@string/alphabetical_listing_activity"
         </activity>
-        <activity android:name=".CategoryItemActivity">
+        <activity android:name=".SitesCategoryItemListingActivity">
             android:label="@string/alphabetical_item_activity"
         </activity>
-        <activity android:name=".CategoryListingActivity">
+        <activity android:name=".SitesCategoryListingActivity">
             android:label="@string/category_listing_activity"
         </activity>
-        <activity android:name=".PeopleActivity" />
-        <activity android:name=".AlphabeticalPeopleActivity" />
-        <activity android:name=".CategoryPeopleActivity" />
-        <activity android:name=".PeopleItemActivity"></activity>
+        <activity android:name=".PeopleActivity">
+            android:label="@string/people_activity"
+        </activity>
+        <activity android:name=".PeopleAlphabeticalListingActivity">
+            android:label="@string/alphabetical_people_activity"
+        </activity>
+        <activity android:name=".PeopleCategoryListingActivity">
+            android:label="@string/category_people_listing_activity"
+        </activity>
+        <activity android:name=".PeopleItemActivity">
+            android:label="@string/people_item_activity"
+        </activity>
+        <activity android:name=".PeopleCategoryItemListingActivity">
+            android:label="@string/category_people_item_activity"
+        </activity>
     </application>
 
 </manifest>

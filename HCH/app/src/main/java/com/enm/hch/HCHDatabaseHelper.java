@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 class HCHDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "HCH"; // the name of our database
-    private static final int DB_VERSION = 1; //the version of the database
+    private static final String DB_NAME = "HCH";
+    private static final int DB_VERSION = 1;
 
     HCHDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -38,8 +38,12 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER);");
 
         //INSERT SITES
-        insertSites(db, "Classic Hall", 1900, 1901,
-                "Fa La La La La", "Academic Building", "None",
+        insertSites(db, "Classic Hall", 1947, 2017,
+                "The construction of Classic Hall, also known as 'New' Classic Hall, " +
+                        "was completed in 1947. The building was built to replace Old " +
+                        "Classic Hall, which had been demolished after a fire in 1941. " +
+                        "The academic building was last renovated in 2002.",
+                "Academic Building", "None",
                 1234);
         insertSites(db, "Hendricks Hall", 1900, 1901,
                 "Fa La La La La", "Academic Building", "VP Hendricks",
@@ -86,6 +90,22 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //INSERT PEOPLE
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.", 1900, 2000,
+                "Description", 1234);
+        //TESTING PEOPLE
+        insertPeople(db, "Alumnus Test Guy",
+                "Guy", "Alumnus", "Test", 1900, 2000,
+                "Description", 1234);
+        insertPeople(db, "Faculty Test Guy",
+                "Guy", "Faculty", "Test", 1900, 2000,
+                "Description", 1234);
+        insertPeople(db, "President Test Guy",
+                "Guy", "President", "Test", 1900, 2000,
+                "Description", 1234);
+        insertPeople(db, "Relative Test Guy",
+                "Guy", "Relative", "Test", 1900, 2000,
+                "Description", 1234);
+        insertPeople(db, "Local Test Guy",
+                "Guy", "Local", "Test", 1900, 2000,
                 "Description", 1234);
 
 
@@ -135,8 +155,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //CREATE TABLE SITES_TO_PEOPLE
         //
         db.execSQL("CREATE TABLE SITES_TO_PEOPLE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "SITE TEXT, "
-                + "NAME_PERSON TEXT);");
+                + "SITE_NAME TEXT, "
+                + "NAMESAKE TEXT);");
 
         //INSERT SITES_TO_PEOPLE
         insertSitesToPeople(db, "Classic Hall", "NONE");
@@ -149,6 +169,45 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Lynn Hall", "Mr. and Mrs. Lynn");
         insertSitesToPeople(db, "Duggan Library", "Mrs. Duggan");
         insertSitesToPeople(db, "Lynn Center for the Fine Arts (CFA)", "Mr. and Mrs. Lynn");
+
+
+        //
+        //CREATE TABLE PEOPLE_TO_CONNECTION
+        db.execSQL("CREATE TABLE PEOPLE_TO_CONNECTION (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "NAMESAKE TEXT, "
+                + "ALUMNUS TEXT, "
+                + "FACULTY_STAFF TEXT, "
+                + "PRESIDENT TEXT, "
+                + "RELATIVE TEXT, "
+                + "LOCAL TEXT);");
+
+        //INSERT PEOPLE_TO_CONNECTION
+        insertPeopleToConnection(db, "Vice President Thomas A. Hendricks",
+                "Y", "N", "N", "N", "N");
+        //TESTING
+        //TESTING PEOPLE
+        insertPeopleToConnection(db, "Alumnus Test Guy", "Y", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Faculty Test Guy", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "President Test Guy", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Relative Test Guy", "N", "N", "N", "Y", "N");
+        insertPeopleToConnection(db, "Local Test Guy", "N", "N", "N", "N", "Y");
+
+
+        //
+        //CREATE TABLE CONNECTION_PEOPLE
+        //
+        db.execSQL("CREATE TABLE CONNECTION_PEOPLE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "CATEGORY TEXT, "
+                + "CATEGORY_PROPER TEXT, "
+                + "DESCRIPTION TEXT);");
+
+        //INSERT CONNECTION_PEOPLE
+        insertConnectionPeople(db, "ALUMNUS", "Alumnus", "Description");
+        insertConnectionPeople(db, "FACULTY_STAFF", "Faculty & Staff", "Description");
+        insertConnectionPeople(db, "PRESIDENT", "President", "Description");
+        insertConnectionPeople(db, "RELATIVE", "Relative", "Description");
+        insertConnectionPeople(db, "LOCAL", "Local", "Description");
+
 
 
         //
@@ -171,21 +230,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //INSERT IMAGES_PEOPLE
 
 
-        //
-        //CREATE TABLE PEOPLE_TO_CONNECTION
-        db.execSQL("CREATE TABLE PEOPLE_TO_CONNECTION (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "NAMESAKE TEXT, "
-                + "ALUMNUS TEXT, "
-                + "FACULTY_STAFF TEXT, "
-                + "PRESIDENT TEXT, "
-                + "RELATIVE TEXT, "
-                + "LOCAL TEXT);");
-
-        //INSERT PEOPLE_TO_CONNECTION
-        insertPeopleToConnection(db, "Vice President Thomas A. Hendricks",
-                "Y", "N", "N", "N", "N");
     }
-
 
     private static void insertSites(SQLiteDatabase db, String site_name,
                                     int date_built, int date_destroyed,
@@ -204,14 +249,14 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
     private static void insertPeople(SQLiteDatabase db, String namesake,
                                      String name_last, String name_first, String name_middle,
-                                     int date_born, int date_death,
+                                     int date_birth, int date_death,
                                      String description, int image_id) {
         ContentValues peopleValues = new ContentValues();
         peopleValues.put("NAMESAKE", namesake);
         peopleValues.put("NAME_LAST", name_last);
         peopleValues.put("NAME_FIRST", name_first);
         peopleValues.put("NAME_MIDDLE", name_middle);
-        peopleValues.put("DATE_BORN", date_born);
+        peopleValues.put("DATE_BIRTH", date_birth);
         peopleValues.put("DATE_DEATH", date_death);
         peopleValues.put("DESCRIPTION", description);
         peopleValues.put("IMAGE_ID", image_id);
@@ -243,11 +288,34 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private static void insertSitesToPeople(SQLiteDatabase db, String site_name,
-                                            String name_person) {
+                                            String namesake) {
         ContentValues sitesPeopleValues = new ContentValues();
         sitesPeopleValues.put("SITE_NAME", site_name);
-        sitesPeopleValues.put("NAME_PERSON", name_person);
-        db.insert("SITE_TO_PEOPLE", null, sitesPeopleValues);
+        sitesPeopleValues.put("NAMESAKE", namesake);
+        db.insert("SITES_TO_PEOPLE", null, sitesPeopleValues);
+    }
+
+    private static void insertPeopleToConnection(SQLiteDatabase db, String namesake,
+                                                 String alumnus, String faculty_staff,
+                                                 String president, String relative,
+                                                 String local) {
+        ContentValues peopleValues = new ContentValues();
+        peopleValues.put("NAMESAKE", namesake);
+        peopleValues.put("ALUMNUS", alumnus);
+        peopleValues.put("FACULTY_STAFF", faculty_staff);
+        peopleValues.put("PRESIDENT", president);
+        peopleValues.put("RELATIVE", relative);
+        peopleValues.put("LOCAL", local);
+        db.insert("PEOPLE_TO_CONNECTION", null, peopleValues);
+    }
+
+    private static void insertConnectionPeople(SQLiteDatabase db, String category,
+                                               String category_proper, String description) {
+        ContentValues connectionPeopleValues = new ContentValues();
+        connectionPeopleValues.put("CATEGORY", category);
+        connectionPeopleValues.put("CATEGORY_PROPER", category_proper);
+        connectionPeopleValues.put("DESCRIPTION", description);
+        db.insert("CONNECTION_PEOPLE", null, connectionPeopleValues);
     }
 
     private static void insertImageSites(SQLiteDatabase db, String site_name,
@@ -267,19 +335,4 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         imagePeopleValues.put("FILE", file);
         db.insert("IMAGES_PEOPLE", null, imagePeopleValues);
     }
-
-    private static void insertPeopleToConnection(SQLiteDatabase db, String namesake,
-                                                 String alumnus, String faculty_staff,
-                                                 String president, String relative,
-                                                 String local) {
-        ContentValues peopleValues = new ContentValues();
-        peopleValues.put("NAMESAKE", namesake);
-        peopleValues.put("ALUMNUS", alumnus);
-        peopleValues.put("FACULTY_STAFF", faculty_staff);
-        peopleValues.put("PRESIDENT", president);
-        peopleValues.put("RELATIVE", relative);
-        peopleValues.put("LOCAL", local);
-        db.insert("PEOPLE_TO_CONNECTION", null, peopleValues);
-    }
 }
-
