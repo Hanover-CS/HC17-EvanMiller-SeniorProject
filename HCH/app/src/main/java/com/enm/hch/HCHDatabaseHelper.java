@@ -34,6 +34,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "DATE_DESTROYED INTEGER, "
                 + "DESCRIPTION TEXT, "
                 + "NAMESAKE TEXT, "
+                + "LATITUDE DOUBLE, "
+                + "LONGITUDE DOUBLE, "
                 + "IMAGE_ID INTEGER);");
 
         //INSERT SITES
@@ -42,34 +44,34 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "was completed in 1947. The building was built to replace Old " +
                         "Classic Hall, which had been demolished after a fire in 1941. " +
                         "The academic building was last renovated in 2002.",
-                "None", 1234);
+                "None", 38.713063, -85.458299, 1234);
         insertSites(db, "Hendricks Hall", 1900, 1901,
                 "Fa La La La La", "VP Hendricks",
-                1234);
+                38.712584, -85.457797, 1234);
         insertSites(db, "Parker Auditorium", 1900, 1901,
                 "Fa La La La La", "President Parker",
-                1234);
+                38.713423, -85.457188, 1234);
         insertSites(db, "Science Center", 1900, 1901,
                 "Fa La La La La", "Goodrich",
-                1234);
+                38.714262, -85.458282, 1234);
         insertSites(db, "Science Hall", 1900, 1901,
                 "Fa La La La La", "None",
-                1234);
+                38.713917, -85.459202, 1234);
         insertSites(db, "Newby Hall", 1900, 1901,
                 "Fa La La La La", "Newby",
-                1234);
+                38.714366, -85.461857, 1234);
         insertSites(db, "Faculty Office Building", 1900, 1901,
                 "Fa La La La La", "None",
-                1234);
+                38.714578, -85.458873, 1234);
         insertSites(db, "Lynn Hall", 1900, 1901,
                 "Fa La La La La", "Lynn",
-                1234);
+                38.714588, -85.459754, 1234);
         insertSites(db, "Duggan Library", 1900, 1901,
                 "Fa La La La La", "Duggan",
-                1234);
+                38.715624, -85.460044, 1234);
         insertSites(db, "Lynn Center for the Fine Arts (CFA)", 1900, 1901,
                 "Fa La La La La", "Lynn",
-                1234);
+                38.716473, -85.460089, 1234);
 
 
         //
@@ -232,13 +234,17 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
     private static void insertSites(SQLiteDatabase db, String site_name,
                                     int date_built, int date_destroyed,
-                                    String description, String namesake, int image_id) {
+                                    String description, String namesake,
+                                    double latitude, double longitude,
+                                    int image_id) {
         ContentValues siteValues = new ContentValues();
         siteValues.put("SITE_NAME", site_name);
         siteValues.put("DATE_BUILT", date_built);
         siteValues.put("DATE_DESTROYED", date_destroyed);
         siteValues.put("DESCRIPTION", description);
         siteValues.put("NAMESAKE", namesake);
+        siteValues.put("LATITUDE", latitude);
+        siteValues.put("LONGITUDE", longitude);
         siteValues.put("IMAGE_ID", image_id);
         db.insert("SITES", null, siteValues);
     }

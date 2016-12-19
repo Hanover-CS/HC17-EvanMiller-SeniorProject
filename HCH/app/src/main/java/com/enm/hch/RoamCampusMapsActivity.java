@@ -2,6 +2,10 @@ package com.enm.hch;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -9,6 +13,9 @@ import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.location.LocationListener;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,7 +28,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class RoamCampusMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    GoogleMap googleMap;
     private Location locationLL;
     private boolean bound = false;
 
@@ -47,6 +53,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements OnMapRea
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        addSiteMarkers();
         mMap.addMarker(new MarkerOptions().position(new LatLng(38.71433, -85.48113)).title("Marker").snippet("Snippet"));
 
         /*
@@ -97,7 +104,48 @@ public class RoamCampusMapsActivity extends FragmentActivity implements OnMapRea
         });
     }
 
+    private void addSiteMarkers() {
+        try{
+            SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
+            SQLiteDatabase db = HCHDatabaseHelper.getReadableDatabase();
 
+            Cursor cursor = db.query ("SITES",
+                    new String[] {"_id", "SITE_NAME", "LATITUDE", "LONGITUDE"},
+                    null, null, null, null,
+                    "SITE_NAME ASC");
+
+            cursor.moveToFirst();
+            String siteNameText = cursor.getString(1);
+            double latitudeText = cursor.getDouble(2);
+            double longitudeText = cursor.getDouble(3);
+            LatLng latLng = new LatLng(latitudeText, longitudeText);
+            mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText).snippet(siteNameText));
+
+            Boolean loop = true;
+            while (loop == true){
+                if(cursor.moveToNext() == false){
+                    loop = false;
+                }
+                else {
+                    //cursor.moveToNext())
+                    siteNameText = cursor.getString(1);
+                    latitudeText = cursor.getDouble(2);
+                    longitudeText = cursor.getDouble(3);
+                    latLng = new LatLng(latitudeText, longitudeText);
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText).snippet(siteNameText));
+                }
+            }
+
+            cursor.close();
+            db.close();
+
+
+        } catch(SQLiteException e) {
+            Log.v("SQLiteException", "..........SQLITE_EXCEPTION..........");
+            Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 
     @Override
     protected void onStart() {
