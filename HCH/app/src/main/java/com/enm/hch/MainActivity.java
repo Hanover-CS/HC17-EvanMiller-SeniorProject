@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void roamCampusClicked(View view) {
-        Intent intent = new Intent (this, RoamCampusActivity.class);
+        Intent intent = new Intent (this, RoamCampusMapsActivity.class);
         startActivity(intent);
     }
 

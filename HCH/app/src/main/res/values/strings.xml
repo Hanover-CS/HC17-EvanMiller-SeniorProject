@@ -9,4 +9,5 @@
     <string name="categories">Categories</string>
     <string name="people">People</string>
     <string name="about">About description</string>
+    <string name="title_activity_roam_campus_maps">Map</string>
 </resources>
