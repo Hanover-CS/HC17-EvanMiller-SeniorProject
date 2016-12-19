@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class AlphabeticalItemActivity extends Activity {
+public class SitesItemActivity extends Activity {
 
     public static final String ITEM = "item";
 

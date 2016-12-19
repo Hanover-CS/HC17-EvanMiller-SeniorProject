@@ -13,7 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class CategoryItemActivity extends ListActivity {
+public class SitesCategoryItemListingActivity extends ListActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
 
@@ -77,8 +77,8 @@ public class CategoryItemActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(CategoryItemActivity.this, AlphabeticalItemActivity.class);
-        intent.putExtra(AlphabeticalItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(SitesCategoryItemListingActivity.this, SitesItemActivity.class);
+        intent.putExtra(SitesItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 
@@ -95,7 +95,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class CategoryItemActivity extends Activity {
+public class SitesCategoryItemListingActivity extends Activity {
 
     public static final String ITEM = "item";
 

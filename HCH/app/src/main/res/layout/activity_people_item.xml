@@ -14,22 +14,29 @@
     <TextView
         android:id="@+id/namesake_people"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="25dp"/>
 
     <TextView
         android:id="@+id/date_born_people"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="18dp"/>
 
     <TextView
-        android:id="@+id/date_died_people"
+        android:id="@+id/date_death_people"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/description_people"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="15dp"/>
 
 
 </LinearLayout>
