@@ -49,9 +49,9 @@ public class SitesItemActivity extends Activity {
                 dateBuilt.setText("Built: " + dateBuiltText);
 
                 //Populate Date_Destroyed
-                if(dateDestroyedText == "0000") {
+                if(dateDestroyedText.equals("12345")) {
                     TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                    dateDestroyed.setText("Still Standing");
+                    dateDestroyed.setText("Currently Standing");
                 }
                 else {
                     TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);

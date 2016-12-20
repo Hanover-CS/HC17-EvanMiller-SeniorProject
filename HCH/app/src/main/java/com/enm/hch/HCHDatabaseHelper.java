@@ -36,18 +36,18 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "NAMESAKE TEXT, "
                 + "LATITUDE DOUBLE, "
                 + "LONGITUDE DOUBLE);");
+
         /*
         INSERT SITES
         */
-
         //ACADEMIC
-        insertSites(db, "Classic Hall", 1947, 0000,
+        insertSites(db, "Classic Hall", 1947, 12345,
                 "The construction of Classic Hall, also known as 'New' Classic Hall, " +
                         "was completed in 1947. The building was built to replace Old " +
                         "Classic Hall, which had been demolished after a devastating fire in 1941. " +
                         "The academic building was last renovated in 2002.",
                 "None", 38.713063, -85.458299);
-        insertSites(db, "Hendricks Hall", 1903, 0000,
+        insertSites(db, "Hendricks Hall", 1903, 12345,
                 "Hendricks Hall, originally Hendricks Library, was opened to students in 1903. The money" +
                         "for the building was donated by Eliza C. Morgan Hendricks, the wife of " +
                         "the United States Vice President Thomas A. Hendricks. Hendricks graduated from" +
@@ -56,14 +56,14 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "the years including classrooms, Computer Science labs, Business Scholar Program offices," +
                         "and most recently the Hanover College Career Center.",
                 "Vice President Thomas A. Hendricks", 38.712584, -85.457797);
-        insertSites(db, "Parker Auditorium", 1947, 0000,
+        insertSites(db, "Parker Auditorium", 1947, 12345,
                 "Parker Auditorium was built in celebration of Albert G. Parker Jr., 12th president of" +
                         "Hanover College, and his twenty-five years of service to the college. The building" +
                         "served as a main gathering space for campus events and chapel services in its " +
                         "early days. Parker Auditorium has also held many theatre productions throughout its" +
                         "history.",
                 "President Parker", 38.713423, -85.457188);
-        insertSites(db, "Science Center", 2000, 0000,
+        insertSites(db, "Science Center", 2000, 12345,
                 "Science Center is the largest academic building on Hanover College's campus. It's " +
                         "construction took place in the late 1990's and was completed in 2000. The south side" +
                         "of the building was originally Goodrich Hall, which was renovated and joined to " +
@@ -71,28 +71,28 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "named after P. E. Goodrich, president of the Hanover College Board of Trustees from " +
                         "1930-1948.",
                 "P. E. Goodrich", 38.714262, -85.458282);
-        insertSites(db, "Science Hall", 1952, 0000,
+        insertSites(db, "Science Hall", 1952, 12345,
                 "Science Hall was originally built in 1952 as the new Hanover College Library, replacing Hendricks Library. " +
                         "at the time. The library was then moved to its current residence in the Hanover " +
                         "College Duggan Library in 1973 upon the new building's completion. Science Hall, also " +
                         "referred to as 'Old Science Hall', has served many purposes through the years including " +
                         "classrooms, faculty offices, and Computer Science Lab.",
                 "None", 38.713917, -85.459202);
-        insertSites(db, "Newby Hall", 1939, 0000,
+        insertSites(db, "Newby Hall", 1939, 12345,
                 "Newby Hall was originally built as the Hanover College Newby Hospital in 1939 after " +
                         "NEWBY...? In 1963, Newby Hospital was renovated and enlarged to accommodate a " +
                         "growing student population. It is unclear when the building ceased being a campus " +
                         "hospital. Today, Newby Hall serves as the headquarters for the Education department," +
                         "providing classrooms and faculty offices.",
                 "NEWBY...?", 38.714366, -85.461857);
-        insertSites(db, "Faculty Office Building", 1931, 0000,
+        insertSites(db, "Faculty Office Building", 1931, 12345,
                 "The Faculty Office Building (FOB) was originally built in 1931 as a fraternity house for the" +
                         "Phi Delta Theta fraternity. In 1969, Phi Delta Theta built a new fraternity" +
                         "house and left their old residence for the use of Hanover College. It is unclear " +
                         "exactly when the building was officially renamed the Faculty Office Building, " +
                         "but today, the building serves as classrooms and faculty offices.",
                 "None", 38.714578, -85.458873);
-        insertSites(db, "Lynn Hall", 1947, 0000,
+        insertSites(db, "Lynn Hall", 1947, 12345,
                 "Lynn Hall was built in 1947 as Lynn Gymnasium. The building was named after Charles J. " +
                         "Lynn, president of the Hanover College Board of Trustees from 1948-1958. " +
                         "It served as the official gymnasium at " +
@@ -104,7 +104,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "faculty offices, and suite-style dorm rooms. Today, the building also serves as the " +
                         "home of the Computer Science department.",
                 "Charles J. Lynn", 38.714588, -85.459754);
-        insertSites(db, "Duggan Library", 1973, 0000,
+        insertSites(db, "Duggan Library", 1973, 12345,
                 "The Duggan Library was built in 1973 to replace the old Hanover College Library (now " +
                         "Science Hall). The library was named after Mrs. A. L. Duggan, sister of J. Graham Brown" +
                         "who attended Hanover College from 1898-1900, who donated the money to construct the " +
@@ -113,7 +113,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "took place in the early 2000's, renovating the third floor for student use and" +
                         "adding an official space for the Hanover College Archives.",
                 "Mrs. A. L. Duggan", 38.715624, -85.460044);
-        insertSites(db, "Lynn Center for the Fine Arts", 1978, 0000,
+        insertSites(db, "Lynn Center for the Fine Arts", 1978, 12345,
                 "The Lynn Center for the Fine Arts (also referred to as CFA) was built in 1978. It was " +
                         "named after Mr. and Mrs. Charles J. Lynn. Charles J. Lynn served as the president " +
                         "of the Hanover College Board of Trustees from 1948-1958." +
@@ -122,113 +122,121 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Charles J. Lynn", 38.716473, -85.460089);
 
         //STUDENT HOUSING
-        insertSites(db, "Donner Residence Hall", 1900, 1901,
+        insertSites(db, "Donner Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Ide Residence Hall", 1900, 1901,
+        insertSites(db, "Ide Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Katherine Parker Residence Hall", 1900, 1901,
+        insertSites(db, "Katherine Parker Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Blythe Residence Hall", 1900, 1901,
+        insertSites(db, "Blythe Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Crowe Residence Hall", 1900, 1901,
+        insertSites(db, "Crowe Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Wiley Residence Hall", 1900, 1901,
+        insertSites(db, "Wiley Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Coulter Residence Hall", 1900, 1901,
+        insertSites(db, "Coulter Residence Hall", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Ogle Suites", 1900, 1901,
+        insertSites(db, "Ogle Suites", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Greenwood Suites", 1900, 1901,
+        insertSites(db, "Greenwood Suites", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "File House", 1900, 1901,
+        insertSites(db, "File House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Young House", 1900, 1901,
+        insertSites(db, "Young House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
         //GREEK LIFE
-        insertSites(db, "Lambda Chi Alpha Fraternity House", 1900, 1901,
+        insertSites(db, "Lambda Chi Alpha Fraternity House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Phi Delta Theta Fraternity House", 1900, 1901,
+        insertSites(db, "Phi Delta Theta Fraternity House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Phi Gamma Delta Fraternity House", 1900, 1901,
+        insertSites(db, "Phi Gamma Delta Fraternity House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Sigma Chi Fraternity House", 1900, 1901,
+        insertSites(db, "Sigma Chi Fraternity House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Alpha Delta Pi Sorority House", 1900, 1901,
+        insertSites(db, "Alpha Delta Pi Sorority House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Chi Omega Sorority House", 1900, 1901,
+        insertSites(db, "Chi Omega Sorority House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Kappa Alpha Theta Sorority House", 1900, 1901,
+        insertSites(db, "Kappa Alpha Theta Sorority House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Phi Mu Sorority House", 1900, 1901,
+        insertSites(db, "Phi Mu Sorority House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
         //ADMINISTRATION
-        insertSites(db, "Long Administration Building", 1900, 1901,
+        insertSites(db, "Long Administration Building", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Brown Memorial Chapel", 1900, 1901,
+        insertSites(db, "Admission Building", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "President's House", 1900, 1901,
+        insertSites(db, "Academic Computing Center", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Brown Campus Center", 1900, 1901,
+
+        //CAMPUS_LIFE
+        insertSites(db, "Brown Memorial Chapel", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Horner Health and Recreational Center", 1900, 1901,
+        insertSites(db, "President's House", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Admission Building", 1900, 1901,
+        insertSites(db, "Brown Campus Center", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Academic Computing Center", 1900, 1901,
+        insertSites(db, "Horner Health and Recreational Center", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Shoebox", 1900, 1901,
+        insertSites(db, "Shoebox", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "YMCA", 1900, 1901,
+        insertSites(db, "YMCA", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Culbertson Observatory", 1900, 1901,
+        insertSites(db, "Culbertson Observatory", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
-        insertSites(db, "Panther Athletic Conference", 1900, 1901,
+        insertSites(db, "Panther Athletic Conference", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
         //OUTSIDE
-        insertSites(db, "", 1900, 1901,
+        insertSites(db, "The Point", 1900, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
         //MEMORIAL
-        insertSites(db, "", 1900, 1901,
-                "Fa La La La La", "",
-                0.0, 0.0);
 
         //OLD CAMPUS
-        insertSites(db, "", 1900, 1901,
+        insertSites(db, "Old Classic Hall", 1900, 1901,
+                "Fa La La La La", "",
+                0.0, 0.0);
+        insertSites(db, "Old Science Hall", 1900, 1901,
+                "Fa La La La La", "",
+                0.0, 0.0);
+        insertSites(db, "College Point House", 1900, 1901,
+                "Fa La La La La", "",
+                0.0, 0.0);
+        insertSites(db, "Long Gymnasium", 1900, 1901,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
@@ -275,23 +283,63 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "SITE_NAME STRING, "
                 + "ACADEMIC_BUILDING STRING, "
                 + "STUDENT_HOUSING STRING, "
+                + "GREEK_HOUSING STRING, "
                 + "ADMINISTRATION STRING, "
+                + "CAMPUS_LIFE STRING, "
                 + "OUTSIDE STRING, "
                 + "MEMORIAL STRING, "
                 + "OLD_CAMPUS STRING);");
 
         //INSERT SITES_TO_SITE_TYPE
-        insertSitesToSiteType(db, "Classic Hall", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Hendricks Hall", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Parker Auditorium", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Science Center", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Science Hall", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Newby Hall", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Faculty Office Building", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Lynn Hall", "Y", "Y", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Duggan Library", "Y", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Lynn Center for the Fine Arts (CFA)", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Classic Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Hendricks Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Parker Auditorium", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Science Center", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Science Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Newby Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Faculty Office Building", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Lynn Hall", "Y", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Duggan Library", "Y", "N", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Lynn Center for the Fine Arts", "Y", "N", "N", "N", "N", "N", "N", "N");
 
+        insertSitesToSiteType(db, "Donner Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Ide Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Katherine Parker Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Blythe Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Crowe Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Wiley Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Coulter Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Ogle Suites", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Greenwood Suites", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "File House", "N", "Y", "N", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Young House", "N", "Y", "N", "N", "N", "N", "N", "N");
+
+        insertSitesToSiteType(db, "Lambda Chi Alpha Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Phi Delta Theta Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Phi Gamma Delta Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Sigma Chi Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Alpha Delta Pi Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Chi Omega Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Kappa Alpha Theta Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Phi Mu Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
+
+        insertSitesToSiteType(db, "Long Administration Building", "N", "N", "N", "Y", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Admissions Building", "N", "N", "N", "Y", "N", "N", "N", "N");
+        insertSitesToSiteType(db, "Academic Computing Center", "N", "N", "N", "Y", "N", "N", "N", "N");
+
+        insertSitesToSiteType(db, "Brown Memorial Chapel", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "President's House", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "Brown Campus Center", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "Horner Health and Recreational Center", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "Shoebox", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "YMCA", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "Culbertson Observatory", "N", "N", "N", "N", "Y", "N", "N", "N");
+        insertSitesToSiteType(db, "Panther Athletic Complex", "N", "N", "N", "N", "Y", "N", "N", "N");
+
+        insertSitesToSiteType(db, "Old Classic Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
+        insertSitesToSiteType(db, "Old Science Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
+        insertSitesToSiteType(db, "College Point House", "N", "N", "N", "N", "N", "N", "N", "Y");
+        insertSitesToSiteType(db, "Long Gymnasium", "N", "N", "N", "N", "N", "N", "N", "Y");
 
         //
         //CREATE TABLE SITE_TYPE
@@ -424,13 +472,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
     private static void insertSitesToSiteType(SQLiteDatabase db, String site_name,
                                               String academic_building, String student_housing,
-                                              String administration, String outside,
+                                              String greek_housing, String administration,
+                                              String campus_life, String outside,
                                               String memorial, String old_campus) {
         ContentValues sitesSiteTypeValues = new ContentValues();
         sitesSiteTypeValues.put("SITE_NAME", site_name);
         sitesSiteTypeValues.put("ACADEMIC_BUILDING", academic_building);
         sitesSiteTypeValues.put("STUDENT_HOUSING", student_housing);
+        sitesSiteTypeValues.put("GREEK_HOUSING", greek_housing);
         sitesSiteTypeValues.put("ADMINISTRATION", administration);
+        sitesSiteTypeValues.put("CAMPUS_LIFE", campus_life);
         sitesSiteTypeValues.put("OUTSIDE", outside);
         sitesSiteTypeValues.put("MEMORIAL", memorial);
         sitesSiteTypeValues.put("OLD_CAMPUS", old_campus);
