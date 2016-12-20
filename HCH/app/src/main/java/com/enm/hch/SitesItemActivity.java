@@ -17,7 +17,7 @@ public class SitesItemActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabetical_item);
+        setContentView(R.layout.activity_sites_item);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 

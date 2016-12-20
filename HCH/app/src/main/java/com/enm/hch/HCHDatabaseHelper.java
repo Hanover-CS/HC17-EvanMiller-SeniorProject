@@ -352,7 +352,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //INSERT SITE_TYPE
         insertSiteType(db, "ACADEMIC_BUILDING", "Academic Building", "INFO");
         insertSiteType(db, "STUDENT_HOUSING", "Student Housing", "INFO");
+        insertSiteType(db, "GREEK_HOUSING", "Greek Housing", "INFO");
         insertSiteType(db, "ADMINISTRATION", "Administration", "INFO");
+        insertSiteType(db, "CAMPUS_LIFE", "Campus Life", "INFO");
         insertSiteType(db, "OUTSIDE", "Outside", "INFO");
         insertSiteType(db, "MEMORIAL", "Memorial", "INFO");
         insertSiteType(db, "OLD_CAMPUS", "Old Campus", "INFO");
@@ -375,8 +377,46 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Faculty Office Building", "NONE");
         insertSitesToPeople(db, "Lynn Hall", "Mr. and Mrs. Lynn");
         insertSitesToPeople(db, "Duggan Library", "Mrs. Duggan");
-        insertSitesToPeople(db, "Lynn Center for the Fine Arts (CFA)", "Mr. and Mrs. Lynn");
+        insertSitesToPeople(db, "Lynn Center for the Fine Arts", "Mr. and Mrs. Lynn");
 
+        insertSitesToPeople(db, "Donner Residence Hall", "William H. Donner");
+        insertSitesToPeople(db, "Ide Residence Hall", "Mrs. John J. Ide");
+        insertSitesToPeople(db, "Katherine Parker Residence Hall", "Katherine Parker");
+        insertSitesToPeople(db, "Blythe Residence Hall", "James Blythe");
+        insertSitesToPeople(db, "Crowe Residence Hall", "John Finley Crowe");
+        insertSitesToPeople(db, "Wiley Residence Hall", "Harvey W. Wiley");
+        insertSitesToPeople(db, "Coulter Residence Hall", "Coulter");
+        insertSitesToPeople(db, "Ogle Suites", "Ogle");
+        insertSitesToPeople(db, "Greenwood Suites", "Greenwood");
+        insertSitesToPeople(db, "File House", "File");
+        insertSitesToPeople(db, "Young House", "Young");
+
+        insertSitesToPeople(db, "Lambda Chi Alpha Fraternity House", "NONE");
+        insertSitesToPeople(db, "Phi Delta Theta Fraternity House", "NONE");
+        insertSitesToPeople(db, "Phi Gamma Delta Fraternity House", "NONE");
+        insertSitesToPeople(db, "Sigma Chi Fraternity House", "NONE");
+        insertSitesToPeople(db, "Alpha Delta Pi Sorority House", "NONE");
+        insertSitesToPeople(db, "Chi Omega Sorority House", "NONE");
+        insertSitesToPeople(db, "Kappa Alpha Theta Sorority House", "NONE");
+        insertSitesToPeople(db, "Phi Mu Sorority House", "NONE");
+
+        insertSitesToPeople(db, "Long Administration Building", "Henry C. Long");
+        insertSitesToPeople(db, "Admission Building", "NONE");
+        insertSitesToPeople(db, "Academic Computing Center", "NONE");
+
+        insertSitesToPeople(db, "Brown Memorial Chapel", "James Graham Brown");
+        insertSitesToPeople(db, "President's House", "NONE");
+        insertSitesToPeople(db, "Brown Campus Center", "James Graham Brown");
+        insertSitesToPeople(db, "Horner Health and Recreational Center", "John E. Horner");
+        insertSitesToPeople(db, "Shoebox", "NONE");
+        insertSitesToPeople(db, "YMCA", "NONE");
+        insertSitesToPeople(db, "Culbertson Observatory", "Glenn Culbertson");
+        insertSitesToPeople(db, "Panther Athletic Complex", "Lyman S. Ayers");
+
+        insertSitesToPeople(db, "Old Classic Hall", "NONE");
+        insertSitesToPeople(db, "Old Science Hall", "NONE");
+        insertSitesToPeople(db, "College Point House", "NONE");
+        insertSitesToPeople(db, "Long Gymnasium", "Henry C. Long");
 
         //
         //CREATE TABLE PEOPLE_TO_CONNECTION

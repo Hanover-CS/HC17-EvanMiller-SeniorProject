@@ -102,7 +102,7 @@ public class SitesCategoryItemListingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_item);
+        setContentView(R.layout.activity_sites_category_item_listing);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 
