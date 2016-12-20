@@ -251,29 +251,29 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "NAME_MIDDLE TEXT, "
                 + "DATE_BIRTH INTEGER, "
                 + "DATE_DEATH INTEGER, "
-                + "DESCRIPTION TEXT, "
-                + "IMAGE_ID INTEGER);");
+                + "DESCRIPTION TEXT);");
+
+        //TESTING PEOPLE
+        insertPeople(db, "Alumnus Test Guy",
+                "Guy", "Alumnus", "Test", 1900, 2000,
+                "Description");
+        insertPeople(db, "Faculty Test Guy",
+                "Guy", "Faculty", "Test", 1900, 2000,
+                "Description");
+        insertPeople(db, "President Test Guy",
+                "Guy", "President", "Test", 1900, 2000,
+                "Description");
+        insertPeople(db, "Relative Test Guy",
+                "Guy", "Relative", "Test", 1900, 2000,
+                "Description");
+        insertPeople(db, "Local Test Guy",
+                "Guy", "Local", "Test", 1900, 2000,
+                "Description");
 
         //INSERT PEOPLE
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.", 1900, 2000,
-                "Description", 1234);
-        //TESTING PEOPLE
-        insertPeople(db, "Alumnus Test Guy",
-                "Guy", "Alumnus", "Test", 1900, 2000,
-                "Description", 1234);
-        insertPeople(db, "Faculty Test Guy",
-                "Guy", "Faculty", "Test", 1900, 2000,
-                "Description", 1234);
-        insertPeople(db, "President Test Guy",
-                "Guy", "President", "Test", 1900, 2000,
-                "Description", 1234);
-        insertPeople(db, "Relative Test Guy",
-                "Guy", "Relative", "Test", 1900, 2000,
-                "Description", 1234);
-        insertPeople(db, "Local Test Guy",
-                "Guy", "Local", "Test", 1900, 2000,
-                "Description", 1234);
+                "Description");
 
 
         //
@@ -290,7 +290,10 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "MEMORIAL STRING, "
                 + "OLD_CAMPUS STRING);");
 
+        //
         //INSERT SITES_TO_SITE_TYPE
+        //
+        //ACADEMIC_BUILDING
         insertSitesToSiteType(db, "Classic Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Hendricks Hall", "Y", "N", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Parker Auditorium", "Y", "N", "N", "N", "N", "N", "N", "N");
@@ -302,6 +305,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Duggan Library", "Y", "N", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Lynn Center for the Fine Arts", "Y", "N", "N", "N", "N", "N", "N", "N");
 
+        //STUDENT_HOUSING
         insertSitesToSiteType(db, "Donner Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Ide Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Katherine Parker Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
@@ -314,6 +318,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "File House", "N", "Y", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Young House", "N", "Y", "N", "N", "N", "N", "N", "N");
 
+        //GREEK_HOUSING
         insertSitesToSiteType(db, "Lambda Chi Alpha Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Phi Delta Theta Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Phi Gamma Delta Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
@@ -323,10 +328,12 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Kappa Alpha Theta Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Phi Mu Sorority House", "N", "N", "Y", "N", "N", "N", "N", "N");
 
+        //ADMINISTRATION
         insertSitesToSiteType(db, "Long Administration Building", "N", "N", "N", "Y", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Admissions Building", "N", "N", "N", "Y", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Academic Computing Center", "N", "N", "N", "Y", "N", "N", "N", "N");
 
+        //CAMPUS_LIFE
         insertSitesToSiteType(db, "Brown Memorial Chapel", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "President's House", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "Brown Campus Center", "N", "N", "N", "N", "Y", "N", "N", "N");
@@ -336,6 +343,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Culbertson Observatory", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "Panther Athletic Complex", "N", "N", "N", "N", "Y", "N", "N", "N");
 
+        //OLD_CAMPUS
         insertSitesToSiteType(db, "Old Classic Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
         insertSitesToSiteType(db, "Old Science Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
         insertSitesToSiteType(db, "College Point House", "N", "N", "N", "N", "N", "N", "N", "Y");
@@ -350,14 +358,24 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "DESCRIPTION TEXT);");
 
         //INSERT SITE_TYPE
-        insertSiteType(db, "ACADEMIC_BUILDING", "Academic Building", "INFO");
-        insertSiteType(db, "STUDENT_HOUSING", "Student Housing", "INFO");
-        insertSiteType(db, "GREEK_HOUSING", "Greek Housing", "INFO");
-        insertSiteType(db, "ADMINISTRATION", "Administration", "INFO");
-        insertSiteType(db, "CAMPUS_LIFE", "Campus Life", "INFO");
-        insertSiteType(db, "OUTSIDE", "Outside", "INFO");
-        insertSiteType(db, "MEMORIAL", "Memorial", "INFO");
-        insertSiteType(db, "OLD_CAMPUS", "Old Campus", "INFO");
+        insertSiteType(db, "ACADEMIC_BUILDING", "Academic Building", "Buildings that are mainly used " +
+                "for purposes relating to the academic nature of the college. ");
+        insertSiteType(db, "STUDENT_HOUSING", "Student Housing", "Buildings that house students during " +
+                "the college's academic year.");
+        insertSiteType(db, "GREEK_HOUSING", "Greek Housing", "Buildings that house students of a " +
+                "particular Greek affiliation during the college's academic year.");
+        insertSiteType(db, "ADMINISTRATION", "Administration", "Buildings that house " +
+                "offices and meeting spaces used for managing the college's official business " +
+                "and other administrative purposes.");
+        insertSiteType(db, "CAMPUS_LIFE", "Campus Life", "Buildings that add to and supplement the " +
+                "college experience both on a daily or semi-regularly basis.");
+        insertSiteType(db, "OUTSIDE", "Outside", "Locations not located inside campus buildings that " +
+                "hold historical significance to the college.");
+        insertSiteType(db, "MEMORIAL", "Memorial", "Specific monuments to individuals, times, or " +
+                "movements in the college's history.");
+        insertSiteType(db, "OLD_CAMPUS", "Old Campus", "Buildings and locations at the college that " +
+                "no longer exist or have been majorly renovated beyond their original intent that " +
+                "held major significance to the college at one time.");
 
 
         //
@@ -370,7 +388,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //INSERT SITES_TO_PEOPLE
         insertSitesToPeople(db, "Classic Hall", "NONE");
         insertSitesToPeople(db, "Hendricks Hall", "Vice President Thomas A. Hendricks");
-        insertSitesToPeople(db, "Parker Auditorium", "President Parker");
+        insertSitesToPeople(db, "Parker Auditorium", "Albert G. Parker");
         insertSitesToPeople(db, "Science Center", "NONE");
         insertSitesToPeople(db, "Science Hall", "NONE");
         insertSitesToPeople(db, "Newby Hall", "Mr. Newby");
@@ -418,6 +436,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "College Point House", "NONE");
         insertSitesToPeople(db, "Long Gymnasium", "Henry C. Long");
 
+
+
         //
         //CREATE TABLE PEOPLE_TO_CONNECTION
         db.execSQL("CREATE TABLE PEOPLE_TO_CONNECTION (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -428,16 +448,55 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "RELATIVE TEXT, "
                 + "LOCAL TEXT);");
 
+        //TESTING PEOPLE
+        insertPeopleToConnection(db, "Alumnus Test Guy",
+                "Y", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Faculty Test Guy",
+                "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "President Test Guy",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Relative Test Guy",
+                "N", "N", "N", "Y", "N");
+        insertPeopleToConnection(db, "Local Test Guy",
+                "N", "N", "N", "N", "Y");
+
+        insertPeopleToConnection(db, "James Blythe",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Duncan McAuley",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Eramus D. MacMaster",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Sylvester Scovel",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Thomas E. Thomas",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Jonathan Edwards",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "James Wood",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "George D. Archibald",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "George C. Heckman",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Daniel Fisher",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "William A. Millis",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Albert G. Parker",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "John E. Horner",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Russell Nichols",
+                "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Sue DeWine", "N",
+                "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Lake Lambert III",
+                "N", "N", "Y", "N", "N");
+
         //INSERT PEOPLE_TO_CONNECTION
         insertPeopleToConnection(db, "Vice President Thomas A. Hendricks",
                 "Y", "N", "N", "N", "N");
-        //TESTING
-        //TESTING PEOPLE
-        insertPeopleToConnection(db, "Alumnus Test Guy", "Y", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Faculty Test Guy", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "President Test Guy", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Relative Test Guy", "N", "N", "N", "Y", "N");
-        insertPeopleToConnection(db, "Local Test Guy", "N", "N", "N", "N", "Y");
+
 
 
         //
@@ -449,11 +508,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "DESCRIPTION TEXT);");
 
         //INSERT CONNECTION_PEOPLE
-        insertConnectionPeople(db, "ALUMNUS", "Alumnus", "Description");
-        insertConnectionPeople(db, "FACULTY_STAFF", "Faculty & Staff", "Description");
-        insertConnectionPeople(db, "PRESIDENT", "President", "Description");
-        insertConnectionPeople(db, "RELATIVE", "Relative", "Description");
-        insertConnectionPeople(db, "LOCAL", "Local", "Description");
+        insertConnectionPeople(db, "ALUMNUS", "Alumnus", "A person who graduated from or claims academic " +
+                "connections with Hanover College.");
+        insertConnectionPeople(db, "FACULTY_STAFF", "Faculty & Staff", "A person who has worked " +
+                "at Hanover College.");
+        insertConnectionPeople(db, "PRESIDENT", "President", "A person who has served as president of " +
+                "Hanover College.");
+        insertConnectionPeople(db, "RELATIVE", "Relative", "A person who is related to someone " +
+                "connected with Hanover College");
+        insertConnectionPeople(db, "LOCAL", "Local", "A person who lives in the local area or community " +
+                "and claims a connection with Hanover College.");
 
 
 
@@ -497,7 +561,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     private static void insertPeople(SQLiteDatabase db, String namesake,
                                      String name_last, String name_first, String name_middle,
                                      int date_birth, int date_death,
-                                     String description, int image_id) {
+                                     String description) {
         ContentValues peopleValues = new ContentValues();
         peopleValues.put("NAMESAKE", namesake);
         peopleValues.put("NAME_LAST", name_last);
@@ -506,7 +570,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         peopleValues.put("DATE_BIRTH", date_birth);
         peopleValues.put("DATE_DEATH", date_death);
         peopleValues.put("DESCRIPTION", description);
-        peopleValues.put("IMAGE_ID", image_id);
         db.insert("PEOPLE", null, peopleValues);
     }
 
