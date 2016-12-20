@@ -49,8 +49,14 @@ public class SitesItemActivity extends Activity {
                 dateBuilt.setText("Built: " + dateBuiltText);
 
                 //Populate Date_Destroyed
-                TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                dateDestroyed.setText("Status: " + dateDestroyedText);
+                if(dateDestroyedText == "0000") {
+                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                    dateDestroyed.setText("Still Standing");
+                }
+                else {
+                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                    dateDestroyed.setText("Destroyed: " + dateDestroyedText);
+                }
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description);
