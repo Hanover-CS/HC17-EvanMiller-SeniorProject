@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -22,10 +23,16 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class RoamCampusMapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import static com.enm.hch.R.id.map;
+
+public class RoamCampusMapsActivity extends FragmentActivity implements
+        OnMapReadyCallback {
 
     private GoogleMap mMap;
     private Location locationLL;
@@ -37,7 +44,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements OnMapRea
         setContentView(R.layout.activity_roam_campus_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(map);
         mapFragment.getMapAsync(this);
     }
 
@@ -52,9 +59,20 @@ public class RoamCampusMapsActivity extends FragmentActivity implements OnMapRea
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        //Create Map
         mMap = googleMap;
+
+        //Display Zoom Buttons
+        UiSettings mapSettings;
+        mapSettings = mMap.getUiSettings();
+        mapSettings.setZoomControlsEnabled(true);
+
+        //Set Standing Marker
+        LatLng campus = new LatLng(38.71433, -85.48113);
+        mMap.addMarker(new MarkerOptions().position(campus).title("Campus Center").snippet("Campus Center"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(campus));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         addSiteMarkers();
-        mMap.addMarker(new MarkerOptions().position(new LatLng(38.71433, -85.48113)).title("Marker").snippet("Snippet"));
 
         /*
         // Add a marker in Sydney and move the camera
@@ -121,19 +139,15 @@ public class RoamCampusMapsActivity extends FragmentActivity implements OnMapRea
             LatLng latLng = new LatLng(latitudeText, longitudeText);
             mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText).snippet(siteNameText));
 
-            Boolean loop = true;
-            while (loop == true){
-                if(cursor.moveToNext() == false){
-                    loop = false;
-                }
-                else {
-                    //cursor.moveToNext())
-                    siteNameText = cursor.getString(1);
-                    latitudeText = cursor.getDouble(2);
-                    longitudeText = cursor.getDouble(3);
-                    latLng = new LatLng(latitudeText, longitudeText);
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText).snippet(siteNameText));
-                }
+            while (cursor.moveToNext()){
+                //cursor.moveToNext())
+                siteNameText = cursor.getString(1);
+                latitudeText = cursor.getDouble(2);
+                longitudeText = cursor.getDouble(3);
+                latLng = new LatLng(latitudeText, longitudeText);
+                //mMap.addCircle(new CircleOptions().center(latLng).radius(6).strokeColor(Color.BLUE).fillColor(Color.BLUE));
+                mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText).snippet(siteNameText)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
             }
 
             cursor.close();
