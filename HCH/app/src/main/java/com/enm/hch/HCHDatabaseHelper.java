@@ -79,12 +79,12 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "classrooms, faculty offices, and Computer Science Lab.",
                 "None", 38.713917, -85.459202);
         insertSites(db, "Newby Hall", 1939, 12345,
-                "Newby Hall was originally built as the Hanover College Newby Hospital in 1939 after " +
-                        "NEWBY...? In 1963, Newby Hospital was renovated and enlarged to accommodate a " +
-                        "growing student population. It is unclear when the building ceased being a campus " +
-                        "hospital. Today, Newby Hall serves as the headquarters for the Education department," +
-                        "providing classrooms and faculty offices.",
-                "NEWBY...?", 38.714366, -85.461857);
+                "Newby Hall was originally built as the Hanover College Newby Hospital in 1939. Funds were donated " +
+                        "by Arthur C. Newby, a friend of a Hanover College trustee. " +
+                        "In 1963, Newby Hospital was renovated and enlarged to accommodate a " +
+                        "growing student population and serve as classrooms. Today, Newby Hall serves as the " +
+                        "headquarters for the Education department, providing classrooms and faculty offices.",
+                "Arthur C. Newby", 38.714366, -85.461857);
         insertSites(db, "Faculty Office Building", 1931, 12345,
                 "The Faculty Office Building (FOB) was originally built in 1931 as a fraternity house for the" +
                         "Phi Delta Theta fraternity. In 1969, Phi Delta Theta built a new fraternity" +
@@ -106,13 +106,14 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Charles J. Lynn", 38.714588, -85.459754);
         insertSites(db, "Duggan Library", 1973, 12345,
                 "The Duggan Library was built in 1973 to replace the old Hanover College Library (now " +
-                        "Science Hall). The library was named after Mrs. A. L. Duggan, sister of J. Graham Brown" +
-                        "who attended Hanover College from 1898-1900, who donated the money to construct the " +
+                        "Science Hall). The library is named in honor of Mrs. Agnus L. Brown Duggan, " +
+                        "sister of J. Graham Brown (who attended Hanover College from 1898-1900) and " +
+                        "donor of the money to construct the " +
                         "building. Less than a year after its completion, a tornado hit the building in 1974, " +
                         "tearing the roof off; the building was quickly repaired. A major renovation " +
                         "took place in the early 2000's, renovating the third floor for student use and" +
                         "adding an official space for the Hanover College Archives.",
-                "Mrs. A. L. Duggan", 38.715624, -85.460044);
+                "Agnus L. Brown Duggan", 38.715624, -85.460044);
         insertSites(db, "Lynn Center for the Fine Arts", 1978, 12345,
                 "The Lynn Center for the Fine Arts (also referred to as CFA) was built in 1978. It was " +
                         "named after Mr. and Mrs. Charles J. Lynn. Charles J. Lynn served as the president " +
@@ -220,7 +221,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 0.0, 0.0);
 
         //OUTSIDE
-        insertSites(db, "The Point", 1900, 12345,
+        insertSites(db, "The Point", 12345, 12345,
                 "Fa La La La La", "",
                 0.0, 0.0);
 
@@ -251,29 +252,187 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "NAME_MIDDLE TEXT, "
                 + "DATE_BIRTH INTEGER, "
                 + "DATE_DEATH INTEGER, "
+                + "GENDER STRING, "
                 + "DESCRIPTION TEXT);");
 
         //TESTING PEOPLE
         insertPeople(db, "Alumnus Test Guy",
-                "Guy", "Alumnus", "Test", 1900, 2000,
+                "Guy", "Alumnus", "Test",
+                1900, 2000, "M",
                 "Description");
         insertPeople(db, "Faculty Test Guy",
-                "Guy", "Faculty", "Test", 1900, 2000,
+                "Guy", "Faculty", "Test",
+                1900, 2000, "M",
                 "Description");
         insertPeople(db, "President Test Guy",
-                "Guy", "President", "Test", 1900, 2000,
+                "Guy", "President", "Test",
+                1900, 2000, "M",
                 "Description");
         insertPeople(db, "Relative Test Guy",
-                "Guy", "Relative", "Test", 1900, 2000,
+                "Guy", "Relative", "Test",
+                1900, 2000, "M",
                 "Description");
         insertPeople(db, "Local Test Guy",
-                "Guy", "Local", "Test", 1900, 2000,
+                "Guy", "Local", "Test",
+                1900, 2000, "M",
                 "Description");
 
+        //
         //INSERT PEOPLE
-        insertPeople(db, "Vice President Thomas A. Hendricks",
-                "Hendricks", "Thomas", "A.", 1900, 2000,
+        //
+        //PRESIDENTS
+        insertPeople(db, "James Blythe",
+                "Blythe", "James", "NONE",
+                1900, 2000, "M",
                 "Description");
+        insertPeople(db, "Duncan McAuley",
+                "McAuley", "Duncan", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Eramus D. MacMaster",
+                "MacMaster", "Eramus", "D.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Sylvester Scovel",
+                "Scovel", "Sylvester", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Thomas E. Thomas",
+                "Thomas", "Thomas", "E.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Jonathan Edwards",
+                "Edwards", "Jonathan", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "James Wood",
+                "Wood", "James", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "George D. Archibald",
+                "Archibald", "George", "D.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "George C. Heckman",
+                "Heckman", "George", "C.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Daniel Fisher",
+                "Fisher", "Daniel", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "William A. Millis",
+                "Millis", "William", "A.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Albert G. Parker",
+                "Parker", "Albert", "G.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "John E. Horner",
+                "Horner", "John", "E.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Russell Nichols",
+                "Nichols", "Rusty", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Sue DeWine",
+                "DeWine", "Sue", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Lake Lambert III",
+                "Lambert", "Lake", "NONE",
+                1900, 2000, "M",
+                "Description");
+
+        //OTHER PEOPLE
+        insertPeople(db, "Lyman S. Ayers",
+                "Ayers", "Lyman", "S.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "James Graham Brown",
+                "Brown", "James", "Graham",
+                1881, 1969, "M",
+                "Description");
+        insertPeople(db, "Mary Craig Graham Brown",
+                "Brown", "Mary", "Craig Graham",
+                1900, 2000, "F",
+                "Brown Chapel -> James's mother");
+        insertPeople(db, "William Pool Brown",
+                "Brown", "William", "Pool",
+                1900, 2000, "M",
+                "Brown Chapel -> James's father");
+        insertPeople(db, "Coulter",
+                "Coulter", "NONE", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "John Finley Crowe",
+                "Crowe", "John", "Finley",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Glenn Culbertson",
+                "Culbertson", "Glenn", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "William H. Donner",
+                "Donner", "William", "H.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Agnus L. Brown Duggan",
+                "Duggan", "A.", "L.",
+                1900, 2000, "F",
+                "Description");
+        insertPeople(db, "File",
+                "File", "NONE", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Greenwood",
+                "Greenwood", "NONE", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Vice President Thomas A. Hendricks",
+                "Hendricks", "Thomas", "A.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Mrs. John J. Ide",
+                "Ide", "John", "J.",
+                1900, 2000, "F",
+                "Description");
+        insertPeople(db, "Henry C. Long",
+                "Long", "Henry", "C.",
+                1900, 2000,  "M",
+                "Description");
+        insertPeople(db, "Charles J. Lynn",
+                "Lynn", "Charles", "J.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Arthur C. Newby",
+                "Newby", "Arthur", "C.",
+                1900, 2000, "M",
+                "Friend of college trustee John W. Suverkrup (trustee for 19 years) " +
+                        "and donated funds to construct building");
+        insertPeople(db, "Ogle",
+                "Ogle", "NONE", "NONE",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Katherine Parker",
+                "Parker", "Katherine", "NONE",
+                1900, 2000, "F",
+                "Description");
+        insertPeople(db, "Harvey W. Wiley",
+                "Wiley", "Harvey", "W.",
+                1900, 2000, "M",
+                "Description");
+        insertPeople(db, "Young",
+                "Young", "NONE", "NONE",
+                1900, 2000, "M",
+                "Description");
+
+
+
+
+
 
 
         //
@@ -391,11 +550,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Parker Auditorium", "Albert G. Parker");
         insertSitesToPeople(db, "Science Center", "NONE");
         insertSitesToPeople(db, "Science Hall", "NONE");
-        insertSitesToPeople(db, "Newby Hall", "Mr. Newby");
+        insertSitesToPeople(db, "Newby Hall", "Arthur C. Newby");
         insertSitesToPeople(db, "Faculty Office Building", "NONE");
-        insertSitesToPeople(db, "Lynn Hall", "Mr. and Mrs. Lynn");
-        insertSitesToPeople(db, "Duggan Library", "Mrs. Duggan");
-        insertSitesToPeople(db, "Lynn Center for the Fine Arts", "Mr. and Mrs. Lynn");
+        insertSitesToPeople(db, "Lynn Hall", "Charles J. Lynn");
+        insertSitesToPeople(db, "Duggan Library", "Agnus L. Brown Duggan");
+        insertSitesToPeople(db, "Lynn Center for the Fine Arts", "Charles J. Lynn");
 
         insertSitesToPeople(db, "Donner Residence Hall", "William H. Donner");
         insertSitesToPeople(db, "Ide Residence Hall", "Mrs. John J. Ide");
@@ -422,7 +581,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Admission Building", "NONE");
         insertSitesToPeople(db, "Academic Computing Center", "NONE");
 
-        insertSitesToPeople(db, "Brown Memorial Chapel", "James Graham Brown");
+        insertSitesToPeople(db, "Brown Memorial Chapel", "William Pool Brown");
         insertSitesToPeople(db, "President's House", "NONE");
         insertSitesToPeople(db, "Brown Campus Center", "James Graham Brown");
         insertSitesToPeople(db, "Horner Health and Recreational Center", "John E. Horner");
@@ -446,56 +605,98 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "FACULTY_STAFF TEXT, "
                 + "PRESIDENT TEXT, "
                 + "RELATIVE TEXT, "
-                + "LOCAL TEXT);");
+                + "LOCAL TEXT,"
+                + "OTHER TEXT);");
 
         //TESTING PEOPLE
         insertPeopleToConnection(db, "Alumnus Test Guy",
-                "Y", "N", "N", "N", "N");
+                "Y", "N", "N", "N", "N", "N");
         insertPeopleToConnection(db, "Faculty Test Guy",
-                "N", "Y", "N", "N", "N");
+                "N", "Y", "N", "N", "N", "N");
         insertPeopleToConnection(db, "President Test Guy",
-                "N", "N", "Y", "N", "N");
+                "N", "N", "Y", "N", "N", "N");
         insertPeopleToConnection(db, "Relative Test Guy",
-                "N", "N", "N", "Y", "N");
+                "N", "N", "N", "Y", "N", "N");
         insertPeopleToConnection(db, "Local Test Guy",
-                "N", "N", "N", "N", "Y");
-
-        insertPeopleToConnection(db, "James Blythe",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Duncan McAuley",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Eramus D. MacMaster",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Sylvester Scovel",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Thomas E. Thomas",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Jonathan Edwards",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "James Wood",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "George D. Archibald",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "George C. Heckman",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Daniel Fisher",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "William A. Millis",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Albert G. Parker",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "John E. Horner",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Russell Nichols",
-                "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Sue DeWine", "N",
-                "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Lake Lambert III",
-                "N", "N", "Y", "N", "N");
-
+                "N", "N", "N", "N", "Y", "N");
+        //
         //INSERT PEOPLE_TO_CONNECTION
+        //
+        //PRESIDENTS
+        insertPeopleToConnection(db, "James Blythe",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Duncan McAuley",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Eramus D. MacMaster",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Sylvester Scovel",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Thomas E. Thomas",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Jonathan Edwards",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "James Wood",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "George D. Archibald",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "George C. Heckman",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Daniel Fisher",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "William A. Millis",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Albert G. Parker",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "John E. Horner",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Russell Nichols",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Sue DeWine",
+                "N", "N", "Y", "N", "N", "N");
+        insertPeopleToConnection(db, "Lake Lambert III",
+                "N", "N", "Y", "N", "N", "N");
+
+        //OTHER PEOPLE
+        insertPeopleToConnection(db, "Lyman S. Ayers",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "James Graham Brown",
+                "Y", "N", "N", "N", "Y", "N");
+        insertPeopleToConnection(db, "Mary Craig Graham Brown",
+                "N", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "William Pool Brown",
+                "N", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Coulter",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "John Finley Crowe",
+                "N", "Y", "N", "N", "Y", "N");
+        insertPeopleToConnection(db, "Glenn Culbertson",
+                "N", "Y", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "William H. Donner",
+                "Y", "N", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Agnus L. Brown Duggan",
+                "N", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "File",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "Greenwood",
+                "N", "N", "N", "N", "N", "Y");
         insertPeopleToConnection(db, "Vice President Thomas A. Hendricks",
-                "Y", "N", "N", "N", "N");
+                "Y", "N", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Mrs. John J. Ide",
+                "N", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Henry C. Long",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "Charles J. Lynn",
+                "Y", "Y", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Arthur C. Newby",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "Ogle",
+                "N", "N", "N", "N", "N", "Y");
+        insertPeopleToConnection(db, "Katherine Parker",
+                "N", "N", "N", "Y", "N", "N");
+        insertPeopleToConnection(db, "Harvey W. Wiley",
+                "Y", "N", "N", "N", "N", "N");
+        insertPeopleToConnection(db, "Young",
+                "N", "N", "N", "N", "N", "Y");
 
 
 
@@ -527,16 +728,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IMAGES_SITES (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "SITE_NAME TEXT, "
                 + "IMAGE_ID TEXT, "
-                + "FILE TEXT);");
+                + "IMAGE_TEXT TEXT);");
 
         //INSERT IMAGES_SITES
 
 
         //CREATE TABLE IMAGES_PEOPLE
         db.execSQL("CREATE TABLE IMAGES_PEOPLE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "SITE_TYPE TEXT, "
+                + "NAMESAKE TEXT, "
                 + "IMAGE_ID TEXT, "
-                + "FILE TEXT);");
+                + "IMAGE_TEXT TEXT);");
 
         //INSERT IMAGES_PEOPLE
 
@@ -561,7 +762,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     private static void insertPeople(SQLiteDatabase db, String namesake,
                                      String name_last, String name_first, String name_middle,
                                      int date_birth, int date_death,
-                                     String description) {
+                                     String gender, String description) {
         ContentValues peopleValues = new ContentValues();
         peopleValues.put("NAMESAKE", namesake);
         peopleValues.put("NAME_LAST", name_last);
@@ -569,6 +770,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         peopleValues.put("NAME_MIDDLE", name_middle);
         peopleValues.put("DATE_BIRTH", date_birth);
         peopleValues.put("DATE_DEATH", date_death);
+        peopleValues.put("GENDER", gender);
         peopleValues.put("DESCRIPTION", description);
         db.insert("PEOPLE", null, peopleValues);
     }
@@ -611,7 +813,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     private static void insertPeopleToConnection(SQLiteDatabase db, String namesake,
                                                  String alumnus, String faculty_staff,
                                                  String president, String relative,
-                                                 String local) {
+                                                 String local, String other) {
         ContentValues peopleValues = new ContentValues();
         peopleValues.put("NAMESAKE", namesake);
         peopleValues.put("ALUMNUS", alumnus);
@@ -619,6 +821,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         peopleValues.put("PRESIDENT", president);
         peopleValues.put("RELATIVE", relative);
         peopleValues.put("LOCAL", local);
+        peopleValues.put("OTHER", other);
         db.insert("PEOPLE_TO_CONNECTION", null, peopleValues);
     }
 
