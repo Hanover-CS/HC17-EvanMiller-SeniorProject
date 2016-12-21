@@ -598,8 +598,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
 
         //
-        //CREATE TABLE PEOPLE_TO_CONNECTION
-        db.execSQL("CREATE TABLE PEOPLE_TO_CONNECTION (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+        //CREATE TABLE PEOPLE_TO_PEOPLE_TYPE
+        db.execSQL("CREATE TABLE PEOPLE_TO_PEOPLE_TYPE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAMESAKE TEXT, "
                 + "ALUMNUS TEXT, "
                 + "FACULTY_STAFF TEXT, "
@@ -609,115 +609,115 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "OTHER TEXT);");
 
         //TESTING PEOPLE
-        insertPeopleToConnection(db, "Alumnus Test Guy",
+        insertPeopleToPeopleType(db, "Alumnus Test Guy",
                 "Y", "N", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Faculty Test Guy",
+        insertPeopleToPeopleType(db, "Faculty Test Guy",
                 "N", "Y", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "President Test Guy",
+        insertPeopleToPeopleType(db, "President Test Guy",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Relative Test Guy",
+        insertPeopleToPeopleType(db, "Relative Test Guy",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Local Test Guy",
+        insertPeopleToPeopleType(db, "Local Test Guy",
                 "N", "N", "N", "N", "Y", "N");
         //
-        //INSERT PEOPLE_TO_CONNECTION
+        //INSERT PEOPLE_TO_PEOPLE_TYPE
         //
         //PRESIDENTS
-        insertPeopleToConnection(db, "James Blythe",
+        insertPeopleToPeopleType(db, "James Blythe",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Duncan McAuley",
+        insertPeopleToPeopleType(db, "Duncan McAuley",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Eramus D. MacMaster",
+        insertPeopleToPeopleType(db, "Eramus D. MacMaster",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Sylvester Scovel",
+        insertPeopleToPeopleType(db, "Sylvester Scovel",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Thomas E. Thomas",
+        insertPeopleToPeopleType(db, "Thomas E. Thomas",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Jonathan Edwards",
+        insertPeopleToPeopleType(db, "Jonathan Edwards",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "James Wood",
+        insertPeopleToPeopleType(db, "James Wood",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "George D. Archibald",
+        insertPeopleToPeopleType(db, "George D. Archibald",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "George C. Heckman",
+        insertPeopleToPeopleType(db, "George C. Heckman",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Daniel Fisher",
+        insertPeopleToPeopleType(db, "Daniel Fisher",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "William A. Millis",
+        insertPeopleToPeopleType(db, "William A. Millis",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Albert G. Parker",
+        insertPeopleToPeopleType(db, "Albert G. Parker",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "John E. Horner",
+        insertPeopleToPeopleType(db, "John E. Horner",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Russell Nichols",
+        insertPeopleToPeopleType(db, "Russell Nichols",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Sue DeWine",
+        insertPeopleToPeopleType(db, "Sue DeWine",
                 "N", "N", "Y", "N", "N", "N");
-        insertPeopleToConnection(db, "Lake Lambert III",
+        insertPeopleToPeopleType(db, "Lake Lambert III",
                 "N", "N", "Y", "N", "N", "N");
 
         //OTHER PEOPLE
-        insertPeopleToConnection(db, "Lyman S. Ayers",
+        insertPeopleToPeopleType(db, "Lyman S. Ayers",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "James Graham Brown",
+        insertPeopleToPeopleType(db, "James Graham Brown",
                 "Y", "N", "N", "N", "Y", "N");
-        insertPeopleToConnection(db, "Mary Craig Graham Brown",
+        insertPeopleToPeopleType(db, "Mary Craig Graham Brown",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "William Pool Brown",
+        insertPeopleToPeopleType(db, "William Pool Brown",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Coulter",
+        insertPeopleToPeopleType(db, "Coulter",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "John Finley Crowe",
+        insertPeopleToPeopleType(db, "John Finley Crowe",
                 "N", "Y", "N", "N", "Y", "N");
-        insertPeopleToConnection(db, "Glenn Culbertson",
+        insertPeopleToPeopleType(db, "Glenn Culbertson",
                 "N", "Y", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "William H. Donner",
+        insertPeopleToPeopleType(db, "William H. Donner",
                 "Y", "N", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Agnus L. Brown Duggan",
+        insertPeopleToPeopleType(db, "Agnus L. Brown Duggan",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "File",
+        insertPeopleToPeopleType(db, "File",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "Greenwood",
+        insertPeopleToPeopleType(db, "Greenwood",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "Vice President Thomas A. Hendricks",
+        insertPeopleToPeopleType(db, "Vice President Thomas A. Hendricks",
                 "Y", "N", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Mrs. John J. Ide",
+        insertPeopleToPeopleType(db, "Mrs. John J. Ide",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Henry C. Long",
+        insertPeopleToPeopleType(db, "Henry C. Long",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "Charles J. Lynn",
+        insertPeopleToPeopleType(db, "Charles J. Lynn",
                 "Y", "Y", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Arthur C. Newby",
+        insertPeopleToPeopleType(db, "Arthur C. Newby",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "Ogle",
+        insertPeopleToPeopleType(db, "Ogle",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToConnection(db, "Katherine Parker",
+        insertPeopleToPeopleType(db, "Katherine Parker",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToConnection(db, "Harvey W. Wiley",
+        insertPeopleToPeopleType(db, "Harvey W. Wiley",
                 "Y", "N", "N", "N", "N", "N");
-        insertPeopleToConnection(db, "Young",
+        insertPeopleToPeopleType(db, "Young",
                 "N", "N", "N", "N", "N", "Y");
 
 
 
         //
-        //CREATE TABLE CONNECTION_PEOPLE
+        //CREATE TABLE PEOPLE_TYPE
         //
-        db.execSQL("CREATE TABLE CONNECTION_PEOPLE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+        db.execSQL("CREATE TABLE PEOPLE_TYPE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "CATEGORY TEXT, "
                 + "CATEGORY_PROPER TEXT, "
                 + "DESCRIPTION TEXT);");
 
-        //INSERT CONNECTION_PEOPLE
-        insertConnectionPeople(db, "ALUMNUS", "Alumnus", "A person who graduated from or claims academic " +
+        //INSERT PEOPLE_TYPE
+        insertPeopleType(db, "ALUMNUS", "Alumnus", "A person who graduated from or claims academic " +
                 "connections with Hanover College.");
-        insertConnectionPeople(db, "FACULTY_STAFF", "Faculty & Staff", "A person who has worked " +
+        insertPeopleType(db, "FACULTY_STAFF", "Faculty & Staff", "A person who has worked " +
                 "at Hanover College.");
-        insertConnectionPeople(db, "PRESIDENT", "President", "A person who has served as president of " +
+        insertPeopleType(db, "PRESIDENT", "President", "A person who has served as president of " +
                 "Hanover College.");
-        insertConnectionPeople(db, "RELATIVE", "Relative", "A person who is related to someone " +
+        insertPeopleType(db, "RELATIVE", "Relative", "A person who is related to someone " +
                 "connected with Hanover College");
-        insertConnectionPeople(db, "LOCAL", "Local", "A person who lives in the local area or community " +
+        insertPeopleType(db, "LOCAL", "Local", "A person who lives in the local area or community " +
                 "and claims a connection with Hanover College.");
 
 
@@ -810,7 +810,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("SITES_TO_PEOPLE", null, sitesPeopleValues);
     }
 
-    private static void insertPeopleToConnection(SQLiteDatabase db, String namesake,
+    private static void insertPeopleToPeopleType(SQLiteDatabase db, String namesake,
                                                  String alumnus, String faculty_staff,
                                                  String president, String relative,
                                                  String local, String other) {
@@ -822,16 +822,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         peopleValues.put("RELATIVE", relative);
         peopleValues.put("LOCAL", local);
         peopleValues.put("OTHER", other);
-        db.insert("PEOPLE_TO_CONNECTION", null, peopleValues);
+        db.insert("PEOPLE_TO_PEOPLE_TYPE", null, peopleValues);
     }
 
-    private static void insertConnectionPeople(SQLiteDatabase db, String category,
+    private static void insertPeopleType(SQLiteDatabase db, String category,
                                                String category_proper, String description) {
-        ContentValues connectionPeopleValues = new ContentValues();
-        connectionPeopleValues.put("CATEGORY", category);
-        connectionPeopleValues.put("CATEGORY_PROPER", category_proper);
-        connectionPeopleValues.put("DESCRIPTION", description);
-        db.insert("CONNECTION_PEOPLE", null, connectionPeopleValues);
+        ContentValues peopleTypeValues = new ContentValues();
+        peopleTypeValues.put("CATEGORY", category);
+        peopleTypeValues.put("CATEGORY_PROPER", category_proper);
+        peopleTypeValues.put("DESCRIPTION", description);
+        db.insert("PEOPLE_TYPE", null, peopleTypeValues);
     }
 
     private static void insertImageSites(SQLiteDatabase db, String site_name,

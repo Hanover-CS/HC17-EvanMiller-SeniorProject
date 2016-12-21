@@ -30,7 +30,7 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("CONNECTION_PEOPLE",
+            cursor = db.query("PEOPLE_TYPE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     "_id = ?",
                     new String[]{Integer.toString(item)},
@@ -39,7 +39,7 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
             cursor.moveToFirst();
             String category_input = cursor.getString(1) + " = ?";
 
-            cursor = db.query("PEOPLE_TO_CONNECTION",
+            cursor = db.query("PEOPLE_TO_PEOPLE_TYPE",
                     null,
                     category_input,
                     new String[]{"Y"},

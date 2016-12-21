@@ -27,7 +27,7 @@ public class PeopleCategoryListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("CONNECTION_PEOPLE",
+            cursor = db.query("PEOPLE_TYPE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     null, null, null, null,
                     "CATEGORY ASC");
