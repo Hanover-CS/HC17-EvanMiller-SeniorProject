@@ -68,6 +68,19 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
         addSiteMarkers();
 
+        //Code needed to pull device's current location
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String provider = locationManager.getBestProvider(criteria, true);
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+
+        //Find latitude & longitude
+        double latitude = myLocation.getLatitude();
+        double longitude = myLocation.getLongitude();
+        LatLng latLng = new LatLng(latitude, longitude);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(20));
+
         //Handler to continuously find device's current location and realign camera
         final Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -80,18 +93,12 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                 Location myLocation = locationManager.getLastKnownLocation(provider);
 
                 //Find latitude & longitude
-                //double latitude = myLocation.getLatitude();
-                double latitude = 38.71433;
-                //double longitude = myLocation.getLongitude();
-                double longitude = -85.48113;
-                //Create a LatLng object for the current location
+                double latitude = myLocation.getLatitude();
+                double longitude = myLocation.getLongitude();
                 LatLng latLng = new LatLng(latitude, longitude);
-
-                mMap.addMarker(new MarkerOptions().position(latLng));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
-                //handler.postDelayed(this, 10000);
+                handler.postDelayed(this, 1000);
             }
         });
     }
@@ -127,7 +134,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                 //Creates Marker
                 marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
                         .snippet("Hanover College")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker_test)));
                 //Sets Tag as SITE_NAME -> pass on to pull info from Database
                 marker.setTag(siteNameText);
             }

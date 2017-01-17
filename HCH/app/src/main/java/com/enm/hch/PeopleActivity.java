@@ -23,4 +23,10 @@ public class PeopleActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /*
+    public void categoriesPeopleDescriptionsClicked(View view) {
+        Intent intent = new Intent (this, PeopleCategoryDescriptionsActivity.class);
+        startActivity(intent);
+    }
+    */
 }

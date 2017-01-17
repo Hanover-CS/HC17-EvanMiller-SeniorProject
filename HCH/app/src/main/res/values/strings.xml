@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Hanover College History</string>
-    <string name="app_nickname">HCH</string>
-    <string name="description">The fun and interactive way to learn
-        the history of Hanover College</string>
+    <string name="description">The fun and interactive way to learn the history of Hanover College</string>
     <string name="roam_campus">Roam Campus</string>
     <string name="browse_list">Browse List</string>
     <string name="about_name">About</string>
+    <string name="sites">Sites</string>
     <string name="alphabetical_list">Alphabetical List</string>
     <string name="categories">Categories</string>
     <string name="people">People</string>

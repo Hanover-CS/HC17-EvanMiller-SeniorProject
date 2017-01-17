@@ -31,14 +31,13 @@ public class SitesCategoryItemListingActivity extends ListActivity {
             db = HCHDatabaseHelper.getReadableDatabase();
 
             cursor = db.query("SITE_TYPE",
-                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
+                    new String[]{"_id", "CATEGORY"},
                     "_id = ?",
                     new String[] {Integer.toString(item)},
                     null, null, null);
 
             cursor.moveToFirst();
             String category = cursor.getString(1);
-            String category_proper = cursor.getString(2);
 
             String category_input = category + " = ?";
 

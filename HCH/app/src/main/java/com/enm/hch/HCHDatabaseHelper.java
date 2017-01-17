@@ -98,7 +98,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "It served as the official gymnasium at " +
                         "Hanover College until Long Gymnasium was built in 1957 (located on the current " +
                         "site of Horner Health and Recreational Center). Lynn Gymnasium (also referred to as " +
-                        "'Lynn Gymn') served as a practice gym, meeting space, and recreational area until " +
+                        "'Lynn Gym') served as a practice gym, meeting space, and recreational area until " +
                         "2013 when renovations began on the building. In the fall of 2014, Lynn Hall opened " +
                         "as an academic building and option for campus housing, offering two classrooms, " +
                         "faculty offices, and suite-style dorm rooms. Today, the building also serves as the " +
@@ -123,123 +123,140 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Charles J. Lynn", 38.716473, -85.460089);
 
         //STUDENT HOUSING
-        insertSites(db, "Donner Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Ide Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Katherine Parker Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Blythe Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Crowe Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Wiley Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+        insertSites(db, "Donner Residence Hall", 1939, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Ide Residence Hall", 1951, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Katherine Parker Residence Hall", 1964, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Blythe Residence Hall", 1956, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Crowe Residence Hall", 1949, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Wiley Residence Hall", 1963, 12345,
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Coulter Residence Hall", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Ogle Suites", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Greenwood Suites", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "File House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Young House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
 
         //GREEK LIFE
-        insertSites(db, "Lambda Chi Alpha Fraternity House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Phi Delta Theta Fraternity House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Phi Gamma Delta Fraternity House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Sigma Chi Fraternity House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Alpha Delta Pi Sorority House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Chi Omega Sorority House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Kappa Alpha Theta Sorority House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Phi Mu Sorority House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+        insertSites(db, "Lambda Chi Alpha Fraternity House", 1955, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Phi Delta Theta Fraternity House", 1969, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Phi Gamma Delta Fraternity House", 1955, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Sigma Chi Fraternity House", 1955, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Alpha Delta Pi Sorority House", 1954, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Chi Omega Sorority House", 1954, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Kappa Alpha Theta Sorority House", 1971, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Phi Mu Sorority House", 1954, 12345,
+                "",
+                "", 0.0, 0.0);
 
         //ADMINISTRATION
-        insertSites(db, "Long Administration Building", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+        insertSites(db, "Long Administration Building", 1963, 12345,
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Admission Building", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Academic Computing Center", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
 
         //CAMPUS_LIFE
-        insertSites(db, "Brown Memorial Chapel", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "President's House", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Brown Campus Center", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Horner Health and Recreational Center", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+        insertSites(db, "Brown Memorial Chapel", 1956, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "President's House", 1952, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Brown Campus Center", 1967, 12345,
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Horner Health and Recreational Center", 1995, 12345,
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Shoebox", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "YMCA", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Culbertson Observatory", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Panther Athletic Conference", 1900, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Panther Athletic Complex", 1972, 12345,
+                "Lyman S. Ayers Athletic Complex",
+                "", 0.0, 0.0);
 
         //OUTSIDE
         insertSites(db, "The Point", 12345, 12345,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
 
         //MEMORIAL
 
         //OLD CAMPUS
+        //UNKNOWN
         insertSites(db, "Old Classic Hall", 1900, 1901,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "Old Science Hall", 1900, 1901,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
         insertSites(db, "College Point House", 1900, 1901,
-                "Fa La La La La", "",
-                0.0, 0.0);
-        insertSites(db, "Long Gymnasium", 1900, 1901,
-                "Fa La La La La", "",
-                0.0, 0.0);
+                "",
+                "", 0.0, 0.0);
+        insertSites(db, "Long Gymnasium", 1957, 1992,
+                "",
+                "", 0.0, 0.0);
+        //UNKNOWN
+        insertSites(db, "Old President's House", 1880, 1950,
+                "",
+                "", 0.0, 0.0);
 
 
         //
@@ -355,14 +372,17 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Brown", "James", "Graham",
                 1881, 1969, "M",
                 "Description");
+        //UNKNOWN
         insertPeople(db, "Mary Craig Graham Brown",
                 "Brown", "Mary", "Craig Graham",
                 1900, 2000, "F",
                 "Brown Chapel -> James's mother");
+        //UNKNOWN
         insertPeople(db, "William Pool Brown",
                 "Brown", "William", "Pool",
                 1900, 2000, "M",
                 "Brown Chapel -> James's father");
+        //UNKNOWN
         insertPeople(db, "Coulter",
                 "Coulter", "NONE", "NONE",
                 1900, 2000, "M",
@@ -373,20 +393,32 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Description");
         insertPeople(db, "Glenn Culbertson",
                 "Culbertson", "Glenn", "NONE",
-                1900, 2000, "M",
-                "Description");
+                1863, 1927, "M",
+                "Glenn taught astronomy, physics, and geology at Hanover College for 34 years from " +
+                        "1893-1927. He was very involved on campus. He also served as a state " +
+                        "legislator. Culbertson was a Hanover College alum, class of 1888.");
         insertPeople(db, "William H. Donner",
-                "Donner", "William", "H.",
-                1900, 2000, "M",
-                "Description");
+                "Donner", "William", "Henry",
+                1864, 1953, "M",
+                "William Henry Donner was born and raised in Columbus, Indiana. He attended Hanover " +
+                        "College for one semester in the fall of 1882 but was called home to help " +
+                        "out in the family business. Through many business ventures ranging from tin " +
+                        "plating to steel, he amassed a small fortune. After retirement, Donner " +
+                        "began giving to many organizations, one being Hanover College. Through a " +
+                        "series of small challenges he posed to Hanover, Donner matched the amount " +
+                        "that the college raised; this money was used to pay off debts, create a " +
+                        "campus plan, beautification, and build new campus buildings including " +
+                        "Donner Hall.");
         insertPeople(db, "Agnus L. Brown Duggan",
                 "Duggan", "A.", "L.",
                 1900, 2000, "F",
                 "Description");
+        //UNKNOWN
         insertPeople(db, "File",
                 "File", "NONE", "NONE",
                 1900, 2000, "M",
                 "Description");
+        //UNKNOWN
         insertPeople(db, "Greenwood",
                 "Greenwood", "NONE", "NONE",
                 1900, 2000, "M",
@@ -412,6 +444,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 1900, 2000, "M",
                 "Friend of college trustee John W. Suverkrup (trustee for 19 years) " +
                         "and donated funds to construct building");
+        //UNKNOWN
         insertPeople(db, "Ogle",
                 "Ogle", "NONE", "NONE",
                 1900, 2000, "M",
@@ -424,15 +457,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Wiley", "Harvey", "W.",
                 1900, 2000, "M",
                 "Description");
+        //UNKNOWN
         insertPeople(db, "Young",
                 "Young", "NONE", "NONE",
                 1900, 2000, "M",
                 "Description");
-
-
-
-
-
 
 
         //
@@ -719,7 +748,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "connected with Hanover College");
         insertPeopleType(db, "LOCAL", "Local", "A person who lives in the local area or community " +
                 "and claims a connection with Hanover College.");
-
 
 
         //

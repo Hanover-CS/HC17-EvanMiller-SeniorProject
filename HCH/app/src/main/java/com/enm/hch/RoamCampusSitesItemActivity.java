@@ -40,6 +40,7 @@ public class RoamCampusSitesItemActivity extends Activity {
                 String dateDestroyedText = Integer.toString(cursor.getInt(3));
                 String descriptionText = cursor.getString(4);
                 String namesakeText = cursor.getString(5);
+                String temp;
 
                 //Populate Site_Name
                 TextView siteName = (TextView) findViewById(R.id.site_name);
@@ -47,26 +48,31 @@ public class RoamCampusSitesItemActivity extends Activity {
 
                 //Populate Date_Built
                 TextView dateBuilt = (TextView) findViewById(R.id.date_built);
-                dateBuilt.setText("Built: " + dateBuiltText);
+                temp = "Built: " + dateBuiltText;
+                dateBuilt.setText(temp);
 
                 //Populate Date_Destroyed
                 if(dateDestroyedText.equals("12345")) {
                     TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                    dateDestroyed.setText("Currently Standing");
+                    temp = "Currently Standing";
+                    dateDestroyed.setText(temp);
                 }
                 else {
                     TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                    dateDestroyed.setText("Destroyed: " + dateDestroyedText);
+                    temp = "Destroyed: " + dateDestroyedText;
+                    dateDestroyed.setText(temp);
                 }
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description);
-                description.setText("\n" + descriptionText);
+                temp = "\n" + descriptionText;
+                description.setText(temp);
 
                 //Populate Namesake
-                if (namesakeText != "None") {
+                if (namesakeText.equals("None")) {
                     TextView namesake = (TextView) findViewById(R.id.namesake);
-                    namesake.setText("Namesake: " + namesakeText);
+                    temp = "Namesake: " + namesakeText;
+                    namesake.setText(temp);
                 }
             }
 
