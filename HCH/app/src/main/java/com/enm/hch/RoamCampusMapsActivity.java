@@ -79,7 +79,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         double longitude = myLocation.getLongitude();
         LatLng latLng = new LatLng(latitude, longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(20));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
 
         //Handler to continuously find device's current location and realign camera
         final Handler handler = new Handler();
@@ -96,7 +96,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                 double latitude = myLocation.getLatitude();
                 double longitude = myLocation.getLongitude();
                 LatLng latLng = new LatLng(latitude, longitude);
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                //mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
                 handler.postDelayed(this, 1000);
             }
@@ -134,7 +134,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                 //Creates Marker
                 marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
                         .snippet("Hanover College")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker_test)));
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
                 //Sets Tag as SITE_NAME -> pass on to pull info from Database
                 marker.setTag(siteNameText);
             }
