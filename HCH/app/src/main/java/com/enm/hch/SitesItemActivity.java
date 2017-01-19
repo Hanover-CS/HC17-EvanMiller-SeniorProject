@@ -10,14 +10,14 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class AlphabeticalItemActivity extends Activity {
+public class SitesItemActivity extends Activity {
 
     public static final String ITEM = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabetical_item);
+        setContentView(R.layout.activity_sites_item);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 
@@ -39,6 +39,7 @@ public class AlphabeticalItemActivity extends Activity {
                 String dateDestroyedText = Integer.toString(cursor.getInt(3));
                 String descriptionText = cursor.getString(4);
                 String namesakeText = cursor.getString(5);
+                String temp;
 
                 //Populate Site_Name
                 TextView siteName = (TextView) findViewById(R.id.site_name);
@@ -46,20 +47,31 @@ public class AlphabeticalItemActivity extends Activity {
 
                 //Populate Date_Built
                 TextView dateBuilt = (TextView) findViewById(R.id.date_built);
-                dateBuilt.setText("Built: " + dateBuiltText);
+                temp = "Built: " + dateBuiltText;
+                dateBuilt.setText(temp);
 
                 //Populate Date_Destroyed
-                TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
-                dateDestroyed.setText("Status: " + dateDestroyedText);
+                if(dateDestroyedText.equals("12345")) {
+                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                    temp = "Currently Standing";
+                    dateDestroyed.setText(temp);
+                }
+                else {
+                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                    temp = "Destroyed: " + dateDestroyedText;
+                    dateDestroyed.setText(temp);
+                }
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description);
-                description.setText("\n" + descriptionText);
+                temp = "\n" + descriptionText;
+                description.setText(temp);
 
                 //Populate Namesake
-                if (namesakeText != "None") {
+                if (namesakeText.equals("None")) {
                     TextView namesake = (TextView) findViewById(R.id.namesake);
-                    namesake.setText("Namesake: " + namesakeText);
+                    temp = "Namesake: " + namesakeText;
+                    namesake.setText(temp);
                 }
 
             }

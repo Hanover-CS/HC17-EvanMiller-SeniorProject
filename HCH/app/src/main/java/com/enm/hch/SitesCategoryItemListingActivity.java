@@ -13,7 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class CategoryItemActivity extends ListActivity {
+public class SitesCategoryItemListingActivity extends ListActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
 
@@ -31,14 +31,13 @@ public class CategoryItemActivity extends ListActivity {
             db = HCHDatabaseHelper.getReadableDatabase();
 
             cursor = db.query("SITE_TYPE",
-                    new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
+                    new String[]{"_id", "CATEGORY"},
                     "_id = ?",
                     new String[] {Integer.toString(item)},
                     null, null, null);
 
             cursor.moveToFirst();
             String category = cursor.getString(1);
-            String category_proper = cursor.getString(2);
 
             String category_input = category + " = ?";
 
@@ -77,8 +76,8 @@ public class CategoryItemActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(CategoryItemActivity.this, AlphabeticalItemActivity.class);
-        intent.putExtra(AlphabeticalItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(SitesCategoryItemListingActivity.this, SitesItemActivity.class);
+        intent.putExtra(SitesItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 
@@ -95,14 +94,14 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class CategoryItemActivity extends Activity {
+public class SitesCategoryItemListingActivity extends Activity {
 
     public static final String ITEM = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_item);
+        setContentView(R.layout.activity_sites_category_item_listing);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 

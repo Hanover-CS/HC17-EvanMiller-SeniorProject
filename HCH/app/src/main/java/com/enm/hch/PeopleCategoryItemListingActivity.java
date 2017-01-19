@@ -13,35 +13,50 @@ import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class CategoryListingActivity extends ListActivity {
-
+public class PeopleCategoryItemListingActivity extends ListActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
+
+    public static final String ITEM = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listSites = getListView();
 
-        try{
+        int item = (Integer) getIntent().getExtras().get(ITEM);
+
+        try {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
-            cursor = db.query("SITE_TYPE",
+            cursor = db.query("PEOPLE_TYPE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
-                    null, null, null, null,
-                    "CATEGORY ASC");
+                    "_id = ?",
+                    new String[]{Integer.toString(item)},
+                    null, null, null);
+
+            cursor.moveToFirst();
+            String category_input = cursor.getString(1) + " = ?";
+
+            cursor = db.query("PEOPLE_TO_PEOPLE_TYPE",
+                    null,
+                    category_input,
+                    new String[]{"Y"},
+                    null,
+                    null,
+                    "NAMESAKE ASC");
 
             CursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[]{"CATEGORY_PROPER"},
+                    new String[]{"NAMESAKE"},
                     new int[]{android.R.id.text1},
                     0);
 
             listSites.setAdapter(listAdapter);
 
-        } catch(SQLiteException error) {
+        } catch (SQLiteException error) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -59,8 +74,8 @@ public class CategoryListingActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id) {
-        Intent intent = new Intent(CategoryListingActivity.this, CategoryItemActivity.class);
-        intent.putExtra(CategoryItemActivity.ITEM, (int) id);
+        Intent intent = new Intent(PeopleCategoryItemListingActivity.this, PeopleItemActivity.class);
+        intent.putExtra(PeopleItemActivity.ITEM, (int) id);
         startActivity(intent);
     }
 }
