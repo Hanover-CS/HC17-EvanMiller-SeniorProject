@@ -125,7 +125,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //STUDENT HOUSING
         insertSites(db, "Donner Residence Hall", 1939, 12345,
                 "",
-                "", 38.713380, -85.461991);
+                "William H. Donner", 38.713380, -85.461991);
         insertSites(db, "Ide Residence Hall", 1951, 12345,
                 "",
                 "Mrs. John J. Ide", 38.713368, -85.462475);

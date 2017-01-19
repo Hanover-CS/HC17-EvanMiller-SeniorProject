@@ -23,6 +23,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -52,6 +54,13 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         //Create Map
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        /*
+        LatLng northwest = new LatLng(38.724916, -85.487288);
+        LatLng southeast = new LatLng(38.704825, -85.451196);
+        LatLngBounds cameraBounds = new LatLngBounds(northwest, southeast);
+        mMap.setLatLngBoundsForCameraTarget(cameraBounds);
+        */
 
         //Display Zoom Buttons
         UiSettings mapSettings;
@@ -120,8 +129,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
             double longitudeText = cursor.getDouble(3);
             LatLng latLng = new LatLng(latitudeText, longitudeText);
             Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
-                    .snippet("Hanover College")
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
+                    .snippet("Hanover College").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             //Sets Tag as SITE_NAME -> pass on to pull info from Database
             marker.setTag(siteNameText);
 
@@ -133,8 +141,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
                 //Creates Marker
                 marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
-                        .snippet("Hanover College")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
+                        .snippet("Hanover College").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 //Sets Tag as SITE_NAME -> pass on to pull info from Database
                 marker.setTag(siteNameText);
             }
