@@ -149,7 +149,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //UNKNOWN
         insertSites(db, "Ogle Suites", 1900, 12345,
                 "",
-                "Ogle", 38.712780, -85.464459);
+                "Josephine Ogle", 38.712780, -85.464459);
         //UNKNOWN
         insertSites(db, "Greenwood Suites", 1900, 12345,
                 "",
@@ -262,6 +262,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "GENDER STRING, "
                 + "DESCRIPTION TEXT);");
 
+        /*
         //TESTING PEOPLE
         insertPeople(db, "Alumnus Test Guy",
                 "Guy", "Alumnus", "Test",
@@ -283,6 +284,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Guy", "Local", "Test",
                 1900, 2000, "M",
                 "Description");
+        */
 
         //
         //INSERT PEOPLE
@@ -387,22 +389,17 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Donner", "William", "Henry",
                 1864, 1953, "M",
                 "William Henry Donner was born and raised in Columbus, Indiana. He attended Hanover " +
-                        "College for one semester in the fall of 1882 but was called home to help " +
-                        "out in the family business. Through many business ventures ranging from tin " +
-                        "plating to steel, he amassed a small fortune. After retirement, Donner " +
-                        "began giving to many organizations, one being Hanover College. Through a " +
-                        "series of small challenges he posed to Hanover, Donner matched the amount " +
-                        "that the college raised; this money was used to pay off debts, create a " +
-                        "campus plan, beautification, and build new campus buildings including " +
-                        "Donner Hall.");
+                        "College for only one semester in the fall of 1882 and then returned home to help " +
+                        "his family. After participating in many business ventures, " +
+                        "he amassed a small fortune. After retirement, Donner " +
+                        "began giving to many organizations including Hanover College. Through a " +
+                        "series of small financial challenges, Donner donated more than $2,000,000. " +
+                        " The money was used to " +
+                        "pay off debts, create a campus plan, and build new campus buildings including " +
+                        "Donner Hall, Classic Hall, Parker Auditorium, Ide Hall, and the President's House.");
         insertPeople(db, "Agnus L. Brown Duggan",
                 "Duggan", "A.", "L.",
                 1900, 2000, "F",
-                "Description");
-        //UNKNOWN
-        insertPeople(db, "File",
-                "File", "NONE", "NONE",
-                1900, 2000, "M",
                 "Description");
         //UNKNOWN
         insertPeople(db, "Greenwood",
@@ -411,38 +408,68 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Description");
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.",
-                1900, 2000, "M",
-                "Description");
+                1819, 1885, "M",
+                "Thomas A. Hendricks was an 1841 graduate of Hanover College. He served in the U.S. " +
+                        "House of Representatives from 1851-1855 and in the U.S. Senate from 1863-69, " +
+                        "both for Indiana. He served as Vice President of the United States under " +
+                        "Grover Cleveland from 1885 until his death later that year. His wife " +
+                        "donated money to Hanover College to erect a library in his honor, which " +
+                        "still stands today.");
         insertPeople(db, "Mrs. John J. Ide",
                 "Ide", "John", "J.",
                 1900, 2000, "F",
                 "Description");
         insertPeople(db, "Henry C. Long",
                 "Long", "Henry", "C.",
-                1900, 2000,  "M",
-                "Description");
+                1843, 1901,  "M",
+                "Henry C. Long was an Indianapolis lumber dealer. He supported and advocated for women's " +
+                        "education in Indiana. Through donations from his estate, Long College for Women " +
+                        "of Hanover College (1947-1978) was founded and many campus buildings were constructed, " +
+                        "including Long Gymnasium (1957-93). The Administration Building was renamed in his " +
+                        "honor in 1994.");
         insertPeople(db, "Charles J. Lynn",
                 "Lynn", "Charles", "J.",
-                1900, 2000, "M",
-                "Description");
+                1874, 1958, "M",
+                "Charles J. Lynn was a Hanover College Board of Trustee from 1938-1958. He was an " +
+                        "execute with the Eli Lilly pharmaceutical company. He and his wife " +
+                        "Dorothy B. Lynn made many generous gifts to Hanover College including an " +
+                        "organ for Old Classic Hall, a collection of rare books for the library, " +
+                        "and a large endowment following both of their deaths.");
+        insertPeople(db, "Dorothy B. Lynn",
+                "Lynn", "Dorothy", "Black",
+                1902, 1989, "F",
+                "Dorothy Black Lynn was a Hanover College Board of Trustee from 1958-1983. She and " +
+                        "her husband Charles J. Lynn made many generous gifts to Hanover College " +
+                        "including an organ for Old Classic Hall, a collection of rare books for the " +
+                        "library, and a large endowment following both of their deaths.");
         insertPeople(db, "Arthur C. Newby",
                 "Newby", "Arthur", "C.",
                 1900, 2000, "M",
                 "Friend of college trustee John W. Suverkrup (trustee for 19 years) " +
                         "and donated funds to construct building");
         //UNKNOWN
-        insertPeople(db, "Ogle",
-                "Ogle", "NONE", "NONE",
-                1900, 2000, "M",
-                "Description");
-        insertPeople(db, "Katherine Parker",
-                "Parker", "Katherine", "NONE",
-                1900, 2000, "F",
-                "Description");
+        insertPeople(db, "Josephine Ogle",
+                "Ogle", "Josephine", "NONE",
+                1905, 1983, "F",
+                "Josephine Ogle was born, raised, and lived her life in Vevay, Indiana, less than " +
+                        "an hour drive away from Hanover College. She was the brother of Paul Ogle, a " +
+                        "philanthropist and founder of The Paul W. Ogle Foundation.");
+        insertPeople(db, "Katherine M. Parker",
+                "Parker", "Katherine", "McAfee",
+                1896, 1980, "F",
+                "Katherine McAfee Parker was the wife of Albert G. Parker, the 12th president of Hanover " +
+                        "College from 1929-1958. She was the daughter of Presbyterian ministers. Some " +
+                        "interesting facts about her include she traveled to Europe in 1946 to study " +
+                        "the effects of World War II on Protestantism, wrote a biography detailing " +
+                        "her father's life, and wrote the words to the Hanover College Alma Mater.");
         insertPeople(db, "Harvey W. Wiley",
                 "Wiley", "Harvey", "W.",
-                1900, 2000, "M",
-                "Description");
+                1844, 1930, "M",
+                "Harvey Washington Wiley was born in Kent, Indiana, less than an hour drive away from " +
+                        "Hanover College. He attended Hanover College from 1963-1967. He attended the " +
+                        "Indiana Medical College in 1871. He was the chief chemist for the U.S. " +
+                        "Department of Agriculture during the turn of the century and led the movement " +
+                        "which produced the Pure Food and Drug Act of 1906.");
         //UNKNOWN
         insertPeople(db, "Young",
                 "Young", "NONE", "NONE",
@@ -578,7 +605,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Crowe Residence Hall", "John Finley Crowe");
         insertSitesToPeople(db, "Wiley Residence Hall", "Harvey W. Wiley");
         insertSitesToPeople(db, "Coulter Residence Hall", "Coulter");
-        insertSitesToPeople(db, "Ogle Suites", "Ogle");
+        insertSitesToPeople(db, "Ogle Suites", "Josephine Ogle");
         insertSitesToPeople(db, "Greenwood Suites", "Greenwood");
         insertSitesToPeople(db, "File House", "File");
         insertSitesToPeople(db, "Young House", "Young");
@@ -700,9 +727,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "Charles J. Lynn",
                 "Y", "Y", "N", "N", "N", "N");
+        insertPeopleToPeopleType(db, "Dorothy B. Lynn",
+                "N", "Y", "N", "N", "N", "N");
         insertPeopleToPeopleType(db, "Arthur C. Newby",
                 "N", "N", "N", "N", "N", "Y");
-        insertPeopleToPeopleType(db, "Ogle",
+        insertPeopleToPeopleType(db, "Josephine Ogle",
                 "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "Katherine Parker",
                 "N", "N", "N", "Y", "N", "N");
