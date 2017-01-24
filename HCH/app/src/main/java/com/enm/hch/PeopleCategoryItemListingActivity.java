@@ -34,7 +34,8 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     "_id = ?",
                     new String[]{Integer.toString(item)},
-                    null, null, null);
+                    null, null,
+                    "CATEGORY ASC");
 
             cursor.moveToFirst();
             String category_input = cursor.getString(1) + " = ?";
