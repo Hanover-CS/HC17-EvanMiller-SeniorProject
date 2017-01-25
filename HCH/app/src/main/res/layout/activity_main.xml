@@ -19,20 +19,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="roamCampusClicked"
-        android:text="@string/roam_campus"/>
+        android:text="@string/roam_campus_title"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="browseListClicked"
-        android:text="@string/browse_list"/>
+        android:text="@string/browse_list_title"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="aboutClicked"
-        android:text="@string/about_name"/>
+        android:text="@string/about_title"/>
 
 </LinearLayout>
