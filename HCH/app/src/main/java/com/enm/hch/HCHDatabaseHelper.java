@@ -850,7 +850,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
         //INSERT IMAGES_SITES
         insertImageSites(db, "Long Administration Building", R.drawable.admin);
-        insertImageSites(db, "Brown Chapel", R.drawable.brown_chapel);
+        insertImageSites(db, "Brown Memorial Chapel", R.drawable.brown_chapel);
         insertImageSites(db, "Brown Campus Center", R.drawable.cc);
         insertImageSites(db, "Lynn Center for the Fine Arts", R.drawable.cfa);
         insertImageSites(db, "Classic Hall", R.drawable.classic);

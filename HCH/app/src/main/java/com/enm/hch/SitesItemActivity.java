@@ -79,7 +79,7 @@ public class SitesItemActivity extends Activity {
                 }
             }
 
-            Cursor cursor_image = db.query ("IMAGE_SITES",
+            Cursor cursor_image = db.query ("IMAGES_SITES",
                     new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
                     "SITE_NAME = ?",
                     new String[] {siteNameGlobal},

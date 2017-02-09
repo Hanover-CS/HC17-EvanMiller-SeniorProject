@@ -59,7 +59,7 @@ public class PeopleItemActivity extends Activity {
                 description.setText(descriptionText);
             }
 
-            Cursor cursor_image = db.query ("IMAGE_PEOPLE",
+            Cursor cursor_image = db.query ("IMAGES_PEOPLE",
                     new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
                     "SITE_NAME = ?",
                     new String[] {personNameGlobal},
