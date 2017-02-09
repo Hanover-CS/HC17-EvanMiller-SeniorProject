@@ -2,6 +2,7 @@ package com.enm.hch;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.database.Cursor;
@@ -21,9 +22,12 @@ public class SitesItemActivity extends Activity {
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
 
+        String siteNameGlobal = "";
+
         try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             SQLiteDatabase db = HCHDatabaseHelper.getReadableDatabase();
+
 
             Cursor cursor = db.query ("SITES",
                     new String[] {"_id", "SITE_NAME", "DATE_BUILT", "DATE_DESTROYED", "DESCRIPTION", "NAMESAKE"},
@@ -31,10 +35,10 @@ public class SitesItemActivity extends Activity {
                     new String[] {Integer.toString(item)},
                     null, null, null);
 
-            //Move to the first record in the Cursor
             if (cursor.moveToFirst()) {
                 //Get details
                 String siteNameText = cursor.getString(1);
+                siteNameGlobal = siteNameText;
                 String dateBuiltText = Integer.toString(cursor.getInt(2));
                 String dateDestroyedText = Integer.toString(cursor.getInt(3));
                 String descriptionText = cursor.getString(4);
@@ -73,7 +77,22 @@ public class SitesItemActivity extends Activity {
                     temp = "Namesake: " + namesakeText;
                     namesake.setText(temp);
                 }
+            }
 
+            Cursor cursor_image = db.query ("IMAGE_SITES",
+                    new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
+                    "SITE_NAME = ?",
+                    new String[] {siteNameGlobal},
+                    null, null, null);
+
+            if (cursor_image.moveToFirst()) {
+                //Get details
+                int imageSiteTemp = cursor.getInt(2);
+
+                //Populate Date_Destroyed
+                ImageView imageSite = (ImageView) findViewById(R.id.image_site);
+                imageSite.setImageResource(imageSiteTemp);
+                imageSite.setContentDescription(siteNameGlobal);
             }
 
             cursor.close();

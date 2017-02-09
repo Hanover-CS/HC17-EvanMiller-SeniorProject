@@ -846,36 +846,34 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //
         db.execSQL("CREATE TABLE IMAGES_SITES (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "SITE_NAME TEXT, "
-                + "IMAGE_ID TEXT, "
-                + "IMAGE_TEXT TEXT);");
+                + "IMAGE_ID INTEGER);");
 
         //INSERT IMAGES_SITES
-        insertImageSites(db, "Long Administration Building", "@drawable/admin.jpg");
-        insertImageSites(db, "Brown Chapel", "@drawable/brown_chapel.jpg");
-        insertImageSites(db, "Brown Campus Center", "@drawable/cc.jpg");
-        insertImageSites(db, "Lynn Center for the Fine Arts", "@drawable/cfa.jpg");
-        insertImageSites(db, "Classic Hall", "@drawable/classic.jpg");
-        insertImageSites(db, "Coulter Residence Hall", "@drawable/coulter.jpg");
-        insertImageSites(db, "Donner Residence Hall", "@drawable/donner.jpg");
-        insertImageSites(db, "File House", "@drawable/file.jpg");
-        insertImageSites(db, "Faculty Office Building", "@drawable/fob.jpg");
-        insertImageSites(db, "Hendricks Hall", "@drawable/hendricks_hall.jpg");
-        insertImageSites(db, "Ide Residence Hall", "@drawable/ide.jpg");
-        insertImageSites(db, "Katherine Parker Residence Hall", "@drawable/kp.jpg");
-        insertImageSites(db, "Duggan Library", "@drawable/library.jpg");
-        insertImageSites(db, "Lynn Hall", "@drawable/lynn.jpg");
-        insertImageSites(db, "Newby Hall", "@drawable/newby.jpg");
-        insertImageSites(db, "Parker Auditorium", "@drawable/parker.jpg");
-        insertImageSites(db, "Science Center", "@drawable/sc.jpg");
-        insertImageSites(db, "Shoebox", "@drawable/shoebox.jpg");
-        insertImageSites(db, "Wiley Residence Hall", "@drawable/wiley.jpg");
+        insertImageSites(db, "Long Administration Building", R.drawable.admin);
+        insertImageSites(db, "Brown Chapel", R.drawable.brown_chapel);
+        insertImageSites(db, "Brown Campus Center", R.drawable.cc);
+        insertImageSites(db, "Lynn Center for the Fine Arts", R.drawable.cfa);
+        insertImageSites(db, "Classic Hall", R.drawable.classic);
+        insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter);
+        insertImageSites(db, "Donner Residence Hall", R.drawable.donner);
+        insertImageSites(db, "File House", R.drawable.file);
+        insertImageSites(db, "Faculty Office Building", R.drawable.fob);
+        insertImageSites(db, "Hendricks Hall", R.drawable.hendricks_hall);
+        insertImageSites(db, "Ide Residence Hall", R.drawable.ide);
+        insertImageSites(db, "Katherine Parker Residence Hall", R.drawable.kp);
+        insertImageSites(db, "Duggan Library", R.drawable.library);
+        insertImageSites(db, "Lynn Hall", R.drawable.lynn);
+        insertImageSites(db, "Newby Hall", R.drawable.newby);
+        insertImageSites(db, "Parker Auditorium", R.drawable.parker);
+        insertImageSites(db, "Science Center", R.drawable.sc);
+        insertImageSites(db, "Shoebox", R.drawable.shoebox);
+        insertImageSites(db, "Wiley Residence Hall", R.drawable.wiley);
 
 
         //CREATE TABLE IMAGES_PEOPLE
         db.execSQL("CREATE TABLE IMAGES_PEOPLE (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAMESAKE TEXT, "
-                + "IMAGE_ID TEXT, "
-                + "IMAGE_TEXT TEXT);");
+                + "IMAGE_ID INTEGER);");
 
         //INSERT IMAGES_PEOPLE
 
@@ -974,7 +972,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private static void insertImageSites(SQLiteDatabase db, String site_name,
-                                         String image_id) {
+                                         int image_id) {
         ContentValues imageSitesValues = new ContentValues();
         imageSitesValues.put("SITE_NAME", site_name);
         imageSitesValues.put("IMAGE_ID", image_id);
@@ -982,7 +980,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private static void insertImagesPeople(SQLiteDatabase db, String person_name,
-                                           String image_id) {
+                                           int image_id) {
         ContentValues imagePeopleValues = new ContentValues();
         imagePeopleValues.put("SITE_NAME", person_name);
         imagePeopleValues.put("IMAGE_ID", image_id);

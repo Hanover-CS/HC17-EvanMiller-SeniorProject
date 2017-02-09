@@ -2,6 +2,7 @@ package com.enm.hch;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.database.Cursor;
@@ -20,6 +21,8 @@ public class PeopleItemActivity extends Activity {
         setContentView(R.layout.activity_people_item);
 
         int item = (Integer)getIntent().getExtras().get(ITEM);
+
+        String personNameGlobal = "";
 
         try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
@@ -54,6 +57,22 @@ public class PeopleItemActivity extends Activity {
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description_people);
                 description.setText(descriptionText);
+            }
+
+            Cursor cursor_image = db.query ("IMAGE_PEOPLE",
+                    new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
+                    "SITE_NAME = ?",
+                    new String[] {personNameGlobal},
+                    null, null, null);
+
+            if (cursor_image.moveToFirst()) {
+                //Get details
+                int imageSiteTemp = cursor.getInt(2);
+
+                //Populate Date_Destroyed
+                ImageView imageSite = (ImageView) findViewById(R.id.image_site);
+                imageSite.setImageResource(imageSiteTemp);
+                imageSite.setContentDescription(personNameGlobal);
             }
 
             cursor.close();
