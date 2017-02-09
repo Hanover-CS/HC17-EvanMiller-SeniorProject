@@ -850,6 +850,25 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "IMAGE_TEXT TEXT);");
 
         //INSERT IMAGES_SITES
+        insertImageSites(db, "Long Administration Building", "@drawable/admin.jpg");
+        insertImageSites(db, "Brown Chapel", "@drawable/brown_chapel.jpg");
+        insertImageSites(db, "Brown Campus Center", "@drawable/cc.jpg");
+        insertImageSites(db, "Lynn Center for the Fine Arts", "@drawable/cfa.jpg");
+        insertImageSites(db, "Classic Hall", "@drawable/classic.jpg");
+        insertImageSites(db, "Coulter Residence Hall", "@drawable/coulter.jpg");
+        insertImageSites(db, "Donner Residence Hall", "@drawable/donner.jpg");
+        insertImageSites(db, "File House", "@drawable/file.jpg");
+        insertImageSites(db, "Faculty Office Building", "@drawable/fob.jpg");
+        insertImageSites(db, "Hendricks Hall", "@drawable/hendricks_hall.jpg");
+        insertImageSites(db, "Ide Residence Hall", "@drawable/ide.jpg");
+        insertImageSites(db, "Katherine Parker Residence Hall", "@drawable/kp.jpg");
+        insertImageSites(db, "Duggan Library", "@drawable/library.jpg");
+        insertImageSites(db, "Lynn Hall", "@drawable/lynn.jpg");
+        insertImageSites(db, "Newby Hall", "@drawable/newby.jpg");
+        insertImageSites(db, "Parker Auditorium", "@drawable/parker.jpg");
+        insertImageSites(db, "Science Center", "@drawable/sc.jpg");
+        insertImageSites(db, "Shoebox", "@drawable/shoebox.jpg");
+        insertImageSites(db, "Wiley Residence Hall", "@drawable/wiley.jpg");
 
 
         //CREATE TABLE IMAGES_PEOPLE
@@ -860,8 +879,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
         //INSERT IMAGES_PEOPLE
 
-
     }
+
+
 
     private static void insertSites(SQLiteDatabase db, String site_name,
                                     int date_built, int date_destroyed,
@@ -954,20 +974,18 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private static void insertImageSites(SQLiteDatabase db, String site_name,
-                                         String image_id, String file) {
+                                         String image_id) {
         ContentValues imageSitesValues = new ContentValues();
         imageSitesValues.put("SITE_NAME", site_name);
         imageSitesValues.put("IMAGE_ID", image_id);
-        imageSitesValues.put("FILE", file);
         db.insert("IMAGES_SITES", null, imageSitesValues);
     }
 
     private static void insertImagesPeople(SQLiteDatabase db, String person_name,
-                                           String image_id, String file) {
+                                           String image_id) {
         ContentValues imagePeopleValues = new ContentValues();
         imagePeopleValues.put("SITE_NAME", person_name);
         imagePeopleValues.put("IMAGE_ID", image_id);
-        imagePeopleValues.put("FILE", file);
         db.insert("IMAGES_PEOPLE", null, imagePeopleValues);
     }
 }
