@@ -79,23 +79,26 @@ public class SitesItemActivity extends Activity {
                 }
             }
 
+            cursor.close();
+
             Cursor cursor_image = db.query ("IMAGES_SITES",
                     new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
                     "SITE_NAME = ?",
                     new String[] {siteNameGlobal},
-                    null, null, null);
+                    null, null,
+                    "SITE_NAME ASC");
 
             if (cursor_image.moveToFirst()) {
                 //Get details
-                int imageSiteTemp = cursor.getInt(2);
+                int imageSiteID = cursor_image.getInt(2);
 
                 //Populate Date_Destroyed
                 ImageView imageSite = (ImageView) findViewById(R.id.image_site);
-                imageSite.setImageResource(imageSiteTemp);
+                imageSite.setImageResource(imageSiteID);
                 imageSite.setContentDescription(siteNameGlobal);
             }
 
-            cursor.close();
+            cursor_image.close();
             db.close();
 
         } catch(SQLiteException e) {
