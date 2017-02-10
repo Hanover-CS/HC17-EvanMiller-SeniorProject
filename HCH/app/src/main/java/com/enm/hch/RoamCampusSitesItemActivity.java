@@ -3,6 +3,7 @@ package com.enm.hch;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.database.Cursor;
@@ -21,6 +22,7 @@ public class RoamCampusSitesItemActivity extends Activity {
         setContentView(R.layout.activity_sites_item);
 
         String item = (String)getIntent().getExtras().get(ITEM);
+        String siteNameGlobal = "";
 
         try{
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
@@ -36,6 +38,7 @@ public class RoamCampusSitesItemActivity extends Activity {
             if (cursor.moveToFirst()) {
                 //Get details
                 String siteNameText = cursor.getString(1);
+                siteNameGlobal = siteNameText;
                 String dateBuiltText = Integer.toString(cursor.getInt(2));
                 String dateDestroyedText = Integer.toString(cursor.getInt(3));
                 String descriptionText = cursor.getString(4);
@@ -77,6 +80,25 @@ public class RoamCampusSitesItemActivity extends Activity {
             }
 
             cursor.close();
+
+            Cursor cursor_image = db.query ("IMAGES_SITES",
+                    new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
+                    "SITE_NAME = ?",
+                    new String[] {siteNameGlobal},
+                    null, null,
+                    "SITE_NAME ASC");
+
+            if (cursor_image.moveToFirst()) {
+                //Get details
+                int imageSiteID = cursor_image.getInt(2);
+
+                //Populate Date_Destroyed
+                ImageView imageSite = (ImageView) findViewById(R.id.image_site);
+                imageSite.setImageResource(imageSiteID);
+                imageSite.setContentDescription(siteNameGlobal);
+            }
+
+            cursor_image.close();
             db.close();
 
         } catch(SQLiteException e) {
