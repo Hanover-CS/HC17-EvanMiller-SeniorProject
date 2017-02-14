@@ -60,8 +60,8 @@ public class PeopleItemActivity extends Activity {
             }
 
             Cursor cursor_image = db.query ("IMAGES_PEOPLE",
-                    new String[] {"_id", "SITE_NAME", "IMAGE_ID"},
-                    "SITE_NAME = ?",
+                    new String[] {"_id", "NAMESAKE", "IMAGE_ID"},
+                    "NAMESAKE = ?",
                     new String[] {personNameGlobal},
                     null, null, null);
 
