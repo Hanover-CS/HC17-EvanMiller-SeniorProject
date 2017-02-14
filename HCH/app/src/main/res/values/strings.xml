@@ -8,20 +8,20 @@
         Search through the Hanover College History database for a specific site or person.
     </string>
     <string name="browse_list_sites_info_text">
-        Search all the sites on the Hanover College History app. Choose to browse by
+        Search all sites on the Hanover College History app. Choose to browse by
         alphabetical listing or category.
     </string>
     <string name="browse_list_people_info_text">
-        Search all the people on the Hanover College History app. Choose to browse by
+        Search all people on the Hanover College History app. Choose to browse by
         alphabetical listing or category.
     </string>
     <string name="categories">Categories</string>
     <string name="category_description">Category Descriptions</string>
     <string name="description">
-        The fun and interactive way to learn the history of Hanover College
+        The fun and interactive way to learn the history of Hanover College!
     </string>
     <string name="main_menu_info_text">
-        The fun and interactive way to learn the history of Hanover College
+        The fun and interactive way to learn the history of Hanover College!
     </string>
     <string name="people">People</string>
     <string name="people_title">People</string>
