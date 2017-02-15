@@ -153,14 +153,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSites(db, "Greenwood Suites", 1900, 12345,
                 "",
                 "None", 38.717104, -85.462500);
-        //UNKNOWN
-        insertSites(db, "File House", 1900, 12345,
-                "",
-                "None", 38.717104, -85.462500);
-        //UNKNOWN
-        insertSites(db, "Young House", 1900, 12345,
-                "",
-                "None", 38.714316, -85.457506);
+
 
         //GREEK LIFE
         insertSites(db, "Lambda Chi Alpha Fraternity House", 1955, 12345,
@@ -188,6 +181,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "",
                 "None", 38.713913, -85.463439);
 
+
         //ADMINISTRATION
         insertSites(db, "Long Administration Building", 1963, 12345,
                 "",
@@ -201,36 +195,28 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "",
                 "None", 38.714536, -85.461404);
 
+
         //CAMPUS_LIFE
         insertSites(db, "Brown Memorial Chapel", 1956, 12345,
                 "",
                 "Mr. & Mrs. William Pool Brown", 38.713000, -85.459784);
-        insertSites(db, "President's House", 1952, 12345,
-                "",
-                "None", 38.712941, -85.459196);
         insertSites(db, "Brown Campus Center", 1967, 12345,
                 "",
                 "James Graham Brown", 38.713801, -85.460400);
         insertSites(db, "Horner Health and Recreational Center", 1995, 12345,
                 "",
                 "John E. Horner", 38.715023, -85.462316);
-        /*
-        //UNKNOWN
+        insertSites(db, "President's House", 1952, 12345,
+                "",
+                "None", 38.712941, -85.459196);
         insertSites(db, "Shoebox", 1900, 12345,
                 "",
                 "None", 38.719390, -85.461238);
-        //UNKNOWN
         insertSites(db, "YMCA", 1900, 12345,
                 "",
                 "None", 38.720722, -85.462305);
-        //UNKNOWN
-        insertSites(db, "Culbertson Observatory", 1900, 12345,
-                "Glenn Culbertson",
-                "", 38.721020, -85.463320);
-        insertSites(db, "Panther Athletic Complex", 1972, 12345,
-                "Lyman S. Ayers Athletic Complex",
-                "Lyman S. Ayers", 38.718580, -85.464157);
 
+        /*
         //OLD CAMPUS
         //UNKNOWN
         insertSites(db, "Old Classic Hall", 1900, 1901,
@@ -856,7 +842,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImageSites(db, "Classic Hall", R.drawable.classic);
         insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter);
         insertImageSites(db, "Donner Residence Hall", R.drawable.donner);
-        insertImageSites(db, "File House", R.drawable.file);
         insertImageSites(db, "Faculty Office Building", R.drawable.fob);
         insertImageSites(db, "Hendricks Hall", R.drawable.hendricks_hall);
         insertImageSites(db, "Horner Health and Recreation Center", R.drawable.horner);
