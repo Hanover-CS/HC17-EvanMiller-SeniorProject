@@ -431,21 +431,15 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Description");
 
         //OTHER PEOPLE
-        insertPeople(db, "Lyman S. Ayers",
-                "Ayers", "Lyman", "S.",
-                1900, 2000, "M",
-                "Description");
         insertPeople(db, "James Graham Brown",
                 "Brown", "James", "Graham",
                 1881, 1969, "M",
                 "Description");
-        //UNKNOWN
         insertPeople(db, "Mr. & Mrs. William Pool Brown",
                 "Brown", "William", "Pool",
                 1900, 2000, "M",
                 "Brown Chapel -> James's father" +
                         "Mary Craig Graham Brown");
-        //UNKNOWN
         insertPeople(db, "Coulter",
                 "Coulter", "NONE", "NONE",
                 1900, 2000, "M",
@@ -475,11 +469,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertPeople(db, "Agnus L. Brown Duggan",
                 "Duggan", "A.", "L.",
                 1900, 2000, "F",
-                "Description");
-        //UNKNOWN
-        insertPeople(db, "Greenwood",
-                "Greenwood", "NONE", "NONE",
-                1900, 2000, "M",
                 "Description");
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.",
@@ -545,11 +534,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "Indiana Medical College in 1871. He was the chief chemist for the U.S. " +
                         "Department of Agriculture during the turn of the century and led the movement " +
                         "which produced the Pure Food and Drug Act of 1906.");
-        //UNKNOWN
-        insertPeople(db, "Young",
-                "Young", "NONE", "NONE",
-                1900, 2000, "M",
-                "Description");
 
 
         //
@@ -591,8 +575,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Coulter Residence Hall", "N", "Y", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Ogle Suites", "N", "Y", "N", "N", "N", "N", "N", "N");
         insertSitesToSiteType(db, "Greenwood Suites", "N", "Y", "N", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "File House", "N", "Y", "N", "N", "N", "N", "N", "N");
-        insertSitesToSiteType(db, "Young House", "N", "Y", "N", "N", "N", "N", "N", "N");
 
         //GREEK_HOUSING
         insertSitesToSiteType(db, "Lambda Chi Alpha Fraternity House", "N", "N", "Y", "N", "N", "N", "N", "N");
@@ -617,7 +599,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Shoebox", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "YMCA", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "Culbertson Observatory", "N", "N", "N", "N", "Y", "N", "N", "N");
-        insertSitesToSiteType(db, "Panther Athletic Complex", "N", "N", "N", "N", "Y", "N", "N", "N");
 
         //OLD_CAMPUS
         insertSitesToSiteType(db, "Old Classic Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
@@ -681,9 +662,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Wiley Residence Hall", "Harvey W. Wiley");
         insertSitesToPeople(db, "Coulter Residence Hall", "Coulter");
         insertSitesToPeople(db, "Ogle Suites", "Josephine Ogle");
-        insertSitesToPeople(db, "Greenwood Suites", "Greenwood");
-        insertSitesToPeople(db, "File House", "File");
-        insertSitesToPeople(db, "Young House", "Young");
+        insertSitesToPeople(db, "Greenwood Suites", "NONE");
 
         insertSitesToPeople(db, "Lambda Chi Alpha Fraternity House", "NONE");
         insertSitesToPeople(db, "Phi Delta Theta Fraternity House", "NONE");
@@ -705,7 +684,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Shoebox", "NONE");
         insertSitesToPeople(db, "YMCA", "NONE");
         insertSitesToPeople(db, "Culbertson Observatory", "Glenn Culbertson");
-        insertSitesToPeople(db, "Panther Athletic Complex", "Lyman S. Ayers");
 
         insertSitesToPeople(db, "Old Classic Hall", "NONE");
         insertSitesToPeople(db, "Old Science Hall", "NONE");
@@ -763,8 +741,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "N", "N", "Y", "N", "N", "N");
 
         //OTHER PEOPLE
-        insertPeopleToPeopleType(db, "Lyman S. Ayers",
-                "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "James Graham Brown",
                 "Y", "N", "N", "N", "Y", "N");
         insertPeopleToPeopleType(db, "Mr. & Mrs. William Pool Brown",
@@ -779,10 +755,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Y", "N", "N", "N", "N", "N");
         insertPeopleToPeopleType(db, "Agnus L. Brown Duggan",
                 "N", "N", "N", "Y", "N", "N");
-        insertPeopleToPeopleType(db, "File",
-                "N", "N", "N", "N", "N", "Y");
-        insertPeopleToPeopleType(db, "Greenwood",
-                "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "Vice President Thomas A. Hendricks",
                 "Y", "N", "N", "N", "N", "N");
         insertPeopleToPeopleType(db, "Mrs. John J. Ide",
@@ -801,8 +773,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "N", "N", "N", "Y", "N", "N");
         insertPeopleToPeopleType(db, "Harvey W. Wiley",
                 "Y", "N", "N", "N", "N", "N");
-        insertPeopleToPeopleType(db, "Young",
-                "N", "N", "N", "N", "N", "Y");
 
 
 
