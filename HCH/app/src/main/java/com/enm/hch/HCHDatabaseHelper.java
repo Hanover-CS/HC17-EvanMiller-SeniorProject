@@ -187,7 +187,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "",
                 "Henry C. Long", 38.712451, -85.461101);
         //UNKNOWN
-        insertSites(db, "Admission Building", 1900, 12345,
+        insertSites(db, "Admissions Building", 1900, 12345,
                 "",
                 "None", 38.714356, -85.461486);
         //UNKNOWN
@@ -423,11 +423,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "\"America's Best College's\" competition.");
         insertPeople(db, "Sue DeWine",
                 "DeWine", "Sue", "NONE",
-                1900, 12345, "F",
+                12345, 12345, "F",
                 "Description");
         insertPeople(db, "Lake Lambert III",
                 "Lambert", "Lake", "NONE",
-                1900, 12345, "M",
+                12345, 12345, "M",
                 "Description");
 
         //OTHER PEOPLE
@@ -437,16 +437,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Description");
         insertPeople(db, "Mr. & Mrs. William Pool Brown",
                 "Brown", "William", "Pool",
-                1900, 2000, "M",
+                12345, 12345, "M",
                 "Brown Chapel -> James's father" +
                         "Mary Craig Graham Brown");
         insertPeople(db, "Coulter",
                 "Coulter", "NONE", "NONE",
-                1900, 2000, "M",
+                12345, 12345, "M",
                 "Description");
         insertPeople(db, "John Finley Crowe",
                 "Crowe", "John", "Finley",
-                1900, 2000, "M",
+                12345, 12345, "M",
                 "Description");
         insertPeople(db, "Glenn Culbertson",
                 "Culbertson", "Glenn", "NONE",
@@ -468,7 +468,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "Donner Hall, Classic Hall, Parker Auditorium, Ide Hall, and the President's House.");
         insertPeople(db, "Agnus L. Brown Duggan",
                 "Duggan", "A.", "L.",
-                1900, 2000, "F",
+                12345, 12345, "F",
                 "Description");
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.",
@@ -481,7 +481,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "still stands today.");
         insertPeople(db, "Mrs. John J. Ide",
                 "Ide", "John", "J.",
-                1900, 2000, "F",
+                12345, 12345, "F",
                 "Description");
         insertPeople(db, "Henry C. Long",
                 "Long", "Henry", "C.",
@@ -508,7 +508,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "library, and a large endowment following both of their deaths.");
         insertPeople(db, "Arthur C. Newby",
                 "Newby", "Arthur", "C.",
-                1900, 2000, "M",
+                12345, 12345, "M",
                 "Friend of college trustee John W. Suverkrup (trustee for 19 years) " +
                         "and donated funds to construct building");
         //UNKNOWN
@@ -674,7 +674,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Phi Mu Sorority House", "NONE");
 
         insertSitesToPeople(db, "Long Administration Building", "Henry C. Long");
-        insertSitesToPeople(db, "Admission Building", "NONE");
+        insertSitesToPeople(db, "Admissions Building", "NONE");
         insertSitesToPeople(db, "Academic Computing Center", "NONE");
 
         insertSitesToPeople(db, "Brown Memorial Chapel", "William Pool Brown");
@@ -806,24 +806,48 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
         //INSERT IMAGES_SITES
         insertImageSites(db, "Long Administration Building", R.drawable.admin);
+        insertImageSites(db, "Admissions Building", R.drawable.admissions);
         insertImageSites(db, "Brown Memorial Chapel", R.drawable.brown_chapel);
         insertImageSites(db, "Brown Campus Center", R.drawable.cc);
         insertImageSites(db, "Lynn Center for the Fine Arts", R.drawable.cfa);
         insertImageSites(db, "Classic Hall", R.drawable.classic);
-        insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter);
-        insertImageSites(db, "Donner Residence Hall", R.drawable.donner);
         insertImageSites(db, "Faculty Office Building", R.drawable.fob);
         insertImageSites(db, "Hendricks Hall", R.drawable.hendricks_hall);
-        insertImageSites(db, "Horner Health and Recreation Center", R.drawable.horner);
-        insertImageSites(db, "Ide Residence Hall", R.drawable.ide);
-        insertImageSites(db, "Katherine Parker Residence Hall", R.drawable.kp);
+        insertImageSites(db, "Horner Health and Recreational Center", R.drawable.horner);
         insertImageSites(db, "Duggan Library", R.drawable.library);
         insertImageSites(db, "Lynn Hall", R.drawable.lynn);
         insertImageSites(db, "Newby Hall", R.drawable.newby);
         insertImageSites(db, "Parker Auditorium", R.drawable.parker);
         insertImageSites(db, "Science Center", R.drawable.sc);
         insertImageSites(db, "Shoebox", R.drawable.shoebox);
+        insertImageSites(db, "Science Hall", R.drawable.science_hall);
+
+        //GREEK
+        insertImageSites(db, "Alpha Delta Pi Sorority House", R.drawable.adpi);
+        insertImageSites(db, "Chi Omega Sorority House", R.drawable.chio);
+        insertImageSites(db, "Phi Delta Theta Fraternity House", R.drawable.fidelt);
+        insertImageSites(db, "Phi Gamma Delta Fraternity House", R.drawable.fiji);
+        //ERROR
+        insertImageSites(db, "Lambda Chi Alpha Fraternity House", R.drawable.lambda);
+        insertImageSites(db, "Phi Mu Sorority House", R.drawable.phimu);
+        //ERROR
+        insertImageSites(db, "Kappa Alpha Theta Sorority House", R.drawable.theta);
+        //ERROR
+        insertImageSites(db, "Sigma Chi Fraternity House", R.drawable.sig);
+
+        //HOUSING
+        insertImageSites(db, "Blythe Residence Hall", R.drawable.blythe);
+        insertImageSites(db, "Crowe Residence Hall", R.drawable.crowe);
+        insertImageSites(db, "Greenwood Suites", R.drawable.greenwood);
+        insertImageSites(db, "Ogle Suites", R.drawable.ogle);
+        insertImageSites(db, "Ide Residence Hall", R.drawable.ide);
+        insertImageSites(db, "Katherine Parker Residence Hall", R.drawable.kp);
         insertImageSites(db, "Wiley Residence Hall", R.drawable.wiley);
+        insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter);
+        insertImageSites(db, "Donner Residence Hall", R.drawable.donner);
+
+        //RANDOM/OLD CAMPUS
+        insertImageSites(db, "Goodrich Hall", R.drawable.goodrich);
 
 
         //CREATE TABLE IMAGES_PEOPLE
