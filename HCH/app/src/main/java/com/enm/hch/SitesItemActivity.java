@@ -51,17 +51,29 @@ public class SitesItemActivity extends Activity {
 
                 //Populate Date_Built
                 TextView dateBuilt = (TextView) findViewById(R.id.date_built);
-                temp = "Built: " + dateBuiltText;
-                dateBuilt.setText(temp);
+                //12345 = DATE BUILT UNKNOWN
+                if (dateBuiltText.equals("12345")) {
+                    dateBuilt.setText("Unknown");
+                }
+                //DATE BUILT KNOWN
+                else {
+                    temp = "Built: " + dateBuiltText;
+                    dateBuilt.setText(temp);
+                }
 
                 //Populate Date_Destroyed
-                if(dateDestroyedText.equals("12345")) {
-                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
+                //12345 = NOT DATE DESTROYED - STILL STANDING
+                if (dateDestroyedText.equals("12345")) {
                     temp = "Currently Standing";
                     dateDestroyed.setText(temp);
                 }
+                //54321 = DATE DESTROYED UNKNOWN
+                else if (dateDestroyedText.equals("54321")) {
+                    dateDestroyed.setText("Unknown");
+                }
+                //DATE DESTROYED KNOWN
                 else {
-                    TextView dateDestroyed = (TextView) findViewById(R.id.date_destroyed);
                     temp = "Destroyed: " + dateDestroyedText;
                     dateDestroyed.setText(temp);
                 }
@@ -72,11 +84,14 @@ public class SitesItemActivity extends Activity {
                 description.setText(temp);
 
                 //Populate Namesake
-                if (namesakeText.equals("None")) {
-                    TextView namesake = (TextView) findViewById(R.id.namesake);
+                TextView namesake = (TextView) findViewById(R.id.namesake);
+                //NAMESAKE KNOWN
+                if (!(namesakeText.equals("None"))) {
                     temp = "Namesake: " + namesakeText;
                     namesake.setText(temp);
                 }
+                //NAMESAKE NOT KNOWN
+                //DOES NOT FILL IN AREA
             }
 
             cursor.close();

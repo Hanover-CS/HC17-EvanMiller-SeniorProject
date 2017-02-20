@@ -269,11 +269,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "served in said capacity after his time at Hanover College until his death.");
         insertPeople(db, "Duncan McAuley",
                 "McAuley", "Duncan", "NONE",
-                1900, 2000, "M",
+                12345, 12345, "M",
                 "Description");
         insertPeople(db, "Eramus D. MacMaster",
                 "MacMaster", "Eramus", "D.",
-                1805, 1866, "M",
+                1806, 1864, "M",
                 "Rev. Eramus D. MacMaster served as the third president of Hanover College from 1838-1845. " +
                         "MacMaster oversaw the set up of a bookkeeping system and the sale of some of " +
                         "the College's property to pay off debts, which in turn put the College in " +
@@ -296,7 +296,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "after contracting cholera during an epidemic in the surrounding area.");
         insertPeople(db, "Thomas E. Thomas",
                 "Thomas", "Thomas", "Ebenezer",
-                12345, 1875, "M",
+                1812, 1875, "M",
                 "Rev. Thomas Ebenezer Thomas served as the fifth president of Hanover College from 1849-1854. " +
                         "Thomas oversaw two main accomplishments for Hanover College. First, he purchased " +
                         "the land that the College currently resides (known as Campbell's Farm). Second, " +
@@ -305,7 +305,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "Hanover College to become a professor at a theological seminary.");
         insertPeople(db, "Jonathan Edwards",
                 "Edwards", "Jonathan", "NONE",
-                12345, 1891, "M",
+                1817, 1891, "M",
                 "Rev. Jonathan Edwards served as the sixth president of Hanover College from 1855-1857. " +
                         "Edwards oversaw the move of the College into the new academic building known " +
                         "today as Old Classic Hall (1855-1941). He also increased the College's endowment, " +
@@ -314,7 +314,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "a graduate of the class of 1835.");
         insertPeople(db, "James Wood",
                 "Wood", "James", "NONE",
-                12345, 12345, "M",
+                1799, 1867, "M",
                 "Rev. James Wood served as the seventh president of Hanover College from 1859-1866, " +
                         "covering the time period of the Civil War. Wood kept the College afloat during " +
                         "this tumultuous time, keeping the doors open even when so many young men were " +
@@ -325,7 +325,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "Wood resigned in 1866 to accept the presidency at a different college.");
         insertPeople(db, "George D. Archibald",
                 "Archibald", "George", "D.",
-                12345, 12345, "M",
+                1820, 1902, "M",
                 "Rev. George Dr. Archibald served as the eighth president of Hanover College from 1868-1870. " +
                         "Archibald oversaw several significant changes at Hanover College including the " +
                         "partial admittance of women to the College (women were allowed to take classes but " +
@@ -336,7 +336,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "Board of Trustees at Hanover College. ");
         insertPeople(db, "George C. Heckman",
                 "Heckman", "George", "C.",
-                12345, 12345, "M",
+                1825, 1902, "M",
                 "Rev. George C. Heckman served as the ninth president of Hanover College from 1870-1879. " +
                         "Heckman saw financial distress during his time as president. While student " +
                         "enrollment increased, faculty and their salaries increased as well, causing a " +
@@ -345,9 +345,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "money to pay off immediate debts, but this led to Heckman's resignation in 1879. " +
                         "One legacy that Heckman left was the first President's House: a three-story " +
                         "Victorian house that stood where the current President's House now sits.");
-        insertPeople(db, "Daniel Fisher",
-                "Fisher", "Daniel", "NONE",
-                12345, 12345, "M",
+        insertPeople(db, "Daniel W. Fisher",
+                "Fisher", "Daniel", "Webster",
+                1839, 1913, "M",
                 "Rev. Daniel Fisher served as the tenth president of Hanover College from 1879-1907. " +
                         "Fisher oversaw the first period of increased stability at the College. During " +
                         "his presidency, Fisher oversaw the full admittance of women to Hanover College " +
@@ -410,7 +410,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "fully repaired less than one year later.");
         insertPeople(db, "Russell L. Nichols",
                 "Nichols", "Rusty", "NONE",
-                1900, 12345, "M",
+                12345, 54321, "M",
                 "Russell L. Nichols served as the fourteenth president of Hanover College from 1987-2007. " +
                         "Nichols oversaw many improvements and additions to the Hanover College experience " +
                         "including an increase in full-time faculty, expansion of off-campus study programs " +
@@ -423,11 +423,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "\"America's Best College's\" competition.");
         insertPeople(db, "Sue DeWine",
                 "DeWine", "Sue", "NONE",
-                12345, 12345, "F",
+                12345, 54321, "F",
                 "Description");
         insertPeople(db, "Lake Lambert III",
                 "Lambert", "Lake", "NONE",
-                12345, 12345, "M",
+                12345, 54321, "M",
                 "Description");
 
         //OTHER PEOPLE
@@ -775,7 +775,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Y", "N", "N", "N", "N", "N");
 
 
-
         //
         //CREATE TABLE PEOPLE_TYPE
         //
@@ -827,12 +826,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImageSites(db, "Chi Omega Sorority House", R.drawable.chio);
         insertImageSites(db, "Phi Delta Theta Fraternity House", R.drawable.fidelt);
         insertImageSites(db, "Phi Gamma Delta Fraternity House", R.drawable.fiji);
-        //ERROR
         insertImageSites(db, "Lambda Chi Alpha Fraternity House", R.drawable.lambda);
         insertImageSites(db, "Phi Mu Sorority House", R.drawable.phimu);
-        //ERROR
         insertImageSites(db, "Kappa Alpha Theta Sorority House", R.drawable.theta);
-        //ERROR
         insertImageSites(db, "Sigma Chi Fraternity House", R.drawable.sig);
 
         //HOUSING
