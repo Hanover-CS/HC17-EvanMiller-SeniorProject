@@ -62,7 +62,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "served as a main gathering space for campus events and chapel services in its " +
                         "early days. Parker Auditorium has also held many theatre productions throughout its" +
                         "history.",
-                "President Parker", 38.713423, -85.457188);
+                "Albert G. Parker", 38.713423, -85.457188);
         insertSites(db, "Science Center", 2000, 12345,
                 "Science Center is the largest academic building on Hanover College's campus. It's " +
                         "construction took place in the late 1990's and was completed in 2000. The south side" +
@@ -270,7 +270,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertPeople(db, "Duncan McAuley",
                 "McAuley", "Duncan", "NONE",
                 12345, 12345, "M",
-                "Description");
+                "");
         insertPeople(db, "Eramus D. MacMaster",
                 "MacMaster", "Eramus", "D.",
                 1806, 1864, "M",
@@ -812,11 +812,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImageSites(db, "Classic Hall", R.drawable.classic);
         insertImageSites(db, "Faculty Office Building", R.drawable.fob);
         insertImageSites(db, "Hendricks Hall", R.drawable.hendricks_hall);
-        insertImageSites(db, "Horner Health and Recreational Center", R.drawable.horner);
+        insertImageSites(db, "Horner Health and Recreational Center", R.drawable.horner_gym);
         insertImageSites(db, "Duggan Library", R.drawable.library);
-        insertImageSites(db, "Lynn Hall", R.drawable.lynn);
-        insertImageSites(db, "Newby Hall", R.drawable.newby);
-        insertImageSites(db, "Parker Auditorium", R.drawable.parker);
+        insertImageSites(db, "Lynn Hall", R.drawable.lynn_hall);
+        insertImageSites(db, "Newby Hall", R.drawable.newby_hall);
+        insertImageSites(db, "Parker Auditorium", R.drawable.parker_aud);
         insertImageSites(db, "Science Center", R.drawable.sc);
         insertImageSites(db, "Shoebox", R.drawable.shoebox);
         insertImageSites(db, "Science Hall", R.drawable.science_hall);
@@ -832,18 +832,18 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImageSites(db, "Sigma Chi Fraternity House", R.drawable.sig);
 
         //HOUSING
-        insertImageSites(db, "Blythe Residence Hall", R.drawable.blythe);
-        insertImageSites(db, "Crowe Residence Hall", R.drawable.crowe);
+        insertImageSites(db, "Blythe Residence Hall", R.drawable.blythe_res);
+        insertImageSites(db, "Crowe Residence Hall", R.drawable.crowe_res);
         insertImageSites(db, "Greenwood Suites", R.drawable.greenwood);
-        insertImageSites(db, "Ogle Suites", R.drawable.ogle);
-        insertImageSites(db, "Ide Residence Hall", R.drawable.ide);
+        insertImageSites(db, "Ogle Suites", R.drawable.ogle_res);
+        insertImageSites(db, "Ide Residence Hall", R.drawable.ide_res);
         insertImageSites(db, "Katherine Parker Residence Hall", R.drawable.kp);
-        insertImageSites(db, "Wiley Residence Hall", R.drawable.wiley);
-        insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter);
-        insertImageSites(db, "Donner Residence Hall", R.drawable.donner);
+        insertImageSites(db, "Wiley Residence Hall", R.drawable.wiley_res);
+        insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter_res);
+        insertImageSites(db, "Donner Residence Hall", R.drawable.donner_res);
 
         //RANDOM/OLD CAMPUS
-        insertImageSites(db, "Goodrich Hall", R.drawable.goodrich);
+        insertImageSites(db, "Goodrich Hall", R.drawable.goodrich_building);
 
 
         //CREATE TABLE IMAGES_PEOPLE
@@ -852,6 +852,21 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER);");
 
         //INSERT IMAGES_PEOPLE
+        insertImagesPeople(db, "George D. Archibald", R.drawable.archibald);
+        insertImagesPeople(db, "James Blythe", R.drawable.blythe);
+        insertImagesPeople(db, "Sue DeWine", R.drawable.dewine);
+        insertImagesPeople(db, "Johnathan Edwards", R.drawable.edwards);
+        insertImagesPeople(db, "Daniel W. Fisher", R.drawable.fisher);
+        insertImagesPeople(db, "George C. Heckman", R.drawable.heckman);
+        insertImagesPeople(db, "John E. Horner", R.drawable.horner);
+        insertImagesPeople(db, "Eramus D. MacMaster", R.drawable.macmaster);
+        insertImagesPeople(db, "William A. Millis", R.drawable.millis);
+        insertImagesPeople(db, "Russell L. Nichols", R.drawable.nichols);
+        insertImagesPeople(db, "Albert G. Parker", R.drawable.parker);
+        insertImagesPeople(db, "Sylvester D. Scovel", R.drawable.scovel);
+        insertImagesPeople(db, "Thomas E. Thomas", R.drawable.thomas);
+        insertImagesPeople(db, "James Wood", R.drawable.wood);
+        //MISSING - LAMBERT
 
     }
 
@@ -958,7 +973,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
     private static void insertImagesPeople(SQLiteDatabase db, String person_name,
                                            int image_id) {
         ContentValues imagePeopleValues = new ContentValues();
-        imagePeopleValues.put("SITE_NAME", person_name);
+        imagePeopleValues.put("NAMESAKE", person_name);
         imagePeopleValues.put("IMAGE_ID", image_id);
         db.insert("IMAGES_PEOPLE", null, imagePeopleValues);
     }

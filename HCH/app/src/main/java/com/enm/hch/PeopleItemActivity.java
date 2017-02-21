@@ -90,7 +90,7 @@ public class PeopleItemActivity extends Activity {
                 int imageSiteTemp = cursor.getInt(2);
 
                 //Populate Date_Destroyed
-                ImageView imageSite = (ImageView) findViewById(R.id.image_site);
+                ImageView imageSite = (ImageView) findViewById(R.id.image_people);
                 imageSite.setImageResource(imageSiteTemp);
                 imageSite.setContentDescription(personNameGlobal);
             }
