@@ -16,13 +16,17 @@ import android.location.LocationListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -53,11 +57,6 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        //Display Zoom Buttons
-        UiSettings mapSettings;
-        mapSettings = mMap.getUiSettings();
-        mapSettings.setZoomControlsEnabled(true);
-
         //Set listeners for marker and info window events
         mMap.setOnMarkerClickListener(this);
         mMap.setOnInfoWindowClickListener(this);
@@ -66,39 +65,43 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
         mMap.setMyLocationEnabled(true);
 
+        /*
+        LatLng northwest = new LatLng(38.724916, -85.487288);
+        LatLng southeast = new LatLng(38.704825, -85.451196);
+        LatLngBounds cameraBounds = new LatLngBounds(northwest, southeast);
+        mMap.setLatLngBoundsForCameraTarget(cameraBounds);
+        */
+
+        //Display Zoom Buttons
+        UiSettings mapSettings;
+        mapSettings = mMap.getUiSettings();
+        mapSettings.setZoomControlsEnabled(true);
+
+        //Adds markers for each site on the map
         addSiteMarkers();
 
-        //Code needed to pull device's current location
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
-        String provider = locationManager.getBestProvider(criteria, true);
-        Location myLocation = locationManager.getLastKnownLocation(provider);
-
-        //Find latitude & longitude
-        double latitude = myLocation.getLatitude();
-        double longitude = myLocation.getLongitude();
-        LatLng latLng = new LatLng(latitude, longitude);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
 
         //Handler to continuously find device's current location and realign camera
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
             public void run() {
-                //Code needed to pull device's current location
+                //Pull device's current location
                 LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 Criteria criteria = new Criteria();
                 String provider = locationManager.getBestProvider(criteria, true);
                 Location myLocation = locationManager.getLastKnownLocation(provider);
 
-                //Find latitude & longitude
-                double latitude = myLocation.getLatitude();
-                double longitude = myLocation.getLongitude();
-                LatLng latLng = new LatLng(latitude, longitude);
-                //mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                //Set camera
+                CameraPosition position = CameraPosition.builder()
+                        .target(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
+                        .zoom(17)
+                        .bearing(0.0f)
+                        .tilt(0.0f)
+                        .build();
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
 
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, 5000);
             }
         });
     }
@@ -120,8 +123,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
             double longitudeText = cursor.getDouble(3);
             LatLng latLng = new LatLng(latitudeText, longitudeText);
             Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
-                    .snippet("Hanover College")
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
+                    .snippet("Hanover College").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             //Sets Tag as SITE_NAME -> pass on to pull info from Database
             marker.setTag(siteNameText);
 
@@ -133,8 +135,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
                 //Creates Marker
                 marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
-                        .snippet("Hanover College")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.hch_marker)));
+                        .snippet("Hanover College").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 //Sets Tag as SITE_NAME -> pass on to pull info from Database
                 marker.setTag(siteNameText);
             }

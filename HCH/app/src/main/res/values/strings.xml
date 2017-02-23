@@ -1,13 +1,50 @@
 <resources>
-    <string name="app_name">Hanover College History</string>
-    <string name="description">The fun and interactive way to learn the history of Hanover College</string>
-    <string name="roam_campus">Roam Campus</string>
-    <string name="browse_list">Browse List</string>
-    <string name="about_name">About</string>
-    <string name="sites">Sites</string>
+    <string name="about">Hanover College History is a mobile application focused on engaging
+        Hanover College students, alumni, and supporters with the history of Hanover College and its
+        campus. There are two main ways to interact with the application:\n\n1. Roam Campus - This
+    option is a map where the current location of the user is tracked. While on the Hanover College campus,
+    the user can walk and view each marked building. By clicking on a blue marker, the user can view
+    the name of the site. By clicking on the name, a new window pops up with the information and
+    photograph (if available).\n\n2. Browse List - This option allows the user to search
+    through all of the sites and people included in Hanover College History. A user is able to search
+    either sites or people by an alphabetical listing or category.</string>
+    <string name="about_title">About</string>
     <string name="alphabetical_list">Alphabetical List</string>
+    <string name="app_name">Hanover College History</string>
+    <string name="browse_list_title">Browse List</string>
+    <string name="browse_list_info_text">
+        Search through the Hanover College History database for a specific site or person.
+    </string>
+    <string name="browse_list_sites_info_text">
+        Search all sites on the Hanover College History app. Choose to browse by
+        alphabetical listing or category.
+    </string>
+    <string name="browse_list_people_info_text">
+        Search all people on the Hanover College History app. Choose to browse by
+        alphabetical listing or category.
+    </string>
     <string name="categories">Categories</string>
+    <string name="category_description">Category Descriptions</string>
+    <string name="description">
+        The fun and interactive way to learn the history of Hanover College!
+    </string>
+    <string name="main_menu_info_text">
+        The fun and interactive way to learn the history of Hanover College!
+    </string>
     <string name="people">People</string>
-    <string name="about">About description</string>
-    <string name="title_activity_roam_campus_maps">Map</string>
+    <string name="people_title">People</string>
+    <string name="people_alphabetical_activity">Alphabetical Listing of People</string>
+    <string name="people_category_item_activity">Category Listing</string>
+    <string name="people_category_listing_activity">Selected Category Listing</string>
+    <string name="people_item_activity">Person Bio</string>
+    <string name="person_image">Person Image</string>
+    <string name="roam_campus_title">Roam Campus</string>
+    <string name="roam_campus_sites_item_activity">Site Bio</string>
+    <string name="site_image">Site Image</string>
+    <string name="sites">Sites</string>
+    <string name="sites_item_activity">Site Bio</string>
+    <string name="sites_alphabetical_listing_activity">Alphabetical Listing of Sites</string>
+    <string name="sites_category_item_listing_activity">Selected Category Listing</string>
+    <string name="sites_category_listing_activity">Category Listing</string>
+
 </resources>

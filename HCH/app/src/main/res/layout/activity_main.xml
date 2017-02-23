@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/hch_logo_background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,27 +14,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/description" />
+        android:text="@string/main_menu_info_text"
+        android:textSize="15sp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:alpha=".75"
         android:onClick="roamCampusClicked"
-        android:text="@string/roam_campus"/>
+        android:text="@string/roam_campus_title"
+        android:textSize="20sp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:alpha=".75"
         android:onClick="browseListClicked"
-        android:text="@string/browse_list"/>
+        android:text="@string/browse_list_title"
+        android:textSize="20sp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:alpha=".75"
         android:onClick="aboutClicked"
-        android:text="@string/about_name"/>
+        android:text="@string/about_title"
+        android:textSize="20sp"/>
 
 </LinearLayout>
