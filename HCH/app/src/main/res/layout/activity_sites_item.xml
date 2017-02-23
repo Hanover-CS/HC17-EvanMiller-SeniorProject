@@ -43,7 +43,7 @@
             android:adjustViewBounds="true"
             android:src="@drawable/hch_marker"
             android:layout_marginBottom="8dp"
-            android:contentDescription="Site Image" />
+            android:contentDescription="@string/site_image" />
 
         <TextView
             android:id="@+id/description"

@@ -53,7 +53,7 @@ public class RoamCampusSitesItemActivity extends Activity {
                 TextView dateBuilt = (TextView) findViewById(R.id.date_built);
                 //12345 = DATE BUILT UNKNOWN
                 if (dateBuiltText.equals("12345")) {
-                    dateBuilt.setText("Unknown");
+                    dateBuilt.setText("Built: Unknown");
                 }
                 //DATE BUILT KNOWN
                 else {
@@ -70,7 +70,7 @@ public class RoamCampusSitesItemActivity extends Activity {
                 }
                 //54321 = DATE DESTROYED UNKNOWN
                 else if (dateDestroyedText.equals("54321")) {
-                    dateDestroyed.setText("Unknown");
+                    dateDestroyed.setText("Destroyed: Unknown");
                 }
                 //DATE DESTROYED KNOWN
                 else {

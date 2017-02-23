@@ -50,7 +50,7 @@ public class PeopleItemActivity extends Activity {
                 TextView dateBorn = (TextView) findViewById(R.id.date_born_people);
                 //12345 = BORN DATE UNKNOWN
                 if (dateBornText.equals("12345")) {
-                    dateBorn.setText("Unknown");
+                    dateBorn.setText("Born: Unknown");
                 }
                 //BORN DATE KNOWN
                 else {
@@ -62,7 +62,7 @@ public class PeopleItemActivity extends Activity {
                 TextView dateDeath = (TextView) findViewById(R.id.date_death_people);
                 //12345 = DEATH DATE UNKNOWN
                 if (dateDiedText.equals("12345")) {
-                    dateDeath.setText("Unknown");
+                    dateDeath.setText("Died: Unknown");
                 }
                 //54321 = NO DEATH DATE - STILL LIVING
                 else if (dateDiedText.equals("54321")) {

@@ -124,7 +124,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
         //STUDENT HOUSING
         insertSites(db, "Donner Residence Hall", 1939, 12345,
-                "",
+                "Donner Residence Hall was built in 1939. ",
                 "William H. Donner", 38.713380, -85.461991);
         insertSites(db, "Ide Residence Hall", 1951, 12345,
                 "",
@@ -142,91 +142,105 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "",
                 "Harvey W. Wiley", 38.715628, -85.461520);
         //UNKNOWN
-        insertSites(db, "Coulter Residence Hall", 1900, 12345,
+        insertSites(db, "Coulter Residence Hall", 12345, 12345,
                 "",
                 "Coulter", 38.717656, -85.462175);
         //UNKNOWN
-        insertSites(db, "Ogle Suites", 1900, 12345,
+        insertSites(db, "Ogle Suites", 12345, 12345,
                 "",
                 "Josephine Ogle", 38.712780, -85.464459);
         //UNKNOWN
-        insertSites(db, "Greenwood Suites", 1900, 12345,
+        insertSites(db, "Greenwood Suites", 12345, 12345,
                 "",
                 "None", 38.717104, -85.462500);
 
 
         //GREEK LIFE
         insertSites(db, "Lambda Chi Alpha Fraternity House", 1955, 12345,
-                "",
+                "The Lambda Chi Alpha (Lambda) Fraternity House was built in 1955 during a large-scale construction " +
+                        "project at Hanover College. ",
                 "None", 38.716892, -85.461540);
         insertSites(db, "Phi Delta Theta Fraternity House", 1969, 12345,
-                "",
+                "The Phi Delta Theta (Phi Delt) Fraternity House was built in 1969. The fraternity's " +
+                        "previous residence was renovated and stands today as Faculty Office Building.",
                 "None", 38.718544, -85.461024);
         insertSites(db, "Phi Gamma Delta Fraternity House", 1955, 12345,
-                "",
+                "The Phi Gamma Delta (FIJI) Fraternity House was built in 1955 during a large-scale construction " +
+                        "project at Hanover College. The house was built on the same land as their previous " +
+                        "residence.",
                 "None", 38.712477, -85.462598);
         insertSites(db, "Sigma Chi Fraternity House", 1955, 12345,
-                "",
+                "The Sigma Chi (Sig) Fraternity House was built in 1955 during a large-scale construction " +
+                        "project at Hanover College.",
                 "None", 38.716565, -85.461530);
         insertSites(db, "Alpha Delta Pi Sorority House", 1954, 12345,
-                "",
+                "The Alpha Delta Pi (ADPi) Sorority House was built in 1954 during a large-scale construction " +
+                        "project at Hanover College. The house sits in sorority circle on campus.",
                 "None", 38.713679, -85.463206);
         insertSites(db, "Chi Omega Sorority House", 1954, 12345,
-                "",
+                "The Chi Omega (Chi O) Sorority House was built in 1954 during a large-scale construction " +
+                        "project at Hanover College. The house sits in sorority circle on campus.",
                 "None", 38.713920, -85.462968);
         insertSites(db, "Kappa Alpha Theta Sorority House", 1971, 12345,
-                "",
+                "The Kappa Alpha Theta (Theta) Sorority House was built in 1971.",
                 "None", 38.713837, -85.464092);
         insertSites(db, "Phi Mu Sorority House", 1954, 12345,
-                "",
+                "The Phi Mu Sorority House was built in 1954 during a large-scale construction " +
+                        "project at Hanover College. The house sits in sorority circle on campus.",
                 "None", 38.713913, -85.463439);
 
 
         //ADMINISTRATION
         insertSites(db, "Long Administration Building", 1963, 12345,
-                "",
+                "Long Administration Building was built in 1963 to house administrative offices. The " +
+                        "building sits on the old site of the first dormitory at Hanover College, College " +
+                        "Point House.",
                 "Henry C. Long", 38.712451, -85.461101);
         //UNKNOWN
-        insertSites(db, "Admissions Building", 1900, 12345,
-                "",
+        insertSites(db, "Admissions Building", 12345, 12345,
+                "The Admissions Building was originally built as faculty housing in the 1950's. It was " +
+                        "later converted to house administrative offices.",
                 "None", 38.714356, -85.461486);
         //UNKNOWN
-        insertSites(db, "Academic Computing Center", 1900, 12345,
-                "",
+        insertSites(db, "Academic Computing Center", 12345, 12345,
+                "The Academic Computing Center now houses the Hanover College IT Services.",
                 "None", 38.714536, -85.461404);
 
 
         //CAMPUS_LIFE
         insertSites(db, "Brown Memorial Chapel", 1956, 12345,
-                "",
-                "Mr. & Mrs. William Pool Brown", 38.713000, -85.459784);
+                "The Brown Memorial Chapel (or simply the Chapel), was built with donated funds from " +
+                        "James Graham Brown in 1956. The Chapel was dedicated to James Graham Brown's " +
+                        "parents, William Pool and Mary Craig Graham Brown.",
+                "James Graham Brown", 38.713000, -85.459784);
         insertSites(db, "Brown Campus Center", 1967, 12345,
-                "",
+                "Brown Campus Center (CC) was built by donated funds from James " +
+                        "Graham Brown in 1967.",
                 "James Graham Brown", 38.713801, -85.460400);
         insertSites(db, "Horner Health and Recreational Center", 1995, 12345,
-                "",
+                "Horner Health and Recreational Center (Horner) was built in 1995 to replace " +
+                        "both old Long Gymnasium, which was torn down to build Horner, and Lynn Gymnasium, " +
+                        "which has been remodeled and is now Lynn Hall.",
                 "John E. Horner", 38.715023, -85.462316);
         insertSites(db, "President's House", 1952, 12345,
                 "",
                 "None", 38.712941, -85.459196);
-        insertSites(db, "Shoebox", 1900, 12345,
+        insertSites(db, "Shoebox", 12345, 12345,
                 "",
                 "None", 38.719390, -85.461238);
-        insertSites(db, "YMCA", 1900, 12345,
-                "",
-                "None", 38.720722, -85.462305);
+
 
         /*
         //OLD CAMPUS
-        //UNKNOWN
+        insertSites(db, "YMCA", 12345, 12345,
+                "",
+                "None", 38.720722, -85.462305);
         insertSites(db, "Old Classic Hall", 1900, 1901,
                 "",
                 "None", 38.712572, -85.456412);
-        //UNKNOWN
         insertSites(db, "Old Science Hall", 1900, 1901,
                 "",
                 "None", 38.712972, -85.457066);
-        //UNKNOWN
         insertSites(db, "College Point House", 1900, 1901,
                 "",
                 "None", 38.712480, -85.461738);
@@ -270,7 +284,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertPeople(db, "Duncan McAuley",
                 "McAuley", "Duncan", "NONE",
                 12345, 12345, "M",
-                "");
+                "Duncan McAuley served as the second president of Hanover College from 1836-1838.");
         insertPeople(db, "Eramus D. MacMaster",
                 "MacMaster", "Eramus", "D.",
                 1806, 1864, "M",
@@ -424,30 +438,33 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertPeople(db, "Sue DeWine",
                 "DeWine", "Sue", "NONE",
                 12345, 54321, "F",
-                "Description");
+                "Sue DeWine served as the fifteenth president of Hanover College from 2007-2015.");
         insertPeople(db, "Lake Lambert III",
                 "Lambert", "Lake", "NONE",
                 12345, 54321, "M",
-                "Description");
+                "Lake Lambert III is currently serving as the sixteenth president of Hanover College, " +
+                        "beginning in 2015.");
 
         //OTHER PEOPLE
         insertPeople(db, "James Graham Brown",
                 "Brown", "James", "Graham",
                 1881, 1969, "M",
-                "Description");
-        insertPeople(db, "Mr. & Mrs. William Pool Brown",
-                "Brown", "William", "Pool",
-                12345, 12345, "M",
-                "Brown Chapel -> James's father" +
-                        "Mary Craig Graham Brown");
-        insertPeople(db, "Coulter",
-                "Coulter", "NONE", "NONE",
-                12345, 12345, "M",
-                "Description");
+                "James Graham Brown was a successful lumberman and philanthropist from Louisville. He donated several " +
+                        "million dollars to Hanover College, including $2,000,000 for a campus center " +
+                        "(Brown Campus Center) and a library (Duggan Library). Brown was a member of " +
+                        "the Hanover College Class of 1903.");
+        insertPeople(db, "John Coulter",
+                "Coulter", "John", "Merle",
+                1851, 1928, "M",
+                "John Coulter taught the natural sciences at Hanover College for a short period during the " +
+                        "late 1800's. He graduated from Hanover College in 1870.");
         insertPeople(db, "John Finley Crowe",
                 "Crowe", "John", "Finley",
-                12345, 12345, "M",
-                "Description");
+                1789, 1860, "M",
+                "John Finley Crowe was the founder of Hanover College. Crowe came to Hanover in 1823 when " +
+                        "he became the pastor of the Hanover Presbyterian Church. Crowe worked tirelessly " +
+                        "for the church, the college, and the antislavery movement. Crowe taught at the " +
+                        "college until shortly before his death.");
         insertPeople(db, "Glenn Culbertson",
                 "Culbertson", "Glenn", "NONE",
                 1863, 1927, "M",
@@ -467,9 +484,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "pay off debts, create a campus plan, and build new campus buildings including " +
                         "Donner Hall, Classic Hall, Parker Auditorium, Ide Hall, and the President's House.");
         insertPeople(db, "Agnus L. Brown Duggan",
-                "Duggan", "A.", "L.",
+                "Duggan", "Agnus", "L.",
                 12345, 12345, "F",
-                "Description");
+                "Agnus L. Brown was the sister to James Graham Brown, a financial supporter of Hanover College.");
         insertPeople(db, "Vice President Thomas A. Hendricks",
                 "Hendricks", "Thomas", "A.",
                 1819, 1885, "M",
@@ -482,7 +499,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertPeople(db, "Mrs. John J. Ide",
                 "Ide", "John", "J.",
                 12345, 12345, "F",
-                "Description");
+                "Mrs. John J. Ide was the daughter of William H. Donner, a Hanover College supporter.");
         insertPeople(db, "Henry C. Long",
                 "Long", "Henry", "C.",
                 1843, 1901,  "M",
@@ -660,7 +677,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Blythe Residence Hall", "James Blythe");
         insertSitesToPeople(db, "Crowe Residence Hall", "John Finley Crowe");
         insertSitesToPeople(db, "Wiley Residence Hall", "Harvey W. Wiley");
-        insertSitesToPeople(db, "Coulter Residence Hall", "Coulter");
+        insertSitesToPeople(db, "Coulter Residence Hall", "John Coulter");
         insertSitesToPeople(db, "Ogle Suites", "Josephine Ogle");
         insertSitesToPeople(db, "Greenwood Suites", "NONE");
 
@@ -677,7 +694,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Admissions Building", "NONE");
         insertSitesToPeople(db, "Academic Computing Center", "NONE");
 
-        insertSitesToPeople(db, "Brown Memorial Chapel", "William Pool Brown");
+        insertSitesToPeople(db, "Brown Memorial Chapel", "James Graham Brown");
         insertSitesToPeople(db, "President's House", "NONE");
         insertSitesToPeople(db, "Brown Campus Center", "James Graham Brown");
         insertSitesToPeople(db, "Horner Health and Recreational Center", "John E. Horner");
@@ -743,9 +760,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         //OTHER PEOPLE
         insertPeopleToPeopleType(db, "James Graham Brown",
                 "Y", "N", "N", "N", "Y", "N");
-        insertPeopleToPeopleType(db, "Mr. & Mrs. William Pool Brown",
-                "N", "N", "N", "Y", "N", "N");
-        insertPeopleToPeopleType(db, "Coulter",
+        insertPeopleToPeopleType(db, "John Coulter",
                 "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "John Finley Crowe",
                 "N", "Y", "N", "N", "Y", "N");
