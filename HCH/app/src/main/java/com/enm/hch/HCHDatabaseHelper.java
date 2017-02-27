@@ -21,7 +21,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        updateMyDatabase(db, 0, DB_VERSION);
+        updateMyDatabase(db, 1, DB_VERSION);
     }
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -37,9 +37,10 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "LATITUDE DOUBLE, "
                 + "LONGITUDE DOUBLE);");
 
-        /*
-        INSERT SITES
-        */
+        //
+        //INSERT SITES
+        //
+
         //ACADEMIC
         insertSites(db, "Classic Hall", 1947, 12345,
                 "The construction of Classic Hall, also known as 'New' Classic Hall, " +
@@ -124,34 +125,39 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
 
         //STUDENT HOUSING
         insertSites(db, "Donner Residence Hall", 1939, 12345,
-                "Donner Residence Hall was built in 1939. ",
+                "Donner Residence Hall (Donner) was built in 1939. Today, it serves as a freshman dorm for women.",
                 "William H. Donner", 38.713380, -85.461991);
         insertSites(db, "Ide Residence Hall", 1951, 12345,
-                "",
+                "Ide Residence Hall (Ide) was built in 1951. Today, it serves as a freshman dorm for men.",
                 "Mrs. John J. Ide", 38.713368, -85.462475);
         insertSites(db, "Katherine Parker Residence Hall", 1964, 12345,
-                "",
+                "Katherine Parker Residence Hall (KP) was built in 1964. Today, it serves as a co-ed " +
+                        "freshman dorm.",
                 "Katherine Parker", 38.713276, -85.463051);
         insertSites(db, "Blythe Residence Hall", 1956, 12345,
-                "",
+                "Blythe Residence Hall was built in 1956. Today, it serves as a co-ed freshman dorm.",
                 "James Blythe", 38.714691, -85.462096);
         insertSites(db, "Crowe Residence Hall", 1949, 12345,
-                "",
+                "Crowe Residence Hall (Crowe) was built in 1949. Today, it serves as upperclassman housing," +
+                        "providing traditional dorm and suite options.",
                 "John Finley Crowe", 38.714788, -85.460660);
         insertSites(db, "Wiley Residence Hall", 1963, 12345,
-                "",
+                "Wiley Residence Hall (Wiley) was built in 1963. Today, it serves as an upperclassman dorm.",
                 "Harvey W. Wiley", 38.715628, -85.461520);
         //UNKNOWN
         insertSites(db, "Coulter Residence Hall", 12345, 12345,
-                "",
+                "Coulter Residence Hall (Coulter) was originally built as a fraternity house for Beta " +
+                        "Theta Pi. After the fraternity left campus, the house was changed into an " +
+                        "upperclassman dorm.",
                 "Coulter", 38.717656, -85.462175);
         //UNKNOWN
         insertSites(db, "Ogle Suites", 12345, 12345,
-                "",
+                "Ogle Suites (Ogle) offers upperclassman suite-style living. The building also includes " +
+                        "a conference room.",
                 "Josephine Ogle", 38.712780, -85.464459);
         //UNKNOWN
         insertSites(db, "Greenwood Suites", 12345, 12345,
-                "",
+                "Greenwood Suites (Greenwood) offers upperclassman suite-style living.",
                 "None", 38.717104, -85.462500);
 
 
@@ -207,7 +213,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "None", 38.714536, -85.461404);
 
 
-        //CAMPUS_LIFE
+        //CAMPUS LIFE
         insertSites(db, "Brown Memorial Chapel", 1956, 12345,
                 "The Brown Memorial Chapel (or simply the Chapel), was built with donated funds from " +
                         "James Graham Brown in 1956. The Chapel was dedicated to James Graham Brown's " +
@@ -223,31 +229,75 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "which has been remodeled and is now Lynn Hall.",
                 "John E. Horner", 38.715023, -85.462316);
         insertSites(db, "President's House", 1952, 12345,
-                "",
+                "The current President's House was built in 1952. The new house, modeled after the " +
+                        "architecture and design of the first Hanover College academic building Old " +
+                        "Classic Hall, replaced the original home for the president; the original structure " +
+                        "was razed to build the new house. The first house was built in 1876 by the ninth " +
+                        "president of Hanover College George C. Heckman.",
                 "None", 38.712941, -85.459196);
         insertSites(db, "Shoebox", 12345, 12345,
-                "",
+                "The Shoebox was built in the early 2000's as a student-run on-campus restaurant.",
                 "None", 38.719390, -85.461238);
 
 
-        /*
         //OLD CAMPUS
-        insertSites(db, "YMCA", 12345, 12345,
-                "",
+        insertSites(db, "YMCA", 1883, 12345,
+                "The YMCA building was built in 1883. The YMCA organization first came to Hanover College " +
+                        "in 1870. The Hanover College YMCA building was the first YMCA building built on " +
+                        "a college campus in the world. The building was moved from its original location in 1962. " +
+                        "Through the years, the building has been used as a YMCA meeting place, church, " +
+                        "theater, gathering place, and storage center. It was renovated in 2010 and is " +
+                        "used as classrooms today. ",
                 "None", 38.720722, -85.462305);
-        insertSites(db, "Old Classic Hall", 1900, 1901,
-                "",
+        insertSites(db, "Old Classic Hall", 1853, 1941,
+                "Old Classic Hall was the first academic building built by Hanover College and the first " +
+                        "academic building at the Point. The construction for Old Classic Hall began " +
+                        "in the spring of 1853. The building was completed in 1856. It was originally named Main Hall " +
+                        "but was often referred to as Literary Hall. It was renamed Classic Hall in 1900. " +
+                        "The building housed classrooms, lecture rooms, a chapel, an auditorium (seating nearly 500), " +
+                        "an art gallery, offices, and rooms for literary societies. In December of 1941, " +
+                        "the building caught fire and was destroyed; this happened after the last day of " +
+                        "classes and a chapel service in recognition of the bombing of Pearl Harbor and " +
+                        "the U.S. entrance into World War II.",
                 "None", 38.712572, -85.456412);
-        insertSites(db, "Old Science Hall", 1900, 1901,
-                "",
+        insertSites(db, "Old Science Hall", 1897, 1947,
+                "Old Science Hall was built in 1897. The building held the President's office along with " +
+                        "classrooms for chemistry, physics, geology, and biology. The building caught fire " +
+                        "January 1, 1919 but was rebuilt and repaired by 1921. The building was replaced " +
+                        "The building was razed in 1947 after the completion of the new science building " +
+                        "Goodrich Hall (Science Center).",
                 "None", 38.712972, -85.457066);
-        insertSites(db, "College Point House", 1900, 1901,
-                "",
+        insertSites(db, "College Point House", 1882, 1958,
+                "College Point House was the first dormitory at Hanover College. The center section was " +
+                        "built in 1882 for men. In 1908, it was remodeled and turned into a women's dormitory. " +
+                        "Additions were built in 1920 (west wing) and 1927 (east wing). The building was " +
+                        "demolished in 1958. Long Administration Building stands in its place.",
                 "None", 38.712480, -85.461738);
-        insertSites(db, "Long Gymnasium", 1957, 1992,
-                "",
-                "Henry C. Long", 38.715027, -85.463144);
-        */
+        insertSites(db, "Hanover Presbyterian Church", 12345, 12345,
+                "The Hanover Presbyterian Church was the first Hanover College academic building. " +
+                        "\n \n" +
+                        "The Hanover Presbyterian Church was founded in 1812 and was named after Hanover, " +
+                        "New Hampshire, the hometown of the first pastor Rev. Thomas Searle's wife; " +
+                        "the town later adopted the name. John Finley Crowe, founder of Hanover College, " +
+                        "became the pastor at Hanover Presbyterian Church in 1823 and preached from " +
+                        "1823-1832,1838-1846, and 1854-1856." +
+                        "\n \n" +
+                        "The building was originally called the College Edifice and was built in 1832." +
+                        "After a tornado damaged the building in 1837, the Hanover Presbyterian Church proposed " +
+                        "donating money to Hanover College for the repairs and " +
+                        "reconstruction if they could worship and meet in the College Edifice since their " +
+                        "church building had been destroyed; this would continue until the college had repaid " +
+                        "the money and helped build a new church building. In 1842, the Hanover " +
+                        "Presbyterian Church released Hanover College from the agreement provided that the " +
+                        "church should 'have permanently and for ever use and occupancy of the chapel room " +
+                        "in said building (College Edifice).' Hanover College transferred the deed of " +
+                        "the College Edifice and land to the Hanover Presbyterian Church during the 1850's-1860's " +
+                        "after the completion of Old Classic Hall. Several renovations have occurred " +
+                        "throughout the years, but the building has retained its main exterior look from " +
+                        "its 1871 renovation that removed the second story, replaced the south facade, and " +
+                        "installed a steeple.",
+                "None", 38.714554, -85.471051);
+
 
         //
         //CREATE TABLE PEOPLE
@@ -424,7 +474,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "fully repaired less than one year later.");
         insertPeople(db, "Russell L. Nichols",
                 "Nichols", "Rusty", "NONE",
-                12345, 54321, "M",
+                1941, 54321, "M",
                 "Russell L. Nichols served as the fourteenth president of Hanover College from 1987-2007. " +
                         "Nichols oversaw many improvements and additions to the Hanover College experience " +
                         "including an increase in full-time faculty, expansion of off-campus study programs " +
@@ -437,13 +487,13 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "\"America's Best College's\" competition.");
         insertPeople(db, "Sue DeWine",
                 "DeWine", "Sue", "NONE",
-                12345, 54321, "F",
+                1944, 54321, "F",
                 "Sue DeWine served as the fifteenth president of Hanover College from 2007-2015.");
         insertPeople(db, "Lake Lambert III",
                 "Lambert", "Lake", "NONE",
-                12345, 54321, "M",
-                "Lake Lambert III is currently serving as the sixteenth president of Hanover College, " +
-                        "beginning in 2015.");
+                1967, 54321, "M",
+                "Lake Lambert III began serving as the sixteenth president of Hanover College " +
+                        "in 2015.");
 
         //OTHER PEOPLE
         insertPeople(db, "James Graham Brown",
@@ -465,12 +515,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                         "he became the pastor of the Hanover Presbyterian Church. Crowe worked tirelessly " +
                         "for the church, the college, and the antislavery movement. Crowe taught at the " +
                         "college until shortly before his death.");
-        insertPeople(db, "Glenn Culbertson",
-                "Culbertson", "Glenn", "NONE",
-                1863, 1927, "M",
-                "Glenn taught astronomy, physics, and geology at Hanover College for 34 years from " +
-                        "1893-1927. He was very involved on campus. He also served as a state " +
-                        "legislator. Culbertson was a Hanover College alum, class of 1888.");
         insertPeople(db, "William H. Donner",
                 "Donner", "William", "Henry",
                 1864, 1953, "M",
@@ -502,7 +546,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "Mrs. John J. Ide was the daughter of William H. Donner, a Hanover College supporter.");
         insertPeople(db, "Henry C. Long",
                 "Long", "Henry", "C.",
-                1843, 1901,  "M",
+                1843, 1901, "M",
                 "Henry C. Long was an Indianapolis lumber dealer. He supported and advocated for women's " +
                         "education in Indiana. Through donations from his estate, Long College for Women " +
                         "of Hanover College (1947-1978) was founded and many campus buildings were constructed, " +
@@ -615,13 +659,13 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToSiteType(db, "Horner Health and Recreational Center", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "Shoebox", "N", "N", "N", "N", "Y", "N", "N", "N");
         insertSitesToSiteType(db, "YMCA", "N", "N", "N", "N", "Y", "N", "N", "N");
-        insertSitesToSiteType(db, "Culbertson Observatory", "N", "N", "N", "N", "Y", "N", "N", "N");
 
         //OLD_CAMPUS
         insertSitesToSiteType(db, "Old Classic Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
         insertSitesToSiteType(db, "Old Science Hall", "N", "N", "N", "N", "N", "N", "N", "Y");
         insertSitesToSiteType(db, "College Point House", "N", "N", "N", "N", "N", "N", "N", "Y");
         insertSitesToSiteType(db, "Long Gymnasium", "N", "N", "N", "N", "N", "N", "N", "Y");
+        insertSitesToSiteType(db, "Hanover Presbyterian Church", "N", "N", "N", "N", "N", "N", "N", "Y");
 
         //
         //CREATE TABLE SITE_TYPE
@@ -700,13 +744,11 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertSitesToPeople(db, "Horner Health and Recreational Center", "John E. Horner");
         insertSitesToPeople(db, "Shoebox", "NONE");
         insertSitesToPeople(db, "YMCA", "NONE");
-        insertSitesToPeople(db, "Culbertson Observatory", "Glenn Culbertson");
 
         insertSitesToPeople(db, "Old Classic Hall", "NONE");
         insertSitesToPeople(db, "Old Science Hall", "NONE");
         insertSitesToPeople(db, "College Point House", "NONE");
         insertSitesToPeople(db, "Long Gymnasium", "Henry C. Long");
-
 
 
         //
@@ -764,8 +806,6 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 "N", "N", "N", "N", "N", "Y");
         insertPeopleToPeopleType(db, "John Finley Crowe",
                 "N", "Y", "N", "N", "Y", "N");
-        insertPeopleToPeopleType(db, "Glenn Culbertson",
-                "N", "Y", "N", "N", "N", "N");
         insertPeopleToPeopleType(db, "William H. Donner",
                 "Y", "N", "N", "N", "N", "N");
         insertPeopleToPeopleType(db, "Agnus L. Brown Duggan",
@@ -819,34 +859,19 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER);");
 
         //INSERT IMAGES_SITES
-        insertImageSites(db, "Long Administration Building", R.drawable.admin);
-        insertImageSites(db, "Admissions Building", R.drawable.admissions);
-        insertImageSites(db, "Brown Memorial Chapel", R.drawable.brown_chapel);
-        insertImageSites(db, "Brown Campus Center", R.drawable.cc);
-        insertImageSites(db, "Lynn Center for the Fine Arts", R.drawable.cfa);
+        //ACADEMIC
         insertImageSites(db, "Classic Hall", R.drawable.classic);
+        insertImageSites(db, "Science Center", R.drawable.sc);
+        insertImageSites(db, "Science Hall", R.drawable.science_hall);
         insertImageSites(db, "Faculty Office Building", R.drawable.fob);
         insertImageSites(db, "Hendricks Hall", R.drawable.hendricks_hall);
-        insertImageSites(db, "Horner Health and Recreational Center", R.drawable.horner_gym);
-        insertImageSites(db, "Duggan Library", R.drawable.library);
         insertImageSites(db, "Lynn Hall", R.drawable.lynn_hall);
         insertImageSites(db, "Newby Hall", R.drawable.newby_hall);
         insertImageSites(db, "Parker Auditorium", R.drawable.parker_aud);
-        insertImageSites(db, "Science Center", R.drawable.sc);
-        insertImageSites(db, "Shoebox", R.drawable.shoebox);
-        insertImageSites(db, "Science Hall", R.drawable.science_hall);
+        insertImageSites(db, "Lynn Center for the Fine Arts", R.drawable.cfa);
+        insertImageSites(db, "Duggan Library", R.drawable.library);
 
-        //GREEK
-        insertImageSites(db, "Alpha Delta Pi Sorority House", R.drawable.adpi);
-        insertImageSites(db, "Chi Omega Sorority House", R.drawable.chio);
-        insertImageSites(db, "Phi Delta Theta Fraternity House", R.drawable.fidelt);
-        insertImageSites(db, "Phi Gamma Delta Fraternity House", R.drawable.fiji);
-        insertImageSites(db, "Lambda Chi Alpha Fraternity House", R.drawable.lambda);
-        insertImageSites(db, "Phi Mu Sorority House", R.drawable.phimu);
-        insertImageSites(db, "Kappa Alpha Theta Sorority House", R.drawable.theta);
-        insertImageSites(db, "Sigma Chi Fraternity House", R.drawable.sig);
-
-        //HOUSING
+        //STUDENT HOUSING
         insertImageSites(db, "Blythe Residence Hall", R.drawable.blythe_res);
         insertImageSites(db, "Crowe Residence Hall", R.drawable.crowe_res);
         insertImageSites(db, "Greenwood Suites", R.drawable.greenwood);
@@ -857,8 +882,32 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImageSites(db, "Coulter Residence Hall", R.drawable.coulter_res);
         insertImageSites(db, "Donner Residence Hall", R.drawable.donner_res);
 
+        //GREEK LIFE
+        insertImageSites(db, "Alpha Delta Pi Sorority House", R.drawable.adpi);
+        insertImageSites(db, "Chi Omega Sorority House", R.drawable.chio);
+        insertImageSites(db, "Phi Delta Theta Fraternity House", R.drawable.fidelt);
+        insertImageSites(db, "Phi Gamma Delta Fraternity House", R.drawable.fiji);
+        insertImageSites(db, "Lambda Chi Alpha Fraternity House", R.drawable.lambda);
+        insertImageSites(db, "Phi Mu Sorority House", R.drawable.phimu);
+        insertImageSites(db, "Kappa Alpha Theta Sorority House", R.drawable.theta);
+        insertImageSites(db, "Sigma Chi Fraternity House", R.drawable.sig);
+
+        //ADMINISTRATION
+        insertImageSites(db, "Long Administration Building", R.drawable.admin);
+        insertImageSites(db, "Admissions Building", R.drawable.admissions);
+
+        //CAMPUS LIFE
+        insertImageSites(db, "Brown Memorial Chapel", R.drawable.brown_chapel);
+        insertImageSites(db, "Brown Campus Center", R.drawable.cc);
+        insertImageSites(db, "Horner Health and Recreational Center", R.drawable.horner_gym);
+        insertImageSites(db, "Shoebox", R.drawable.shoebox);
+
         //RANDOM/OLD CAMPUS
         insertImageSites(db, "Goodrich Hall", R.drawable.goodrich_building);
+        insertImageSites(db, "Old Classic Hall", R.drawable.old_classic_hall);
+        insertImageSites(db, "Old Science Hall", R.drawable.old_science_hall);
+        insertImageSites(db, "YMCA", R.drawable.ymca);
+        insertImageSites(db, "Hanover Presbyterian Church", R.drawable.hanover_presbyterian_church);
 
 
         //CREATE TABLE IMAGES_PEOPLE
@@ -867,6 +916,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER);");
 
         //INSERT IMAGES_PEOPLE
+        //Presidents
         insertImagesPeople(db, "George D. Archibald", R.drawable.archibald);
         insertImagesPeople(db, "James Blythe", R.drawable.blythe);
         insertImagesPeople(db, "Sue DeWine", R.drawable.dewine);
@@ -881,12 +931,14 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         insertImagesPeople(db, "Sylvester D. Scovel", R.drawable.scovel);
         insertImagesPeople(db, "Thomas E. Thomas", R.drawable.thomas);
         insertImagesPeople(db, "James Wood", R.drawable.wood);
-        //MISSING - LAMBERT
+        insertImagesPeople(db, "Lake Lambert III", R.drawable.lambert);
 
+        //Other
+        insertImagesPeople(db, "John Finley Crowe", R.drawable.crowe);
     }
 
 
-
+    //Helper Function for inserting items in table SITES
     private static void insertSites(SQLiteDatabase db, String site_name,
                                     int date_built, int date_destroyed,
                                     String description, String namesake,
@@ -902,6 +954,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("SITES", null, siteValues);
     }
 
+    //Helper Function for inserting items in table PEOPLE
     private static void insertPeople(SQLiteDatabase db, String namesake,
                                      String name_last, String name_first, String name_middle,
                                      int date_birth, int date_death,
@@ -918,6 +971,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("PEOPLE", null, peopleValues);
     }
 
+    //Helper Function for inserting items in table SITES_TO_SITE_TYPE
     private static void insertSitesToSiteType(SQLiteDatabase db, String site_name,
                                               String academic_building, String student_housing,
                                               String greek_housing, String administration,
@@ -936,6 +990,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("SITES_TO_SITE_TYPE", null, sitesSiteTypeValues);
     }
 
+    //Helper Function for inserting items in table SITE_TYPE
     private static void insertSiteType(SQLiteDatabase db, String category,
                                        String category_proper, String description) {
         ContentValues siteTypeValues = new ContentValues();
@@ -945,6 +1000,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("SITE_TYPE", null, siteTypeValues);
     }
 
+    //Helper Function for inserting items in table SITES_TO_PEOPLE
     private static void insertSitesToPeople(SQLiteDatabase db, String site_name,
                                             String namesake) {
         ContentValues sitesPeopleValues = new ContentValues();
@@ -953,6 +1009,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("SITES_TO_PEOPLE", null, sitesPeopleValues);
     }
 
+    //Helper Function for inserting items in table PEOPLE_TO_PEOPLE_TYPE
     private static void insertPeopleToPeopleType(SQLiteDatabase db, String namesake,
                                                  String alumnus, String faculty_staff,
                                                  String president, String relative,
@@ -968,8 +1025,9 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("PEOPLE_TO_PEOPLE_TYPE", null, peopleValues);
     }
 
+    //Helper Function for inserting items in table PEOPLE_TYPE
     private static void insertPeopleType(SQLiteDatabase db, String category,
-                                               String category_proper, String description) {
+                                         String category_proper, String description) {
         ContentValues peopleTypeValues = new ContentValues();
         peopleTypeValues.put("CATEGORY", category);
         peopleTypeValues.put("CATEGORY_PROPER", category_proper);
@@ -977,6 +1035,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("PEOPLE_TYPE", null, peopleTypeValues);
     }
 
+    //Helper Function for inserting items in table IMAGES_SITES
     private static void insertImageSites(SQLiteDatabase db, String site_name,
                                          int image_id) {
         ContentValues imageSitesValues = new ContentValues();
@@ -985,6 +1044,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
         db.insert("IMAGES_SITES", null, imageSitesValues);
     }
 
+    //Helper Function for inserting items in table IMAGES_PEOPLE
     private static void insertImagesPeople(SQLiteDatabase db, String person_name,
                                            int image_id) {
         ContentValues imagePeopleValues = new ContentValues();

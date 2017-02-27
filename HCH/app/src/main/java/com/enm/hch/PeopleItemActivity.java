@@ -38,28 +38,30 @@ public class PeopleItemActivity extends Activity {
             if (cursor.moveToFirst()) {
                 //Get details
                 String namesakeText = cursor.getString(1);
+                personNameGlobal = namesakeText;
                 String dateBornText = Integer.toString(cursor.getInt(2));
                 String dateDiedText = Integer.toString(cursor.getInt(3));
                 String descriptionText = cursor.getString(4);
+                String temp;
 
                 //Populate Site_Name
                 TextView namesakePeople = (TextView) findViewById(R.id.namesake_people);
                 namesakePeople.setText(namesakeText);
 
                 //Populate Date_Born
-                TextView dateBorn = (TextView) findViewById(R.id.date_born_people);
+                TextView dateBorn = (TextView) findViewById(R.id.date_born);
                 //12345 = BORN DATE UNKNOWN
                 if (dateBornText.equals("12345")) {
                     dateBorn.setText("Born: Unknown");
                 }
                 //BORN DATE KNOWN
                 else {
-                    String temp = "Born: " + dateBornText;
+                    temp = "Born: " + dateBornText;
                     dateBorn.setText(temp);
                 }
 
                 //Populate Date_Death
-                TextView dateDeath = (TextView) findViewById(R.id.date_death_people);
+                TextView dateDeath = (TextView) findViewById(R.id.date_death);
                 //12345 = DEATH DATE UNKNOWN
                 if (dateDiedText.equals("12345")) {
                     dateDeath.setText("Died: Unknown");
@@ -70,14 +72,16 @@ public class PeopleItemActivity extends Activity {
                 }
                 //DEATH DATE KNOWN
                 else {
-                    String temp = "Died: " + dateDiedText;
-                    dateBorn.setText(temp);
+                    temp = "Died: " + dateDiedText;
+                    dateDeath.setText(temp);
                 }
 
                 //Populate Description
                 TextView description = (TextView) findViewById(R.id.description_people);
                 description.setText(descriptionText);
             }
+
+            cursor.close();
 
             Cursor cursor_image = db.query ("IMAGES_PEOPLE",
                     new String[] {"_id", "NAMESAKE", "IMAGE_ID"},
@@ -87,7 +91,7 @@ public class PeopleItemActivity extends Activity {
 
             if (cursor_image.moveToFirst()) {
                 //Get details
-                int imageSiteTemp = cursor.getInt(2);
+                int imageSiteTemp = cursor_image.getInt(2);
 
                 //Populate Date_Destroyed
                 ImageView imageSite = (ImageView) findViewById(R.id.image_people);
@@ -95,7 +99,7 @@ public class PeopleItemActivity extends Activity {
                 imageSite.setContentDescription(personNameGlobal);
             }
 
-            cursor.close();
+            cursor_image.close();
             db.close();
 
         } catch(SQLiteException e) {

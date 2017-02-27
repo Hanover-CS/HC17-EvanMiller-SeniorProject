@@ -62,15 +62,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         mMap.setOnInfoWindowClickListener(this);
         mMap.setOnInfoWindowCloseListener(this);
         mMap.setOnInfoWindowLongClickListener(this);
-
         mMap.setMyLocationEnabled(true);
-
-        /*
-        LatLng northwest = new LatLng(38.724916, -85.487288);
-        LatLng southeast = new LatLng(38.704825, -85.451196);
-        LatLngBounds cameraBounds = new LatLngBounds(northwest, southeast);
-        mMap.setLatLngBoundsForCameraTarget(cameraBounds);
-        */
 
         //Display Zoom Buttons
         UiSettings mapSettings;
@@ -80,30 +72,71 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         //Adds markers for each site on the map
         addSiteMarkers();
 
+        LatLng northwest = new LatLng(38.709774, -85.470337);
+        LatLng southeast = new LatLng(38.721092, -85.451368);
+        LatLngBounds cameraBounds = new LatLngBounds(northwest, southeast);
 
-        //Handler to continuously find device's current location and realign camera
-        final Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                //Pull device's current location
-                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                Criteria criteria = new Criteria();
-                String provider = locationManager.getBestProvider(criteria, true);
-                Location myLocation = locationManager.getLastKnownLocation(provider);
+        //Current Location
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String provider = locationManager.getBestProvider(criteria, true);
+        Location myLocation = locationManager.getLastKnownLocation(provider);
 
-                //Set camera
-                CameraPosition position = CameraPosition.builder()
-                        .target(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
-                        .zoom(17)
-                        .bearing(0.0f)
-                        .tilt(0.0f)
-                        .build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
+        //Using map functionality NOT ON campus
+        //Zooms camera onto center of campus
+        if (!(cameraBounds.equals(myLocation))){
+            //Set location bounds
+            mMap.setLatLngBoundsForCameraTarget(cameraBounds);
+            //Center coordinates of campus
+            LatLng center = cameraBounds.getCenter();
 
-                handler.postDelayed(this, 5000);
-            }
-        });
+            //Set camera on center coordinates of campus
+            CameraPosition position = CameraPosition.builder()
+                    .target(center)
+                    .zoom(17)
+                    .bearing(0.0f)
+                    .tilt(0.0f)
+                    .build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
+        }
+        //Using map functionality ON campus
+        else {
+            //Set camera on current location
+            CameraPosition position = CameraPosition.builder()
+                    .target(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
+                    .zoom(17)
+                    .bearing(0.0f)
+                    .tilt(0.0f)
+                    .build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
+
+            /*
+            //Handler to continuously find device's current location and realign camera
+            final Handler handler = new Handler();
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    //Get device's current location
+                    LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                    Criteria criteria = new Criteria();
+                    String provider = locationManager.getBestProvider(criteria, true);
+                    Location myLocation = locationManager.getLastKnownLocation(provider);
+
+                    //Set camera
+                    CameraPosition position = CameraPosition.builder()
+                            .target(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
+                            .zoom(17)
+                            .bearing(0.0f)
+                            .tilt(0.0f)
+                            .build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
+
+
+                    handler.postDelayed(this, 5000);
+                }
+            });
+            */
+        }
     }
 
     private void addSiteMarkers() {
@@ -117,16 +150,20 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                     null, null, null, null,
                     "SITE_NAME ASC");
 
+            //First query item
             cursor.moveToFirst();
             String siteNameText = cursor.getString(1);
             double latitudeText = cursor.getDouble(2);
             double longitudeText = cursor.getDouble(3);
             LatLng latLng = new LatLng(latitudeText, longitudeText);
+
+            //Creates Marker
             Marker marker = mMap.addMarker(new MarkerOptions().position(latLng).title(siteNameText)
                     .snippet("Hanover College").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             //Sets Tag as SITE_NAME -> pass on to pull info from Database
             marker.setTag(siteNameText);
 
+            //Rest of query items
             while (cursor.moveToNext()){
                 siteNameText = cursor.getString(1);
                 latitudeText = cursor.getDouble(2);
@@ -150,12 +187,14 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         }
     }
 
+    //User clicks on marker - response
     @Override
     public boolean onMarkerClick(final Marker marker) {
         //Returning 'false' falls back to default (displaying default window)
         return false;
     }
 
+    //User clicks on info window brought up by clicking on marker - response
     @Override
     public void onInfoWindowClick(Marker marker) {
         String site_name = marker.getTag().toString();
@@ -165,11 +204,13 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
     }
 
+    //User clicks off of info window brought up by clicking on marker - response
     @Override
     public void onInfoWindowClose(Marker marker) {
         //Do nothing
     }
 
+    //No long click option
     @Override
     public void onInfoWindowLongClick(Marker marker) {
         //Do nothing
