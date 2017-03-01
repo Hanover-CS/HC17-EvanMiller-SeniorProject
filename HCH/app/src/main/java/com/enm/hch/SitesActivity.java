@@ -13,20 +13,15 @@ public class SitesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sites);
     }
 
+    //Alphabetical Listing selected
     public void alphabeticalSitesClicked(View view) {
         Intent intent = new Intent (this, SitesAlphabeticalListingActivity.class);
         startActivity(intent);
     }
 
+    //Categories selected
     public void categoriesSitesClicked(View view) {
         Intent intent = new Intent (this, SitesCategoryListingActivity.class);
         startActivity(intent);
     }
-
-    /*
-    public void categoriesSitesDescriptionsClicked(View view) {
-        Intent intent = new Intent (this, SitesCategoryDescriptionsActivity.class);
-        startActivity(intent);
-    }
-    */
 }

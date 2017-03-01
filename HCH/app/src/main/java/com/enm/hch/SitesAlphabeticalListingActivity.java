@@ -26,6 +26,7 @@ public class SitesAlphabeticalListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
+            //SITES table
             cursor = db.query("SITES",
                     new String[]{"_id", "SITE_NAME"},
                     null, null, null, null,
@@ -38,6 +39,7 @@ public class SitesAlphabeticalListingActivity extends ListActivity {
                     new int[]{android.R.id.text1},
                     0);
 
+            //Lists all Sites alphabetically
             listSites.setAdapter(listAdapter);
 
         } catch(SQLiteException error) {
