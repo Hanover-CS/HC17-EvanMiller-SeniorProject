@@ -142,16 +142,16 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
             insertSites(db, "Wiley Residence Hall", 1963, 12345,
                     "Wiley Residence Hall (Wiley) was built in 1963. Today, it serves as an upperclassman dorm.",
                     "Harvey W. Wiley", 38.715628, -85.461520);
-            insertSites(db, "Coulter Residence Hall", 12345, 12345,
+            insertSites(db, "Coulter Residence Hall", 2003, 12345,
                     "Coulter Residence Hall (Coulter) was originally built as a fraternity house for Beta " +
                             "Theta Pi. After the fraternity left campus, the house was changed into an " +
                             "upperclassman dorm.",
                     "Coulter", 38.717656, -85.462175);
-            insertSites(db, "Ogle Suites", 12345, 12345,
+            insertSites(db, "Ogle Suites", 1999, 12345,
                     "Ogle Suites (Ogle) offers upperclassman suite-style living. The building also includes " +
                             "a conference room.",
                     "Josephine Ogle", 38.712780, -85.464459);
-            insertSites(db, "Greenwood Suites", 12345, 12345,
+            insertSites(db, "Greenwood Suites", 2002, 12345,
                     "Greenwood Suites (Greenwood) offers upperclassman suite-style living.",
                     "None", 38.717104, -85.462500);
 
@@ -195,12 +195,14 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                             "building sits on the old site of the first dormitory at Hanover College, College " +
                             "Point House.",
                     "Henry C. Long", 38.712451, -85.461101);
-            insertSites(db, "Admissions Building", 12345, 12345,
+            insertSites(db, "Admissions Building", 1955, 12345,
                     "The Admissions Building was originally built as faculty housing in the 1950's. It was " +
                             "later converted to house administrative offices.",
                     "None", 38.714356, -85.461486);
-            insertSites(db, "Academic Computing Center", 12345, 12345,
-                    "The Academic Computing Center now houses the Hanover College IT Services.",
+            insertSites(db, "Academic Computing Center", 1955, 12345,
+                    "The Academic Computing Center was originally built for the education department. " +
+                            "It now houses Hanover College's IT Services. It is the College's only " +
+                            "one-story building.",
                     "None", 38.714536, -85.461404);
 
             //CAMPUS LIFE
