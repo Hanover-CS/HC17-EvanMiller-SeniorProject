@@ -1,14 +1,12 @@
 package com.enm.hch;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
@@ -17,12 +15,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.location.LocationListener;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -32,7 +27,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -51,6 +45,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
     };
     private static final int LOCATION_REQUEST = 1827;
 
+    private double versionNum = 0.0;
     private GoogleMap mMap;
 
     @Override
@@ -62,7 +57,11 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
 
-        if (Double.parseDouble(Build.VERSION.RELEASE) >= 6.0) {
+        String versionStr = Build.VERSION.RELEASE;
+        versionStr = versionStr.substring(0, 1);
+        versionNum = Double.parseDouble(versionStr);
+
+        if (versionNum >= 6.0) {
             if (!canAccessLocation()) {
                 requestPermissions(LOCATION_PERMS, LOCATION_REQUEST);
             }
@@ -95,8 +94,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         //Checks for location permissions in Manifest file
         //Required for newer versions of Android
         //Prompts user to allow location permissions if haven't already
-
-        if (Double.parseDouble(Build.VERSION.RELEASE) >= 6.0) {
+        if (versionNum >= 6.0) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED
                     && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -128,7 +126,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
             //Set camera on center coordinates of campus
             CameraPosition position = CameraPosition.builder()
                     .target(center)
-                    .zoom(18)
+                    .zoom(17)
                     .bearing(0.0f)
                     .tilt(0.0f)
                     .build();
@@ -139,7 +137,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
             //Set camera on current location
             CameraPosition position = CameraPosition.builder()
                     .target(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()))
-                    .zoom(18)
+                    .zoom(17)
                     .bearing(0.0f)
                     .tilt(0.0f)
                     .build();
@@ -151,11 +149,9 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    //Get device's current location
-                    LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                    Criteria criteria = new Criteria();
-                    String provider = locationManager.getBestProvider(criteria, true);
-                    Location myLocation = locationManager.getLastKnownLocation(provider);
+                    //Current location
+                    LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+                    Location myLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
                     //Set camera
                     CameraPosition position = CameraPosition.builder()
@@ -173,6 +169,7 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
         }
     }
 
+    //
     private void addSiteMarkers() {
         //Pull LATITUDE and LONGITUDE from each SITE_NAME in SITES and populate markers for each
         try{
