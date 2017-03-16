@@ -27,6 +27,7 @@ public class SitesCategoryListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
+            //SITE_TYPE table
             cursor = db.query("SITE_TYPE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     null, null, null, null,
@@ -39,6 +40,7 @@ public class SitesCategoryListingActivity extends ListActivity {
                     new int[]{android.R.id.text1},
                     0);
 
+            //Lists all Site categories
             listSites.setAdapter(listAdapter);
 
         } catch(SQLiteException error) {

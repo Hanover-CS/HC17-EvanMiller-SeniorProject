@@ -41,7 +41,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
-            android:src="@drawable/hch_marker"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/site_image" />
 
@@ -59,4 +58,5 @@
             android:textSize="18sp"/>
 
     </LinearLayout>
+
 </ScrollView>

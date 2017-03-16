@@ -22,13 +22,13 @@
             android:textSize="25sp"/>
 
         <TextView
-            android:id="@+id/date_born_people"
+            android:id="@+id/date_born"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/date_death_people"
+            android:id="@+id/date_death"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -41,7 +41,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
-            android:src="@drawable/hch_marker"
             android:contentDescription="@string/person_image"
             android:layout_marginBottom="8dp"/>
 
@@ -53,4 +52,5 @@
             android:textSize="15sp"/>
 
     </LinearLayout>
+
 </ScrollView>

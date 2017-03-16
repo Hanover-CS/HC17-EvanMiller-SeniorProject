@@ -13,14 +13,15 @@ public class PeopleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_people);
     }
 
+    //Alphabetical Listing selected
     public void alphabeticalPeopleClicked(View view) {
         Intent intent = new Intent (this, PeopleAlphabeticalListingActivity.class);
         startActivity(intent);
     }
 
+    //Categories selected
     public void categoriesPeopleClicked(View view) {
         Intent intent = new Intent (this, PeopleCategoryListingActivity.class);
         startActivity(intent);
     }
-
 }

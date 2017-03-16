@@ -14,11 +14,13 @@ public class BrowseListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_browse_list);
     }
 
+    //Sites selected
     public void sitesClicked(View view) {
         Intent intent = new Intent (this, SitesActivity.class);
         startActivity(intent);
     }
 
+    //People selected
     public void peopleClicked(View view) {
         Intent intent = new Intent (this, PeopleActivity.class);
         startActivity(intent);

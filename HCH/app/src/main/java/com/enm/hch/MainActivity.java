@@ -13,16 +13,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //Roam Campus selected
     public void roamCampusClicked(View view) {
         Intent intent = new Intent (this, RoamCampusMapsActivity.class);
         startActivity(intent);
     }
 
+    //Browse List selected
     public void browseListClicked(View view) {
         Intent intent = new Intent (this, BrowseListActivity.class);
         startActivity(intent);
     }
 
+    //About selected
     public void aboutClicked(View view) {
         Intent intent = new Intent (this, AboutActivity.class);
         startActivity(intent);

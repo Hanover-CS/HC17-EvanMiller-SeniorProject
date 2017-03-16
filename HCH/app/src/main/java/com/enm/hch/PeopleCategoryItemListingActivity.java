@@ -30,6 +30,7 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
             SQLiteOpenHelper HCHDatabaseHelper = new HCHDatabaseHelper(this);
             db = HCHDatabaseHelper.getReadableDatabase();
 
+            //PEOPLE_TYPE table
             cursor = db.query("PEOPLE_TYPE",
                     new String[]{"_id", "CATEGORY", "CATEGORY_PROPER"},
                     "_id = ?",
@@ -38,8 +39,12 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
                     "CATEGORY ASC");
 
             cursor.moveToFirst();
-            String category_input = cursor.getString(1) + " = ?";
+            String category = cursor.getString(1);
+            //For use in cursor
+            String category_input = category + " = ?";
 
+            //PEOPLE_TO_PEOPLE_TYPE
+            //Searches for "Y" (YES) in specific category's column
             cursor = db.query("PEOPLE_TO_PEOPLE_TYPE",
                     null,
                     category_input,
@@ -55,6 +60,7 @@ public class PeopleCategoryItemListingActivity extends ListActivity {
                     new int[]{android.R.id.text1},
                     0);
 
+            //Displays all People of the specific People category chosen
             listSites.setAdapter(listAdapter);
 
         } catch (SQLiteException error) {
