@@ -1,6 +1,6 @@
 # Hanover College History (HCH)
-## Evan Miller
 ## Hanover College CS Department Senior Project
+## Evan Miller
 
 ### Application Description
 The Hanover College History (HCH) application is an Android application that allows users to engage and absorb the history of Hanover College. The application’s main function is taking users on an interactive historical tour of the college. The device’s location triggers content about a site’s history including a short informational paragraph, old photographs, and interesting facts. There are two options for campus tours: “Roam Campus” where the user can freely walk around campus and visually see on a map all available sites; “Browse List” where the user can select from various lists and categories of historical sites and related people. 
