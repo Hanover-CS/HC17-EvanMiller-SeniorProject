@@ -36,14 +36,8 @@
     <string name="categories">
         Categories
     </string>
-    <string name="category_description">
-        Category Descriptions
-    </string>
-    <string name="description">
-        The fun and interactive way to learn the history of Hanover College!
-    </string>
     <string name="main_menu_info_text">
-        The fun and interactive way to learn the history of Hanover College!
+        The fun and interactive way to learn about the history of Hanover College
     </string>
     <string name="people">
         People

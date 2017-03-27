@@ -48,19 +48,19 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                             "The academic building was last renovated in 2002.",
                     "None", 38.713063, -85.458299);
             insertSites(db, "Hendricks Hall", 1903, 12345,
-                    "Hendricks Hall, originally Hendricks Library, was opened to students in 1903. The money" +
+                    "Hendricks Hall, originally Hendricks Library, was opened to students in 1903. The money " +
                             "for the building was donated by Eliza C. Morgan Hendricks, the wife of " +
-                            "the United States Vice President Thomas A. Hendricks. Hendricks graduated from" +
-                            "Hanover College in 1840. Hendricks Library became Hendricks Hall in 1952 when" +
-                            "a new college library was built. Hendricks Hall has served many purposes through" +
-                            "the years including classrooms, Computer Science labs, Business Scholar Program offices," +
+                            "the United States Vice President Thomas A. Hendricks. Hendricks graduated from " +
+                            "Hanover College in 1840. Hendricks Library became Hendricks Hall in 1952 when " +
+                            "a new college library was built. Hendricks Hall has served many purposes through " +
+                            "the years including classrooms, Computer Science labs, Business Scholar Program offices, " +
                             "and most recently the Hanover College Career Center.",
                     "Vice President Thomas A. Hendricks", 38.712584, -85.457797);
             insertSites(db, "Parker Auditorium", 1947, 12345,
-                    "Parker Auditorium was built in celebration of Albert G. Parker Jr., 12th president of" +
-                            "Hanover College, and his twenty-five years of service to the college. The building" +
+                    "Parker Auditorium was built in celebration of Albert G. Parker Jr., 12th president of " +
+                            "Hanover College, and his twenty-five years of service to the college. The building " +
                             "served as a main gathering space for campus events and chapel services in its " +
-                            "early days. Parker Auditorium has also held many theatre productions throughout its" +
+                            "early days. Parker Auditorium has also held many theatre productions throughout its " +
                             "history.",
                     "Albert G. Parker", 38.713423, -85.457188);
             insertSites(db, "Science Center", 2000, 12345,
@@ -72,7 +72,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                             "1930-1948.",
                     "P. E. Goodrich", 38.714262, -85.458282);
             insertSites(db, "Science Hall", 1952, 12345,
-                    "Science Hall was originally built in 1952 as the new Hanover College Library, replacing Hendricks Library. " +
+                    "Science Hall was originally built in 1952 as the new Hanover College Library, replacing Hendricks Library " +
                             "at the time. The library was then moved to its current residence in the Hanover " +
                             "College Duggan Library in 1973 upon the new building's completion. Science Hall, also " +
                             "referred to as 'Old Science Hall', has served many purposes through the years including " +
@@ -86,8 +86,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                             "headquarters for the Education department, providing classrooms and faculty offices.",
                     "Arthur C. Newby", 38.714366, -85.461857);
             insertSites(db, "Faculty Office Building", 1931, 12345,
-                    "The Faculty Office Building (FOB) was originally built in 1931 as a fraternity house for the" +
-                            "Phi Delta Theta fraternity. In 1969, Phi Delta Theta built a new fraternity" +
+                    "The Faculty Office Building (FOB) was originally built in 1931 as a fraternity house for the " +
+                            "Phi Delta Theta fraternity. In 1969, Phi Delta Theta built a new fraternity " +
                             "house and left their old residence for the use of Hanover College. It is unclear " +
                             "exactly when the building was officially renamed the Faculty Office Building, " +
                             "but today, the building serves as classrooms and faculty offices.",
@@ -111,7 +111,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                             "donor of the money to construct the " +
                             "building. Less than a year after its completion, a tornado hit the building in 1974, " +
                             "tearing the roof off; the building was quickly repaired. A major renovation " +
-                            "took place in the early 2000's, renovating the third floor for student use and" +
+                            "took place in the early 2000's, renovating the third floor for the expanding library collection and" +
                             "adding an official space for the Hanover College Archives.",
                     "Agnus L. Brown Duggan", 38.715624, -85.460044);
             insertSites(db, "Lynn Center for the Fine Arts", 1978, 12345,
@@ -136,7 +136,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     "Blythe Residence Hall was built in 1956. Today, it serves as a co-ed freshman dorm.",
                     "James Blythe", 38.714691, -85.462096);
             insertSites(db, "Crowe Residence Hall", 1949, 12345,
-                    "Crowe Residence Hall (Crowe) was built in 1949. Today, it serves as upperclassman housing," +
+                    "Crowe Residence Hall (Crowe) was built in 1949. Today, it serves as upperclassman housing, " +
                             "providing traditional dorm and suite options.",
                     "John Finley Crowe", 38.714788, -85.460660);
             insertSites(db, "Wiley Residence Hall", 1963, 12345,
@@ -146,7 +146,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     "Coulter Residence Hall (Coulter) was originally built as a fraternity house for Beta " +
                             "Theta Pi. After the fraternity left campus, the house was changed into an " +
                             "upperclassman dorm.",
-                    "Coulter", 38.717656, -85.462175);
+                    "John Coulter", 38.717656, -85.462175);
             insertSites(db, "Ogle Suites", 1999, 12345,
                     "Ogle Suites (Ogle) offers upperclassman suite-style living. The building also includes " +
                             "a conference room.",
@@ -254,7 +254,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
             insertSites(db, "Old Science Hall", 1897, 1947,
                     "Old Science Hall was built in 1897. The building held the President's office along with " +
                             "classrooms for chemistry, physics, geology, and biology. The building caught fire " +
-                            "January 1, 1919 but was rebuilt and repaired by 1921. The building was replaced " +
+                            "January 1, 1919, but was rebuilt and repaired by 1921. " +
                             "The building was razed in 1947 after the completion of the new science building " +
                             "Goodrich Hall (Science Center).",
                     "None", 38.712972, -85.457066);
@@ -307,7 +307,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
             insertPeople(db, "James Blythe",
                     "Blythe", "James", "NONE",
                     1765, 1842, "M",
-                    "Rev. James Blythe served as the first president of Hanover College's from 1832-1836. " +
+                    "Rev. James Blythe served as the first president of Hanover College from 1832-1836. " +
                             "Blythe came to Hanover College from Transylvania " +
                             "University where he had also served as president. As the first president of Hanover " +
                             "College, he witnessed and oversaw a tremendous amount of growth for the college, " +
@@ -380,7 +380,7 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
                     "Rev. George Dr. Archibald served as the eighth president of Hanover College from 1868-1870. " +
                             "Archibald oversaw several significant changes at Hanover College including the " +
                             "partial admittance of women to the College (women were allowed to take classes but " +
-                            "not allowed tp graduate) and restructured and expanded the science curriculum, thus " +
+                            "not allowed to graduate) and restructured and expanded the science curriculum, thus " +
                             "elevating the College's bachelor of science degree. As well, he prevented the " +
                             "College from relocating to Indianapolis in a proposed deal with Wabash College in " +
                             "Crawfordsville, Indiana. Before becoming president, Archibald had served on the " +
@@ -557,8 +557,8 @@ class HCHDatabaseHelper extends SQLiteOpenHelper {
             insertPeople(db, "Arthur C. Newby",
                     "Newby", "Arthur", "C.",
                     12345, 12345, "M",
-                    "Friend of college trustee John W. Suverkrup (trustee for 19 years) " +
-                            "and donated funds to construct building");
+                    "Arthur C. Newby was a friend of Hanover College trustee John W. Suverkrup (trustee for 19 years) " +
+                            "and donated funds to construct Newby Hall.");
             insertPeople(db, "Josephine Ogle",
                     "Ogle", "Josephine", "NONE",
                     1905, 1983, "F",

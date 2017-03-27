@@ -70,9 +70,6 @@ public class RoamCampusMapsActivity extends FragmentActivity implements
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        //Boolean to track if permissions are granted
-        boolean location_permissions = true;
-
         //Create Map
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
